@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "Bu depoyu veya haritaları kullanıyorsanız lütfen aşağıdaki gibi atıf yapınız."
+title: >-
+  Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek: Kalkınma Politikalarının ve
+  Ulus-Aşırı Aktör-Ağların Haritalanması (1945-50)
+type: dataset
+# Sıra: Proje Yürütücüsü, Araştırmacılar, Danışman (roller README.md'de belirtilmiştir)
+authors:
+  - family-names: "Hayal"
+    given-names: "Orhan"
+  - family-names: "Ağcan"
+    given-names: "Muhammed Ali"
+  - family-names: "Kahraman"
+    given-names: "Muhammet Salih"
+  - family-names: "Erken"
+    given-names: "Ali"
+abstract: >-
+  TÜBİTAK 1002-A Hızlı Destek Programı kapsamında desteklenen 324K664 no'lu
+  proje çerçevesinde geliştirilen, aktör-ağ kuramına (ANT) dayalı ilişki
+  temelli kodlama sistematiğinin ürettiği etkileşimli aktör-ağ haritaları.
+keywords:
+  - aktör-ağ kuramı
+  - kalkınma politikaları
+  - Türkiye
+  - 1945-1950
+  - Marshall Planı
+  - söylem analizi
+license: CC-BY-4.0
+repository-code: "https://github.com/orhanhyl/kalkinma-agi-1945-50"
+version: 1.0.0
+date-released: "2026-07-21"
