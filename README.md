@@ -252,13 +252,33 @@ Güncel master tabloda (`12_edges/11_edges.tsv`) **2.308 kodlanmış ilişki**, 
 
 ### Yöntemin özgünlüğü
 
+Aktör-ağ kuramının kendisi, geniş ölçekli bir tarihsel arşive doğrudan
+uygulanabilir bir yöntem sunmaz (Law, 2008): bir idari kararın zorunlu
+geçiş noktası işlevi gördüğünü kuramsal düzeyde söylemek başka, on
+binlerce sayfalık belge içinde bu işlevi hangi ölçütlerle tespit
+edeceğini belirlemek başkadır. Bu projenin asıl yöntemsel katkısı da
+tam burada durur: ANT'ın ilişkisel ontolojisini, her ilişkinin kaynak
+belgeye ve pasaja geri izlenebildiği, denetlenebilir bir kodlama
+protokolüne çevirmek.
+
 Kalkınma söylemi üzerine yapılan çoğu çalışma, metin madenciliğinde
-**co-word / co-occurrence** yöntemlerine dayanır: terimlerin metinde birlikte
-geçme sıklığı, aralarında anlamlı bir ilişki olduğunun *belirleyici* kanıtı
-sayılır — önce sabit varlıklar/kategoriler varsayılır, sonra bunların
-birlikteliği ölçülür. Bu projede co-word/co-occurrence yalnızca **4. adımda,
-aday pasaj seçiminde ön-eleme aracı** olarak kullanılmıştır; asıl kodlama
-kararına hiçbir zaman girmez.
+**co-word / co-occurrence** yöntemlerine dayanır (Callon ve Courtial,
+1983): terimlerin metinde birlikte geçme sıklığı, aralarında anlamlı bir
+ilişki olduğunun *belirleyici* kanıtı sayılır — önce sabit
+varlıklar/kategoriler varsayılır, sonra bunların birlikteliği ölçülür.
+Ama aynı raporda birlikte anılan iki aktör bir çatışmanın, bir
+müzakerenin, başarısız bir çeviri girişiminin ya da sıradan bir idari
+işlemin parçası olabilir — birliktelik sıklığı ilişkinin varlığına
+işaret etse de yönünü, niteliğini ya da işlevini açıklamaz. Kuvvet
+yönelimli ağ görselleştirmeleri ve tartışma haritalama (controversy
+mapping) gibi diğer ilişkisel yöntemler de benzer bir sınırla
+karşılaşır: ikisi de zengin, sürekli ve dijital iz bırakan kaynaklara
+(web arşivleri, çevrimiçi platformlar) dayanır — bu araştırmanın
+malzemesini oluşturan daktilo raporlar, el yazması notlar ve fiziksel
+yazışmalar için doğrudan uygulanabilir değildir. Bu yüzden projede
+co-word/co-occurrence yalnızca **4. adımda, aday pasaj seçiminde
+ön-eleme aracı** olarak kullanılmıştır; hiçbir ilişki yalnızca birlikte
+geçme sıklığına dayanılarak kodlanmaz.
 
 Bunun yerine, aktör-ağ kuramının genel simetri ilkesinden — **bir
 varlığın özellikleri ancak diğer aktörlerle kurduğu ilişkiler içinde
@@ -269,6 +289,15 @@ kod listesine dayanan **yönlü, mekanizmalı ilişki** (X — ilişki — Y)
 kodlamanın birim eylemidir. Bu, ANT'ın ilişkisel ontolojisini somut bir
 kodlama protokolüne çeviren, bu proje için özgün olarak geliştirilmiş bir
 sistematiktir.
+
+Aynı temkin, bu depodaki haritaların okunuşuna da taşınır. Bir düğümün
+görselde merkezde durması ya da başka düğümlere yakın konumlanması, o
+aktörün tarihsel olarak en önemli aktör olduğunun kanıtı değildir —
+yerleşim algoritmasının, kodlanmış ilişki sayısına göre ürettiği bir
+temsildir (Jacomy vd., 2014). Haritalar bu yüzden nihai bir yorum
+sunmaz; araştırmacının yeni sorular geliştirmesine, beklenmedik
+örüntüleri fark etmesine ve bunları belgeye dönüp yeniden
+doğrulamasına yarayan bir keşif yüzeyidir.
 
 ## Haritalar
 
