@@ -1,4 +1,16 @@
+<!doctype html>
+<html lang="tr">
+<head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="2308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı." />
+<link rel="canonical" href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Önerme Ailesi Ağ Haritası" />
+<meta property="og:description" content="2308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı." />
+<meta property="og:url" content="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/" />
+<meta property="og:image" content="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/preview.png" />
+<meta name="twitter:card" content="summary_large_image" />
 <title>Önerme Ailesi Ağ Haritası</title>
 <style>
   :root {
@@ -124,10 +136,13 @@
   .top-nav .fs-btn:hover { background: var(--wash-strong); color: var(--ink); }
   :fullscreen { background: var(--page); }
   :fullscreen .top-nav { display: none; }
+  :fullscreen .map-intro { display: none; }
   :fullscreen .wrap { max-width: none; padding: 12px; }
   :fullscreen #graphSvg { height: 100vh !important; }
 
 </style>
+</head>
+<body>
 <div class="wrap">
 <div class="top-nav mono"><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/">← Ana Sayfa</a><button class="fs-btn" id="fsBtn" type="button">⛶ Tam Ekran</button></div>
 <script>
@@ -144,11 +159,13 @@
 })();
 </script>
 
+<div class="map-intro">
   <p class="eyebrow">Aktör-Ağ Araştırma Protokolü · 1945–1950 Türkçe Külliyatı</p>
   <h1>Önerme Ailesi Ağ Haritası</h1>
   <p class="lede">Her kenar (kurucu ilişki), külliyattan çıkarılan önerme/alt-önermeden birine atanmıştır. Soldaki üç sütun önerme hiyerarşisini gösterir; bir alt-önermeye tıklamak, o önermeye atanmış aktör-ağ kenarlarını sahneye çağırır.</p>
   <div class="stats-row" id="statsRow"></div>
   <hr class="rule" />
+</div>
   <h2 class="section-title">Önerme hiyerarşisi — P1 · P2 · P3</h2>
   <div class="hier-grid" id="hierGrid"></div>
   <hr class="rule" />
@@ -203,7 +220,7 @@
   const CAT_LABEL = {"aktor": "Aktörler", "surec": "Süreçler", "sorun": "Sorunlar", "nesne": "Nesneler / Araçlar"};
   const CAT_VAR = { aktor: '--accent-aktor', surec: '--accent-surec', sorun: '--accent-sorun', nesne: '--accent-nesne' };
   const NODE_CAP = 220;
-  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-07-27_172255_run/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
+  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-07-27_175256_run/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
 
   function mulberry32(seed) {
     return function () {
@@ -580,3 +597,5 @@
   if (initSub) selectProposition(initSub.id, initSub.id, initSub.onerme, initSub.kapsam);
 })();
 </script>
+</body>
+</html>

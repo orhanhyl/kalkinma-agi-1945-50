@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek — Aktör-Ağ Haritaları</title>
 <meta name="description" content="TÜBİTAK 1002-A projesi (324K664) kapsamında geliştirilen ilişki temelli aktör-ağ haritalama sistematiğinin etkileşimli çıktıları." />
+<link rel="canonical" href="https://orhanhyl.github.io/kalkinma-agi-1945-50/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek — Aktör-Ağ Haritaları" />
+<meta property="og:description" content="TÜBİTAK 1002-A projesi (324K664) kapsamında geliştirilen ilişki temelli aktör-ağ haritalama sistematiğinin etkileşimli çıktıları." />
+<meta property="og:url" content="https://orhanhyl.github.io/kalkinma-agi-1945-50/" />
+<meta property="og:image" content="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/preview.png" />
+<meta name="twitter:card" content="summary_large_image" />
 <style>
   :root {
     --page: #f5f0e3; --surface: #fcfcfb; --ink: #1c1a16; --ink-2: #55504a; --muted: #8a8478;
@@ -45,14 +52,20 @@
   p.lede { font-size: 15.5px; color: var(--ink-2); }
   h2.section-title { font-size: 13px; font-family: ui-monospace, monospace; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 16px; font-weight: 500; }
   .map-card {
-    display: block; border: 1px solid var(--hair); background: var(--surface);
-    padding: 18px 20px; text-decoration: none; color: inherit; margin-bottom: 12px;
+    display: flex; gap: 18px; align-items: center; border: 1px solid var(--hair); background: var(--surface);
+    padding: 14px 20px; text-decoration: none; color: inherit; margin-bottom: 12px;
     transition: background 0.1s;
   }
   .map-card:hover { background: var(--wash); }
+  .map-card .thumb {
+    flex: none; width: 128px; height: 88px; object-fit: cover; object-position: center;
+    border: 1px solid var(--hair); background: var(--wash);
+  }
+  .map-card .body { flex: 1; min-width: 0; }
   .map-card .title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
   .map-card .desc { font-size: 13.5px; color: var(--ink-2); }
   .map-card .go { font-family: ui-monospace, monospace; font-size: 11px; color: var(--accent); margin-top: 8px; display: block; }
+  @media (max-width: 520px) { .map-card { flex-direction: column; align-items: stretch; } .map-card .thumb { width: 100%; height: 140px; } }
   footer.note { margin-top: 40px; font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
   a { color: var(--accent); }
 </style>
@@ -81,7 +94,7 @@
   </p>
   <p class="lede" style="font-size:13.5px;">
     Sorunsal, kuramsal çerçeve ve yöntemin tam açıklaması için
-    <a href="README.md">README</a> dosyasına bakınız.
+    <a href="https://github.com/orhanhyl/kalkinma-agi-1945-50#readme">README</a> dosyasına bakınız.
   </p>
 
   <hr class="rule" />
@@ -89,23 +102,32 @@
   <h2 class="section-title">Etkileşimli haritalar</h2>
 
   <a class="map-card" href="maps/aktor-agi/">
-    <div class="title">Aktör Ağı</div>
-    <div class="desc">1.059 düğüm, 1.919 kenar — külliyatta kodlanan tüm aktörler arası ilişki temelli tam ağ.</div>
-    <span class="go">HARİTAYI AÇ →</span>
+    <img class="thumb" src="maps/aktor-agi/preview.png" alt="Aktör Ağı önizlemesi" loading="lazy" />
+    <div class="body">
+      <div class="title">Aktör Ağı</div>
+      <div class="desc">1.059 düğüm, 1.919 kenar — külliyatta kodlanan tüm aktörler arası ilişki temelli tam ağ.</div>
+      <span class="go">HARİTAYI AÇ →</span>
+    </div>
   </a>
   <a class="map-card" href="maps/kume-agi/">
-    <div class="title">Küme Ağı</div>
-    <div class="desc">140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti.</div>
-    <span class="go">HARİTAYI AÇ →</span>
+    <img class="thumb" src="maps/kume-agi/preview.png" alt="Küme Ağı önizlemesi" loading="lazy" />
+    <div class="body">
+      <div class="title">Küme Ağı</div>
+      <div class="desc">140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti.</div>
+      <span class="go">HARİTAYI AÇ →</span>
+    </div>
   </a>
   <a class="map-card" href="maps/onerme-agi/">
-    <div class="title">Önerme Ağı</div>
-    <div class="desc">2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı.</div>
-    <span class="go">HARİTAYI AÇ →</span>
+    <img class="thumb" src="maps/onerme-agi/preview.png" alt="Önerme Ağı önizlemesi" loading="lazy" />
+    <div class="body">
+      <div class="title">Önerme Ağı</div>
+      <div class="desc">2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı.</div>
+      <span class="go">HARİTAYI AÇ →</span>
+    </div>
   </a>
 
   <footer class="note">
-    Atıf ve lisans bilgisi için <a href="README.md">README</a> ve
+    Atıf ve lisans bilgisi için <a href="https://github.com/orhanhyl/kalkinma-agi-1945-50#readme">README</a> ve
     <a href="CITATION.cff">CITATION.cff</a> · CC BY 4.0
   </footer>
 </div>
