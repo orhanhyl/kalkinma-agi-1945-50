@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Sorunsal, kuramsal çerçeve ve ilişki temelli aktör-ağ kodlama yönteminin tam açıklaması." />
+<link rel="canonical" href="https://orhanhyl.github.io/kalkinma-agi-1945-50/yontem/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Yöntem — Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek" />
+<meta property="og:description" content="Sorunsal, kuramsal çerçeve ve ilişki temelli aktör-ağ kodlama yönteminin tam açıklaması." />
+<meta property="og:url" content="https://orhanhyl.github.io/kalkinma-agi-1945-50/yontem/" />
+<title>Yöntem — Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek</title>
+<style>
+  :root {
+    --page: #f5f0e3; --surface: #fcfcfb; --ink: #1c1a16; --ink-2: #55504a; --muted: #8a8478;
+    --hair: rgba(28,26,22,0.12); --hair-strong: rgba(28,26,22,0.22);
+    --wash: rgba(28,26,22,0.045); --wash-strong: rgba(28,26,22,0.09);
+    --accent: #2a78d6;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) {
+      --page: #14110c; --surface: #1a1a19; --ink: #f4f1e8; --ink-2: #c7c2b6; --muted: #8f897c;
+      --hair: rgba(244,241,232,0.14); --hair-strong: rgba(244,241,232,0.26);
+      --wash: rgba(244,241,232,0.05); --wash-strong: rgba(244,241,232,0.10);
+      --accent: #3987e5; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --page: #14110c; --surface: #1a1a19; --ink: #f4f1e8; --ink-2: #c7c2b6; --muted: #8f897c;
+    --hair: rgba(244,241,232,0.14); --hair-strong: rgba(244,241,232,0.26);
+    --wash: rgba(244,241,232,0.05); --wash-strong: rgba(244,241,232,0.10);
+    --accent: #3987e5; color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --page: #f5f0e3; --surface: #fcfcfb; --ink: #1c1a16; --ink-2: #55504a; --muted: #8a8478;
+    --hair: rgba(28,26,22,0.12); --hair-strong: rgba(28,26,22,0.22);
+    --wash: rgba(28,26,22,0.045); --wash-strong: rgba(28,26,22,0.09);
+    --accent: #2a78d6; color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page); color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    line-height: 1.65;
+  }
+  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Consolas, "Liberation Mono", Menlo, monospace; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 40px 28px 90px; }
+  .top-nav { font-family: ui-monospace, monospace; font-size: 11.5px; margin-bottom: 28px; }
+  .top-nav a { color: var(--muted); text-decoration: none; letter-spacing: 0.03em; }
+  .top-nav a:hover { color: var(--ink); text-decoration: underline; }
+  article h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; line-height: 1.2; }
+  article h2 { font-size: clamp(19px, 2.6vw, 23px); font-weight: 600; margin: 42px 0 14px; padding-top: 20px; border-top: 1px solid var(--hair); letter-spacing: -0.005em; }
+  article h2:first-of-type { border-top: none; padding-top: 0; }
+  article h3 { font-size: 16.5px; font-weight: 600; margin: 26px 0 10px; }
+  article p { font-size: 15.5px; color: var(--ink-2); margin: 0 0 15px; }
+  article strong { color: var(--ink); font-weight: 600; }
+  article em { font-style: italic; }
+  article a { color: var(--accent); }
+  article ul, article ol { font-size: 15.5px; color: var(--ink-2); padding-left: 24px; margin: 0 0 15px; }
+  article li { margin-bottom: 6px; }
+  article blockquote {
+    margin: 0 0 18px; padding: 4px 16px; border-left: 2px solid var(--hair-strong);
+    color: var(--ink-2); font-size: 14.5px;
+  }
+  article blockquote p { margin: 0 0 4px; }
+  article hr { border: none; border-top: 1px solid var(--hair); margin: 30px 0; }
+  article code { font-family: ui-monospace, monospace; font-size: 0.9em; background: var(--wash); padding: 1px 5px; border-radius: 2px; }
+  .table-scroll { overflow-x: auto; margin: 0 0 20px; }
+  article table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  article th { text-align: left; font-family: ui-monospace, monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 500; padding: 8px 10px; border-bottom: 1px solid var(--hair-strong); white-space: nowrap; }
+  article td { padding: 7px 10px; border-bottom: 1px solid var(--hair); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  footer.note { margin-top: 48px; font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-nav"><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/">← Ana Sayfa</a></div>
+  <article>
+<h1 id="savaş-sonrası-türkiyede-kalkınmayı-i̇nşa-etmek">Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek</h1>
+<h2 id="kalkınma-politikalarının-ve-ulus-aşırı-aktör-ağların-haritalanması-194550">Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)</h2>
+<blockquote>
+<p>TÜBİTAK 1002-A Hızlı Destek Programı kapsamında desteklenmektedir — Proje No: <strong>324K664</strong> Başlama: 03.06.2025 · Bitiş: 03.06.2026</p>
+</blockquote>
+<p><strong>Proje Yürütücüsü:</strong> Dr. Orhan HAYAL <strong>Araştırmacılar:</strong> Doç. Dr. Muhammed Ali AĞCAN · Arş. Gör. Muhammet Salih KAHRAMAN <strong>Danışman:</strong> Prof. Dr. Ali ERKEN</p>
+<hr />
+<h2 id="bu-depo-hakkında">Bu depo hakkında</h2>
+<p>Bu depo, yukarıdaki projenin temel çıktısı olan <strong>ilişkisel, maddi ve çok ölçekli analiz çerçevesinin</strong> ve buna bağlı <strong>aktör-ağ haritalama altyapısının</strong> somut, etkileşimli çıktılarını barındırır. Külliyat; uzman raporları, diplomatik yazışmalar, arşiv belgeleri, gazete ve dergilerden derlenen, standart künyeli 1.465 belgeden oluşur. Aşağıdaki her harita, bu külliyattan çıkarılan kalkınma ilişkilerinin, Bruno Latour öncülüğündeki Aktör-Ağ Kuramı (ANT) ve maddi-semiyotik yaklaşım çerçevesinde kodlanmasıyla üretilmiştir.</p>
+<h2 id="araştırma-sorunsalı">Araştırma sorunsalı</h2>
+<p>Savaş sonrası dönemde Türkiye, 1930'larda başlatılan ama savaş nedeniyle aksayan devlet öncülüğündeki sanayileşme politikalarını sürdürmek ile ABD'nin merkezinde yer aldığı kapitalist Batı'ya eklemlenip tarımsal ihtisaslaşmayı benimsemek arasında bir tercihle karşılaşır. Bu dönemde, uzman raporları, diplomatik yazışmalar ve basın tartışmaları içinde <strong>"Türkiye yüksek potansiyele sahip ancak azgelişmiş bir tarım toplumudur"</strong> önermesi, kalkınma tartışmalarının ortak referansı hâline gelir.</p>
+<p>Araştırma, bu önermenin doğru olup olmadığını ya da hangi aktörlerin çıkarına hizmet ettiğini sorgulamaz; onun yerine önermenin bilimsel nitelik taşıyan, sorgulanmadan kabul edilen bir olguya nasıl dönüştüğünün <strong>arkeolojisini</strong> yapar — gerçekliği nasıl inşa ettiğini, nasıl istikrar kazandığını ve tartışılamaz bir olgu olarak nasıl dolaşıma girdiğini izler. Bunu yaparken şu soruyu merkeze alır: <strong>kalkınma pratikleri gerçekten politikadan mı beslenir, yoksa pratikler mi politikayı biçimlendirir?</strong> Kalkınma aktörlerinin asıl işi politika tasarlamak mıdır, yoksa kalkınmayı olaylardan bağımsız, istikrarlı ve tutarlı bir gerçekliğe dönüştürmek midir? Proje bu doğrultuda dört hedef etrafında şekillenir:</p>
+<ol type="1">
+<li>Savaş sonrası kalkınma siyasetine yerel, ulusal ve uluslararası ölçekleri birlikte gözeten, aktör odaklı ve ulus-aşırı bir kavrayış geliştirmek;</li>
+<li>Kalkınmayı bir aktör-ağ olarak ilişkisel ve maddi terimlerle ele alan bir haritalama yaklaşımı kurmak;</li>
+<li>Kalkınma ağında seferber olan insan ve insan olmayan aktörlerin bağıntılarını görselleştiren bir aktör-ağ haritası oluşturmak;</li>
+<li>Siyaset ile uzmanlık arasındaki ilişkiyi bileşenleriyle ortaya koymak.</li>
+</ol>
+<h2 id="bulgular">Bulgular</h2>
+<p>Bulgular, "Türkiye yüksek potansiyele sahip ancak azgelişmiş bir tarım toplumudur" üst önermesinin (P0) dönemin belgelerinde hazır bulunan bir teşhis olmadığını; ölçme, sınıflandırma, temsil ve tekrar işlemleriyle adım adım kurulan bir gerçeklik olduğunu gösterir. Bu üst önerme, üç alt teşhisin birbirini tamamlayan işlevlerinden oluşur — bağımsız gözlemlerin toplamı değildir:</p>
+<ul>
+<li><strong>P1 — Yüksek potansiyel</strong>, rezerv, debi, ekilebilir arazi ve ihracat projeksiyonlarıyla kurulur. Seyhan Nehri mühendislik raporunun akış rejimini, taşkın riskini ve baraj kesitini birlikte hesaplayarak akarsuyu 51.700 kilovatlık bir üretim imkânına dönüştürmesi gibi, potansiyel her zaman belirli teknik varsayımlar altında <strong>hesaplanan</strong> bir kategoridir — gerçekleşmiş bir başarı değil.</li>
+<li><strong>P2 — Azgelişmişlik</strong>, birbirine gönderme yapan bir eksiklikler zinciriyle kurulur: yol yetersizliği taşıma maliyetini, maliyet döviz gereksinimini, sınırlı döviz yatırım önceliğini, öncelik kararı da koordinasyon sorununu gündeme taşır. Bu zincirin somut bir izi: Türkiye'nin 1945'te ABD'den istediği 500 milyon dolarlık kredi talebi ile Eximbank'ın 1946'da onayladığı 25 milyon dolar arasındaki <strong>yirmi katlık fark</strong> — azgelişmişlik burada soyut bir "sermaye yokluğu" değil, yatırım isteğiyle dış kreditörün uygun gördüğü kapasite arasındaki müzakere edilmiş mesafe olarak somutlaşır.</li>
+<li><strong>P3 — Tarım toplumu</strong>, seçilmiş göstergelerle (sekiz milyonluk faal nüfusun altı buçuk milyondan fazlasının tarımda olması, geçimlik tüketim, düşük nakdî gelir, araç yetersizliği) kurulur. Karasaban ve hayvan gücünün "geri" üretimin simgesi sayılması köylünün nesnel bir niteliği değildir; asıl işlem, motorlu pulluk şemalarının insan/hayvan gücüne dayalı araçlarla karşılaştırılıp ikincisinin eksik konuma yerleştirilmesidir.</li>
+</ul>
+<p>Bu üç teşhis, farklı belge türlerinde (uzman raporu, diplomatik yazışma, arşiv kaydı, basın) tekrar edilerek birbirini doğrular hâle gelir — ve bu tekrar, P0'a <strong>Latour'un (1987) kara kutulaşma</strong> kavramıyla açıklanabilecek bir istikrar kazandırır: teknik bir teşhis olarak beliren bir iddia, diplomatik yazışmada müzakere konusuna, arşiv kaydında idari göreve, gazete sütununda kamusal eleştiriye çevrildikçe kaynağı sorgulanmadan işlem görmeye başlar. Ne var ki bu istikrar nihai değildir; bulgular, sürecin bütünüyle tamamlanmış bir uzlaşı üretmediğini de gösterir — kara kutulaşma, itirazın sona erdiği bir durum değil, bazı iddiaların yeniden açılmadan devralındığı <strong>seçici bir eğilimdir</strong>.</p>
+<p>Bunun doğrudan bir sonucu, uzmanlığın siyasetten bağımsız bir teknik bilgi alanı olmadığıdır. Max Weston Thornburg örneği bunu açıkça gösterir: onun otorite kazanması kapalı bir ofiste yazdığı teknik metinle değil, diplomatik kanallarla tanıtılması, gazetecilerin onu aktarması ve başlıklandırmasıyla — yani <strong>Callon'un (1984) çeviri sosyolojisindeki sorunsallaştırma, ilgilendirme, görevlendirme ve seferberlik uğraklarıyla</strong> — kurulmuştur. Uzmanlık böylece politika sorunlarını tanımlayan, öncelikleri belirleyen ve uygulama araçlarını meşrulaştıran <strong>kurucu</strong> bir unsur olarak ortaya çıkar; siyaset ve uzmanlık, ayrı iki alan değil, tek bir iktidar-bilgi kompleksinin bileşenleridir.</p>
+<p>Kalkınmanın kuruluşu ayrıca <strong>çok ölçekli</strong>dir: Seyhan havzasındaki köylülerin set talebi, Ankara'daki bakanlık yazışmaları, Washington'a taşınan istatistik tabloları ve IBRD/ECA değerlendirmeleri aynı çeviri zincirinin farklı halkalarıdır — yerelden ulus-aşırıya tek bir ağ. Ve bu ağ sürtünmesizce ilerlemez: Mercury–Medioli finansman girişiminin güvenilir bir kaynak sağlanamadığında somut bir şantiyeye dönüşememesi gibi direnç örnekleri, kalkınmayı zorunlu ve tek yönlü bir ilerleme olarak sunan anlatıları sınırlandırır ve programın engeller etrafında dolanarak yürüyen bir müzakere dizisiyle ayakta kaldığını gösterir.</p>
+<p>Bu depodaki etkileşimli haritalar, tam olarak bu bulguyu keşfetmenin bir yolunu sunar: her harita, P0/P1/P2/P3 önermelerini kuran binlerce tekil ilişkiyi — hangi aktörün, hangi belgede, hangi mekanizmayla neyi mümkün kıldığını ya da engellediğini — tek tek görünür ve kaynağına geri izlenebilir kılar.</p>
+<h2 id="kuramsal-çerçeve">Kuramsal çerçeve</h2>
+<p>Araştırma, aktör-ağ kuramına dayanır. Bu kurama göre "toplumsal" —devlet, kurum, sınıf gibi kategoriler— hazır bir zemin değildir; insan ve insan-dışı unsurlar arasındaki ilişkilerin her defasında yeniden ürettiği kırılgan bir birleşimdir. Bunun yöntemsel karşılığı <strong>genel simetri ilkesidir</strong> (Callon, 1984): bir aktörün —insan ya da insan-dışı, belge, teknoloji, kurum— özellikleri ve etkisi önceden verili değildir; ancak diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar. Kuramın merkezî kavramı olan <strong>çeviri (translation)</strong>, heterojen aktörlerin çıkarlarının yeniden tanımlanarak ortak bir ağ etrafında hizalanma sürecidir ve dört aşamada işler: sorunsallaştırma, ilgilendirme (interessement), kayıt altına alma (enrolment) ve müttefiklerin seferber edilmesi (Callon, 1984). Bu ağlar belirli bir istikrara ulaştığında <strong>kara kutulaşma</strong> ortaya çıkar — karmaşık bir ilişkiler bütünü, tek bir sorgulanamaz gerçeklik gibi görünmeye başlar (Latour, 1987).</p>
+<p>Araştırmacı bu süreçte <strong>agnostik</strong> bir konum benimser: aktörlerin iddialarını önceden doğru ya da yanlış olarak sınıflandırmaz, bu iddiaların hangi ilişkiler aracılığıyla güç kazandığını izler. Belgeler de yalnız söylemsel içerikleriyle değil, maddesellikleriyle birlikte ele alınır (maddi-semiyotik yaklaşım, Mol, 2002). Aşağıdaki kodlama sisteminin beş <strong>makro süreci</strong> (sorunsallaştırma, ilgilendirme, görevlendirme, yazıtlaştırma/seferberlik/stabilizasyon, direnç ve kırılma), çevirinin bu dört kuramsal aşamasını — ve ona eklenen bir direnç boyutunu — belgeye dayalı kodlamada işler kılacak biçimde somutlaştırır.</p>
+<h2 id="yöntem-i̇lişki-temelli-aktör-ağ-kodlama-sistematiği">Yöntem: İlişki temelli aktör-ağ kodlama sistematiği</h2>
+<p>Bu kuramsal çerçeve, somut bir kodlama protokolüne şu adımlarla çevrilir:</p>
+<h3 id="süreç-arşivden-haritaya">Süreç: arşivden haritaya</h3>
+<p><strong>1. Arşiv etnografisi.</strong> Külliyat, uzman raporları, diplomatik yazışmalar, arşiv belgeleri, gazete ve dergilerin taranması ve derlenmesiyle oluşturulur — standart künyeli <strong>1.465 belge</strong>, toplam <strong>~3,65 milyon kelime</strong>:</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Tür</th>
+<th>Belge sayısı</th>
+<th>Kelime sayısı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arşiv belgeleri (A)</td>
+<td>72</td>
+<td>443.144</td>
+</tr>
+<tr>
+<td>Diplomatik yazışmalar (C)</td>
+<td>540</td>
+<td>653.038</td>
+</tr>
+<tr>
+<td>Dergiler (D)</td>
+<td>533</td>
+<td>679.400</td>
+</tr>
+<tr>
+<td>Gazeteler (G)</td>
+<td>269</td>
+<td>206.497</td>
+</tr>
+<tr>
+<td>Raporlar (R)</td>
+<td>51</td>
+<td>1.670.196</td>
+</tr>
+<tr>
+<td><strong>Toplam</strong></td>
+<td><strong>1.465</strong></td>
+<td><strong>3.652.275</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Külliyatın %82'si tam 1945-1950 penceresinde; kalanı, dönemi bağlamlayan öncül (1943-44) ve ardıl (1951-56) belgeler ile bir adet sonradan yayımlanmış anı kaynağından oluşur.</p>
+<p><strong>2. Transkripsiyon.</strong> Derlenen arşiv malzemesi dijital metne aktarılır.</p>
+<p><strong>3. Künyeleme.</strong> Her belge; türü, tarihi ve kaynağıyla birlikte sistematik olarak kataloglanır ve tekil bir kimlikle işaretlenir.</p>
+<p><strong>4. Aday pasaj seçimi.</strong> Künyelenmiş belgeler içinden, kodlamaya aday pasajlar <strong>kapalı bir terimler listesi</strong> üzerinden, terimlerin <strong>birlikte geçme sıklığı (co-word / co-occurrence)</strong> esas alınarak araştırmacı tarafından taranır. <em>Bu adımın işlevi yalnızca ön-elemedir</em> — geniş külliyat içinde nereye bakılacağını daraltır; hangi ilişkinin var olduğuna veya nasıl kodlanacağına dair hiçbir karar vermez. Ardından deterministik bir kapı, biçimsel ölçütlere göre son bir süzme yapar.</p>
+<p><strong>5. İlişki temelli kodlama (asıl iş).</strong> Seçilen her pasajdan, aktör-ağ kuramından hareketle inşa edilmiş <strong>kapalı bir kod/ilişki listesi</strong> kullanılarak, tek bir ilişki üçlüsü çıkarılır:</p>
+<blockquote>
+<p><strong>X (etkileyen/kaynak) — ilişki (etkileme mekanizması) — Y (etkilenen/hedef)</strong></p>
+</blockquote>
+<p>Bu çıkarım — hangi iki varlığın, hangi yönde, hangi mekanizmayla (mümkün kılar, zorunlu kılar, engeller, finanse eder, zayıflatır, kısıtlar…) ilişkilendiği — pasajdaki kanıt cümlesinden <strong>araştırmacı yorumuyla</strong> yapılır. Bu ilişkinin hangi kapalı koda karşılık geldiğinin türetilmesi ve kaynak/hedef uçların önceden kurulmuş varlık sözlüğünde aranması ise deterministiktir; sözlükte karşılığı olmayan yeni bir uç ortaya çıktığında, onun atomik çekirdeğe indirgenmesi yine araştırmacı kararıyla yapılır. Her kodlanan ilişki, son olarak deterministik bir doğrulama kapısından geçer (şema, ilişki-kod tutarlılığı, kaynak metne izlenebilirlik, atomiklik).</p>
+<p>Kodlanan ilişkiler, yukarıda değinilen beş makro süreçten birine göre sınıflanır.</p>
+<p><strong>6. Önerme atama.</strong> Doğrulanmış her ilişki, külliyattan tümevarımla çıkarılmış <strong>kapalı bir önerme/alt-önerme listesinden</strong> birine atanır — "Türkiye yüksek potansiyele sahiptir" (P1), "Türkiye azgelişmiştir" (P2), "Türkiye tarım toplumudur" (P3) ve bunların alt-kırılımları. Bu atama, kural eşleşmesiyle deterministik yapılır; birden çok önermeyle örtüşen belirsiz durumlar araştırmacı kararına bırakılır. Bu katman, bu depodaki haritaların gezinme eksenini oluşturur.</p>
+<!-- TSV_STATS_START — bu blok update_showcase_readme.py tarafından
+     12_edges/11_edges.tsv'den otomatik yeniden üretilir, elle düzenlemeyin. -->
+
+<p>Güncel master tabloda (<code>12_edges/11_edges.tsv</code>) <strong>2.308 kodlanmış ilişki</strong>, <strong>1.346 benzersiz düğüm</strong> ve 27 sütun bulunuyor; ilişkilerin tür bazında dağılımı A 128 · C 844 · D 581 · G 349 · R 406'dır. Önerme atama %100 tamamlanmıştır; bunların <strong>%98,1'i</strong> kural eşleşmesiyle otomatik olarak, kalan <strong>%1,9'i</strong> (birden çok önermeyle örtüşen belirsiz durumlar) araştırmacı kararıyla bir önerme ailesine atanmıştır.</p>
+<!-- TSV_STATS_END -->
+
+<h3 id="yöntemin-özgünlüğü">Yöntemin özgünlüğü</h3>
+<p>Kalkınma söylemi üzerine yapılan çoğu çalışma, metin madenciliğinde <strong>co-word / co-occurrence</strong> yöntemlerine dayanır: terimlerin metinde birlikte geçme sıklığı, aralarında anlamlı bir ilişki olduğunun <em>belirleyici</em> kanıtı sayılır — önce sabit varlıklar/kategoriler varsayılır, sonra bunların birlikteliği ölçülür. Bu projede co-word/co-occurrence yalnızca <strong>4. adımda, aday pasaj seçiminde ön-eleme aracı</strong> olarak kullanılmıştır; asıl kodlama kararına hiçbir zaman girmez.</p>
+<p>Bunun yerine, aktör-ağ kuramının genel simetri ilkesinden — <strong>bir varlığın özellikleri ancak diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar</strong> — hareketle <strong>ilişki temelli bir kodlama sistematiği</strong> inşa edilmiştir: bir düğüm (aktör/nesne), yalnızca bir ilişkinin ucu olarak kodlandığında var olur; sıklık veya birliktelik değil, kapalı bir kod listesine dayanan <strong>yönlü, mekanizmalı ilişki</strong> (X — ilişki — Y) kodlamanın birim eylemidir. Bu, ANT'ın ilişkisel ontolojisini somut bir kodlama protokolüne çeviren, bu proje için özgün olarak geliştirilmiş bir sistematiktir.</p>
+<h2 id="haritalar">Haritalar</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Harita</th>
+<th>Açıklama</th>
+<th>Bağlantı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aktör Ağı</td>
+<td>1.059 düğüm, 1.919 kenar — tüm aktörler arası ilişki temelli tam ağ</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/">orhanhyl.github.io/.../aktor-agi/</a></td>
+</tr>
+<tr>
+<td>Küme Ağı</td>
+<td>140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/">orhanhyl.github.io/.../kume-agi/</a></td>
+</tr>
+<tr>
+<td>Önerme Ağı</td>
+<td>2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/">orhanhyl.github.io/.../onerme-agi/</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="katkılar-ve-sınırlılıklar">Katkılar ve sınırlılıklar</h2>
+<p>Çalışmanın katkıları üç düzeyde toplanır: <strong>kuramsal</strong> düzeyde kalkınmayı ANT ve maddi-semiyotik yaklaşım çerçevesinde yeniden okuyan bir çerçeve; <strong>metodolojik</strong> düzeyde, her yorumu kaynak belgeye geri izlenebilir kılan, denetlenebilir bir araştırma mimarisi (transkripsiyon → pasaj seçimi → ilişki temelli kodlama → önerme ailesi → aktör standartlaştırması → ağ haritalama); <strong>ampirik</strong> düzeyde ise 1.465 belgelik bir külliyatın ilişkisel biçimde yeniden incelenmesi. Araştırma, temsil ettikleri pratiklere doğrudan değil, yalnızca belgeler aracılığıyla eriştiğini kabul eder — bir uzman raporundaki tavsiye, uygulanmış bir politika sayılmaz; kodlama ve haritalama da araştırmacının yorumunu içeren işlemlerdir. Bu nedenle çalışma boyunca ilişkilerin kanıt zorunluluğu ve geriye izlenebilirliği yöntemsel bir güvence olarak korunmuştur.</p>
+<h2 id="atıf">Atıf</h2>
+<p>Hayal, O. (proje yürütücüsü). <em>Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek: Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)</em>. TÜBİTAK 1002-A, Proje No: 324K664.</p>
+<p>Bkz. <a href="CITATION.cff">CITATION.cff</a>.</p>
+<h2 id="lisans">Lisans</h2>
+<p>Bu depodaki metin ve haritalar <a href="https://creativecommons.org/licenses/by/4.0/deed.tr">Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0)</a> lisansı ile paylaşılmaktadır. Bkz. <a href="LICENSE">LICENSE</a>.</p>
+
+  </article>
+  <footer class="note">
+    Bu sayfa <a href="https://github.com/orhanhyl/kalkinma-agi-1945-50">deponun</a> README.md dosyasından otomatik üretilir.
+  </footer>
+</div>
+</body>
+</html>
