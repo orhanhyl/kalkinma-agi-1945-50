@@ -217,11 +217,12 @@ kural eşleşmesiyle deterministik yapılır; birden çok önermeyle örtüşen
 belirsiz durumlar araştırmacı kararına bırakılır. Bu katman, bu depodaki
 haritaların gezinme eksenini oluşturur.
 
-Güncel master tabloda (`12_edges/11_edges.tsv`) **2.342 kodlanmış ilişki**,
-**1.433 benzersiz düğüm** ve 27 sütun bulunuyor; ilişkilerin tür bazında
-dağılımı A 129 · C 849 · D 594 · G 353 · R 418'dir. Bunların **%96'sı**
-kural eşleşmesiyle otomatik olarak bir önerme ailesine atanmıştır; kalanı
-gözden geçirme bekliyor.
+Güncel master tabloda (`12_edges/11_edges.tsv`) **2.308 kodlanmış ilişki**,
+**1.346 benzersiz düğüm** ve 27 sütun bulunuyor; ilişkilerin tür bazında
+dağılımı A 128 · C 844 · D 581 · G 349 · R 406'dır. Önerme atama %100
+tamamlanmıştır; bunların **%98,1'i** kural eşleşmesiyle otomatik olarak,
+kalan **%1,9'u** (birden çok önermeyle örtüşen belirsiz durumlar)
+araştırmacı kararıyla bir önerme ailesine atanmıştır.
 
 ### Yöntemin özgünlüğü
 
@@ -247,9 +248,9 @@ sistematiktir.
 
 | Harita | Açıklama | Bağlantı |
 |---|---|---|
-| Aktör Ağı | 1.059 düğüm, 1.919 kenar — tüm aktörler arası ilişki temelli tam ağ | [maps/aktor-agi/](maps/aktor-agi/) |
-| Küme Ağı | 140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [maps/kume-agi/](maps/kume-agi/) |
-| Önerme Ağı | 2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı | [maps/onerme-agi/](maps/onerme-agi/) |
+| Aktör Ağı | 1.059 düğüm, 1.919 kenar — tüm aktörler arası ilişki temelli tam ağ | [orhanhyl.github.io/.../aktor-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/) |
+| Küme Ağı | 140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [orhanhyl.github.io/.../kume-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/) |
+| Önerme Ağı | 2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı | [orhanhyl.github.io/.../onerme-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/) |
 
 Rapora yerleştirilmesine karar verilen haritalar, her zaman en güncel sürümleriyle (önceki sürüm silinerek) bu tabloya eklenecektir.
 
