@@ -127,6 +127,34 @@ izlenebilir kılar.
 
 ## Kuramsal çerçeve
 
+Bu konumlanış bir boşluk iddiası taşımaz. Türkiye'nin erken Soğuk Savaş
+dönemi kalkınma deneyimi zaten geniş bir yazının konusudur: güvenlik
+mimarisi, siyasal-iktisadi dönüşüm, teknik yardımın sahadaki müzakereleri,
+uzmanlık ağları ve kültürel temsiller bu yazında ayrıntılı biçimde
+işlenmiştir; kalkınma iktisadı ve modernleşme kuramı da dönemin ortak
+kategorilerini —potansiyel, azgelişmişlik, ikili ekonomi— önce
+tanımlamış, bağımlılık okulu ve kalkınma-sonrası eleştiri bu
+kategorilerin kimin çıkarına işlediğini ve hangi iktidar ilişkilerini
+görünmez kıldığını sorgulamıştır. Bu araştırma o tartışmaların dışına
+çıkıp yeni bir vaka icat etmez; ayrı ayrı güçlü olan bu açıklama
+hatlarının, aynı önermenin —"Türkiye yüksek potansiyele sahip ancak
+azgelişmiş bir tarım toplumudur"— kuruluşu etrafında nasıl kesiştiğini
+izler. Fark sorudadır: önceki yazın bu teşhisin doğru olup olmadığını ya
+da kimin çıkarına hizmet ettiğini sorarken, bu çalışma teşhisin nasıl
+sorgulanamaz bir gerçekliğe dönüştüğünü — hangi belgenin hangisini
+doğruladığını, hangi aktörün hangisini hizaladığını — izler.
+
+Bunun somut bir yöntemsel sonucu var: araştırma klasik bağımlı/bağımsız
+değişken düzleminde kurulmaz. Örneğin ABD'nin savaş sonrası dış politika
+hedefleri, Türkiye'nin tarıma dayalı bir kalkınma yönelimi benimsemesinin
+doğrudan nedeni sayılan bir bağımsız değişken olarak ele alınmaz; bu
+hedefler bilgi, söylem, maddi araç ve toplumsal ilişkilerden oluşan
+heterojen bir ağın parçası sayılır, kalkınma politikaları da bu ağdaki
+insan ve insan-dışı aktörlerin etkileşimi üzerinden açıklanır. Analiz
+birimi böylece sabit değişkenler arası nedensellik değil, ağların
+kuruluşu ve istikrar kazanışıdır — bunun kuramsal karşılığı aktör-ağ
+kuramıdır.
+
 Araştırma, aktör-ağ kuramına dayanır. Bu kurama göre "toplumsal" —devlet,
 kurum, sınıf gibi kategoriler— hazır bir zemin değildir; insan ve
 insan-dışı unsurlar arasındaki ilişkilerin her defasında yeniden ürettiği
@@ -264,6 +292,43 @@ kabul eder — bir uzman raporundaki tavsiye, uygulanmış bir politika
 sayılmaz; kodlama ve haritalama da araştırmacının yorumunu içeren
 işlemlerdir. Bu nedenle çalışma boyunca ilişkilerin kanıt zorunluluğu ve
 geriye izlenebilirliği yöntemsel bir güvence olarak korunmuştur.
+
+## Yöntemin aktarılabilirliği
+
+Burada kurulan ilişki temelli kodlama ve ağ haritalama sistematiği tek
+bir tarihsel vakaya bağlı kalmaz. Aynı yöntem, farklı dönem ve ülkelerin
+kalkınma külliyatlarına uygulanarak karşılaştırmalı okumalara açılabilir;
+kalkınma dışında sağlık, çevre, eğitim ve altyapı gibi alanlarda da
+bilgi, uzmanlık ve karar süreçlerinin ilişkisel çözümlenmesinde
+kullanılabilir. Projenin önerdiği yönelimlerden biri, kurulan aktör-ağ
+altyapısının erişilebilir, etkileşimli bir görsel platforma
+dönüştürülmesiydi — bu depo ve içindeki haritalar, o önerinin somut
+karşılığıdır.
+
+Yöntemin bir de politika çözümlemesine dair çıkarımı var: burada sınanan
+yaklaşım, bir politikanın etkisini sabit değişkenler arası nedensellikle
+değil, aktörler, kurumlar, belgeler ve nesneler arasındaki bağıntıların
+izlenmesiyle değerlendirmeyi önerir. Bu ilişkisel bakış yalnız
+1945-1950 Türkiyesi'ni değil, güncel kalkınma ve politika süreçlerini de
+bağlama duyarlı biçimde okumak için bir zemin sunar.
+
+## Yaygın etki
+
+Araştırmanın bulguları uluslararası akademik ortamlarda sınandı: *"A
+'Good Neighbor' for the Middle East: Constructing Türkiye as a
+Development Mediator in the Early Cold War"* başlıklı bildiri ICRP:
+Middle East konferansında tam metin olarak kabul edilip bildiri
+kitapçığında yayımlandı; *"ECA and European Recovery in Türkiye
+(1945–1950): The Limits of Alternative Development Finance"* Hollanda'da
+düzenlenen Tensions of Europe konferansında sunuldu; *"Black-Boxing
+Development: Documentary Infrastructure, Relational Coding, and the
+Turkish Laboratory of the Early Cold War"* başlıklı bildiri 4S (Society
+for Social Studies of Science) Toronto konferansına kabul edildi, sunumu
+Ekim ayında gerçekleştirilecek. Bulgulara dayanan bir panel önerisiyle
+Siyasi İlimler Türk Derneği'nin V. Ulusal Siyaset Bilimi Kongresi'ne
+(Çukurova Üniversitesi, 19-20 Eylül 2026) başvuruldu; Mercury–Medioli
+finansman girişimini konu alan bir makale de hakemli, indeksli bir
+dergide yayımlanmak üzere hazırlanıyor.
 
 ## Atıf
 
