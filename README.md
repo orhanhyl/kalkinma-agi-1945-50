@@ -247,6 +247,9 @@ sistematiktir.
 
 | Harita | Açıklama | Bağlantı |
 |---|---|---|
+| Aktör Ağı | 1.059 düğüm, 1.919 kenar — tüm aktörler arası ilişki temelli tam ağ | [maps/aktor-agi/](maps/aktor-agi/) |
+| Küme Ağı | 140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [maps/kume-agi/](maps/kume-agi/) |
+| Önerme Ağı | 2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı | [maps/onerme-agi/](maps/onerme-agi/) |
 
 Rapora yerleştirilmesine karar verilen haritalar, her zaman en güncel sürümleriyle (önceki sürüm silinerek) bu tabloya eklenecektir.
 
