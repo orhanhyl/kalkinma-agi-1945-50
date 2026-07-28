@@ -247,7 +247,7 @@ haritaların gezinme eksenini oluşturur.
 
 <!-- TSV_STATS_START — bu blok update_showcase_readme.py tarafından
      12_edges/11_edges.tsv'den otomatik yeniden üretilir, elle düzenlemeyin. -->
-Güncel master tabloda (`12_edges/11_edges.tsv`) **2.308 kodlanmış ilişki**, **1.346 benzersiz düğüm** ve 27 sütun bulunuyor; ilişkilerin tür bazında dağılımı A 128 · C 844 · D 581 · G 349 · R 406'dır. Önerme atama %100 tamamlanmıştır; bunların **%98,1'i** kural eşleşmesiyle otomatik olarak, kalan **%1,9'i** (birden çok önermeyle örtüşen belirsiz durumlar) araştırmacı kararıyla bir önerme ailesine atanmıştır.
+Güncel master tabloda (`12_edges/11_edges.tsv`) **2.265 kodlanmış ilişki**, **1.213 benzersiz düğüm** ve 27 sütun bulunuyor; ilişkilerin tür bazında dağılımı A 127 · C 838 · D 556 · G 346 · R 398'dır. Önerme atama %100 tamamlanmıştır; bunların **%98,1'i** kural eşleşmesiyle otomatik olarak, kalan **%1,9'i** (birden çok önermeyle örtüşen belirsiz durumlar) araştırmacı kararıyla bir önerme ailesine atanmıştır.
 <!-- TSV_STATS_END -->
 
 ### Yöntemin özgünlüğü
@@ -303,9 +303,9 @@ doğrulamasına yarayan bir keşif yüzeyidir.
 
 | Harita | Açıklama | Bağlantı |
 |---|---|---|
-| Aktör Ağı | 1.059 düğüm, 1.919 kenar — tüm aktörler arası ilişki temelli tam ağ | [orhanhyl.github.io/.../aktor-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/) |
-| Küme Ağı | 140 düğüm, 583 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [orhanhyl.github.io/.../kume-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/) |
-| Önerme Ağı | 2.308 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı | [orhanhyl.github.io/.../onerme-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/) |
+| Aktör Ağı | 1.005 düğüm, 1.906 kenar — tüm aktörler arası ilişki temelli tam ağ | [orhanhyl.github.io/.../aktor-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/) |
+| Küme Ağı | 140 düğüm, 610 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [orhanhyl.github.io/.../kume-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/) |
+| Önerme Ağı | 2.265 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı | [orhanhyl.github.io/.../onerme-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/) |
 
 ## Katkılar ve sınırlılıklar
 
