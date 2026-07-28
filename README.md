@@ -303,8 +303,8 @@ doğrulamasına yarayan bir keşif yüzeyidir.
 
 | Harita | Açıklama | Bağlantı |
 |---|---|---|
-| Aktör Ağı | 1.005 düğüm, 1.906 kenar — tüm aktörler arası ilişki temelli tam ağ | [orhanhyl.github.io/.../aktor-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/) |
-| Küme Ağı | 140 düğüm, 610 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [orhanhyl.github.io/.../kume-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/) |
+| Aktör Ağı | 1.013 düğüm, 1.924 kenar — tüm aktörler arası ilişki temelli tam ağ | [orhanhyl.github.io/.../aktor-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/) |
+| Küme Ağı | 141 düğüm, 618 kenar, 12 küme — aktör ağının küme düzeyinde özeti | [orhanhyl.github.io/.../kume-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/) |
 | Önerme Ağı | 2.265 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı | [orhanhyl.github.io/.../onerme-agi/](https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/) |
 
 ## Katkılar ve sınırlılıklar
