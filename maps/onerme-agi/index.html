@@ -160,9 +160,9 @@
 </script>
 
 <div class="map-intro">
-  <p class="eyebrow">P0 Önermesini Kuran Alt-Önerme Hiyerarşisi</p>
+  <p class="eyebrow">aktör-ağ haritası · önerme ailesi · rapor §3.8, §4.1</p>
   <h1>Önerme Ailesi Ağ Haritası</h1>
-  <p class="lede">Her kenar (kurucu ilişki), külliyattan çıkarılan önerme/alt-önermeden birine atanmıştır. Soldaki üç sütun önerme hiyerarşisini gösterir; bir alt-önermeye tıklamak, o önermeye atanmış aktör-ağ kenarlarını sahneye çağırır.</p>
+  <p class="lede">P0 üst önermesi — "Türkiye yüksek potansiyele sahip ancak azgelişmiş bir tarım toplumudur" — külliyatta eşit ağırlıkla kurulmuyor: kodlanmış kenarların 1158'i azgelişmişlik (P2), 710'u potansiyel (P1), 397'si tarım toplumu (P3) alt ailesine atanmış. Tek başına en çok tekrarlanan alt-önerme ise P1.5 (dış sermaye/kredi/yardımla açığa çıkarılabilir potansiyel, 497 kenar) — neredeyse tüm P3 ailesi kadar büyük. Soldaki üç sütun bu hiyerarşiyi gösterir; bir alt-önermeye tıklamak ona atanmış aktör-ağ kenarlarını sahneye çağırır.</p>
   <div class="stats-row" id="statsRow"></div>
   <hr class="rule" />
 </div>
@@ -220,7 +220,7 @@
   const CAT_LABEL = {"aktor": "Aktörler", "surec": "Süreçler", "sorun": "Sorunlar", "nesne": "Nesneler / Araçlar"};
   const CAT_VAR = { aktor: '--accent-aktor', surec: '--accent-surec', sorun: '--accent-sorun', nesne: '--accent-nesne' };
   const NODE_CAP = 220;
-  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-07-28_061036_run/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
+  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-07-28_153909_onerme-agi-v2/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
 
   function mulberry32(seed) {
     return function () {
