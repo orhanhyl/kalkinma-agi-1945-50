@@ -52,6 +52,7 @@
   .eyebrow { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 11.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
   h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 600; margin: 0 0 12px; text-wrap: balance; letter-spacing: -0.01em; }
   .lede { font-size: 16.5px; color: var(--ink-2); max-width: 74ch; margin: 0 0 6px; }
+  .stake { font-style: italic; font-size: 14.5px; color: var(--ink-2); border-left: 2px solid var(--hair-strong); padding-left: 14px; margin: 14px 0 0; max-width: 74ch; }
   .stats-row { display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 20px 0 0; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12.5px; color: var(--muted); }
   .stats-row b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
   hr.rule { border: none; border-top: 1px solid var(--hair); margin: 30px 0; }
@@ -150,6 +151,7 @@
   <p class="eyebrow">aktör-ağ haritası · küme düzeyi · rapor §3.9.2, §4.3</p>
   <h1>Küme Ağı — Etkileşimli Harita</h1>
   <p class="lede">Aktör ağının 1013 düğümü 12 tematik kümeye toplanınca, hangi kurumsal blokların birbirine en sıkı bağlı olduğu görünür olur: en güçlü köprü (95 kenar) Devlet/idare/hukuk ile Finans/kredi/döviz kümeleri arasında kuruluyor — devlet aygıtı ile mali araçlar, kalkınma ağının geri kalanına bağlanan iki merkez konumunda. Her kümeden, kümenin toplam ağırlığıyla (üyelerinin tam ağdaki toplam derecesi) orantılı sayıda en yüksek dereceli düğüm gösterilir; çapa yarıçapı ve kümeler-arası uzaklık da aynı ağırlık ve köprü yoğunluğuna göre belirlenir — yüksek dereceli düğüm kümenin merkezine yakın durur.</p>
+  <p class="stake">Devlet/idare ile finans/kredi kümeleri arasındaki bu yoğun köprü, "teknik" görünen kalkınma kararlarının aslında idari-mali iktidarın içinden geçtiğini gösterir — kurumsal blokların zamanla tek ve bütüncül bir yapı gibi algılanmasının (kara kutulaşma) altında yatan çok-aktörlü müzakereyi açığa çıkarır.</p>
   <div class="stats-row" id="statsRow"></div>
   <hr class="rule" />
 </div>
