@@ -207,7 +207,7 @@
           </table>
         </div>
         <div class="cap-note" id="capNote" style="display:none;"></div>
-        <div class="zoom-hint">sürükle · tekerlek ile yakınlaştır</div>
+        <div class="zoom-hint">sürükle · tekerlek/pinch ile yakınlaştır</div>
         <div class="tooltip" id="tooltip"></div>
       </div>
       <div class="detail-panel" id="detailPanel"><span class="hint">Bir düğüme veya kenara tıklayın.</span></div>
@@ -528,14 +528,50 @@
   function escXml(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
   // ── pan/zoom/hover/click ───────────────────────────────────────────────
+  // Zoom iki girdi yolunu paylaşır: masaüstü fare tekerleği (wheel) ve
+  // dokunmatik iki-parmak pinch (activePointers üzerinden Pointer Events ile
+  // izlenir — touch-action:none olduğu için tarayıcının native pinch'i
+  // devre dışı, bu yüzden mesafe hesabı burada elle yapılır).
   const tooltip = document.getElementById('tooltip');
   let panning = false, panStart = null;
+  const activePointers = new Map();
+  let pinchDist = null;
+  function ptDist(a, b) { return Math.hypot(a.x - b.x, a.y - b.y); }
+  function ptMid(a, b) { return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }; }
+  function zoomAt(clientX, clientY, factor) {
+    const rect = svg.getBoundingClientRect();
+    const sx = rect.width / 1000, sy = rect.height / 1000;
+    const mx = (clientX - rect.left) / sx, my = (clientY - rect.top) / sy;
+    const newK = Math.max(0.5, Math.min(8, viewTransform.k * factor));
+    viewTransform.x = mx - ((mx - viewTransform.x) / viewTransform.k) * newK;
+    viewTransform.y = my - ((my - viewTransform.y) / viewTransform.k) * newK;
+    viewTransform.k = newK;
+  }
   svg.addEventListener('pointerdown', (ev) => {
+    activePointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+    if (activePointers.size >= 2) {
+      panning = false;
+      const pts = [...activePointers.values()];
+      pinchDist = ptDist(pts[0], pts[1]);
+      return;
+    }
     panning = true; panStart = { x: ev.clientX - viewTransform.x, y: ev.clientY - viewTransform.y };
     svg.classList.add('dragging');
     clearHighlight();
   });
   svg.addEventListener('pointermove', (ev) => {
+    if (activePointers.has(ev.pointerId)) activePointers.set(ev.pointerId, { x: ev.clientX, y: ev.clientY });
+    if (activePointers.size >= 2) {
+      const pts = [...activePointers.values()];
+      const d = ptDist(pts[0], pts[1]);
+      if (pinchDist) {
+        const mid = ptMid(pts[0], pts[1]);
+        zoomAt(mid.x, mid.y, d / pinchDist);
+        applyTransform();
+      }
+      pinchDist = d;
+      return;
+    }
     const rect = svg.getBoundingClientRect();
     if (panning) {
       viewTransform.x = ev.clientX - panStart.x;
@@ -568,7 +604,13 @@
     }
   });
   svg.addEventListener('pointerleave', () => { tooltip.classList.remove('show'); clearHighlight(); });
-  window.addEventListener('pointerup', () => { panning = false; svg.classList.remove('dragging'); });
+  function endPointer(ev) {
+    activePointers.delete(ev.pointerId);
+    if (activePointers.size < 2) pinchDist = null;
+    if (activePointers.size === 0) { panning = false; svg.classList.remove('dragging'); }
+  }
+  window.addEventListener('pointerup', endPointer);
+  window.addEventListener('pointercancel', endPointer);
   svg.addEventListener('click', (ev) => {
     const el = ev.target.closest('.nd, .lk');
     if (!el) return;
@@ -582,14 +624,8 @@
   });
   svg.addEventListener('wheel', (ev) => {
     ev.preventDefault();
-    const rect = svg.getBoundingClientRect();
-    const sx = rect.width / 1000, sy = rect.height / 1000;
-    const mx = (ev.clientX - rect.left) / sx, my = (ev.clientY - rect.top) / sy;
     const factor = ev.deltaY < 0 ? 1.15 : 0.87;
-    const newK = Math.max(0.5, Math.min(8, viewTransform.k * factor));
-    viewTransform.x = mx - ((mx - viewTransform.x) / viewTransform.k) * newK;
-    viewTransform.y = my - ((my - viewTransform.y) / viewTransform.k) * newK;
-    viewTransform.k = newK;
+    zoomAt(ev.clientX, ev.clientY, factor);
     applyTransform();
   }, { passive: false });
 
