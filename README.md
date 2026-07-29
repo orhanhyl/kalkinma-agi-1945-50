@@ -364,7 +364,7 @@ dergide yayımlanmak üzere hazırlanıyor.
 
 Hayal, O., Ağcan, M. A., Kahraman, M. S. ve Erken, A. *Savaş Sonrası Türkiye'de
 Kalkınmayı İnşa Etmek: Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların
-Haritalanması (1945–50)* [Veri kümesi]. TÜBİTAK 1002-A, Proje No: 324K664.
+Haritalanması (1945–50)*. TÜBİTAK 1002-A, Proje No: 324K664.
 Sürüm 1.0.0 (2026-07-21). Lisans: CC BY 4.0.
 
 ## Lisans
