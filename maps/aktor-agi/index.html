@@ -493,7 +493,12 @@
       const e = visEdges[i];
       const a = nodeById.get(e.s), b = nodeById.get(e.t);
       if (!a || !b) continue;
-      parts.push('<line class="lk" data-idx="' + i + '" x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" stroke="' + e.color + '" stroke-width="' + e.w + '" stroke-dasharray="' + e.dash + '" opacity="0.38" />');
+      // Görsel çizgi ince kalsın diye tıklama/dokunma alanı ayrı, görünmez
+      // ve daha kalın bir kardeş <line>'a taşınır (pointer-events="stroke"
+      // ile boyanmamış olsa da isabet testine girer) — ince kenarları fare
+      // veya parmakla yakalamak zorlaşmasın diye.
+      const hitW = Math.max(8, e.w + 6);
+      parts.push('<g class="lk" data-idx="' + i + '"><line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" stroke="transparent" stroke-width="' + hitW + '" pointer-events="stroke" /><line x1="' + a.x + '" y1="' + a.y + '" x2="' + b.x + '" y2="' + b.y + '" stroke="' + e.color + '" stroke-width="' + e.w + '" stroke-dasharray="' + e.dash + '" opacity="0.38" pointer-events="none" /></g>');
     }
     // düğümler
     for (let i = 0; i < visNodes.length; i++) {

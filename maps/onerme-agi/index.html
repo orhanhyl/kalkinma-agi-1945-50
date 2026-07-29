@@ -554,7 +554,9 @@
     let parts = ['<g id="viewport" transform="translate(' + viewTransform.x + ',' + viewTransform.y + ') scale(' + viewTransform.k + ')">'];
     links.forEach((l, i) => {
       const a = nodes[l.a], b = nodes[l.b];
-      parts.push('<line class="lk" data-idx="' + i + '" x1="' + a.x.toFixed(1) + '" y1="' + a.y.toFixed(1) + '" x2="' + b.x.toFixed(1) + '" y2="' + b.y.toFixed(1) + '" stroke="var(--hair-strong)" stroke-width="1" />');
+      // Görsel çizgi ince kalsın diye tıklama/dokunma alanı ayrı, görünmez
+      // ve daha kalın bir kardeş <line>'a taşınır (pointer-events="stroke").
+      parts.push('<g class="lk" data-idx="' + i + '"><line x1="' + a.x.toFixed(1) + '" y1="' + a.y.toFixed(1) + '" x2="' + b.x.toFixed(1) + '" y2="' + b.y.toFixed(1) + '" stroke="transparent" stroke-width="8" pointer-events="stroke" /><line x1="' + a.x.toFixed(1) + '" y1="' + a.y.toFixed(1) + '" x2="' + b.x.toFixed(1) + '" y2="' + b.y.toFixed(1) + '" stroke="var(--hair-strong)" stroke-width="1" pointer-events="none" /></g>');
     });
     for (const n of nodes) {
       const r = 3 + 6 * Math.sqrt(n.degree / maxDeg);
