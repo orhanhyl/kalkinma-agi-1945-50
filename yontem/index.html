@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8" />
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Sorunsal, kuramsal çerçeve ve ilişki temelli aktör-ağ kodlama yönteminin tam açıklaması." />
 <link rel="canonical" href="https://orhanhyl.github.io/kalkinma-agi-1945-50/yontem/" />
@@ -48,14 +49,23 @@
     line-height: 1.65;
   }
   .mono { font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Segoe UI Mono", Consolas, "Liberation Mono", Menlo, monospace; }
-  .wrap { max-width: 780px; margin: 0 auto; padding: 40px 28px 90px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 28px 90px; }
   .top-nav { font-family: ui-monospace, monospace; font-size: 11.5px; margin-bottom: 28px; }
   .top-nav a { color: var(--muted); text-decoration: none; letter-spacing: 0.03em; }
   .top-nav a:hover { color: var(--ink); text-decoration: underline; }
+  .theme-btn { position: fixed; top: 14px; left: 14px; z-index: 100; font-family: ui-monospace, monospace; font-size: 15px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 4px; padding: 0; }
+  .theme-btn:hover { background: var(--wash-strong); color: var(--ink); }
   article h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; line-height: 1.2; }
   article h2 { font-size: clamp(19px, 2.6vw, 23px); font-weight: 600; margin: 42px 0 14px; padding-top: 20px; border-top: 1px solid var(--hair); letter-spacing: -0.005em; }
   article h2:first-of-type { border-top: none; padding-top: 0; }
   article h3 { font-size: 16.5px; font-weight: 600; margin: 26px 0 10px; }
+  nav.toc { border: 1px solid var(--hair); background: var(--wash); padding: 16px 20px; margin: 24px 0 32px; }
+  nav.toc .toc-title { font-size: 12px; font-family: ui-monospace, monospace; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 500; margin: 0 0 10px; border: none; padding: 0; }
+  nav.toc ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 24px; }
+  nav.toc li { margin-bottom: 5px; font-size: 13.5px; break-inside: avoid; }
+  nav.toc a { color: var(--ink-2); text-decoration: none; }
+  nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+  @media (max-width: 520px) { nav.toc ul { columns: 1; } }
   article p { font-size: 15.5px; color: var(--ink-2); margin: 0 0 15px; }
   article strong { color: var(--ink); font-weight: 600; }
   article em { font-style: italic; }
@@ -76,6 +86,7 @@
 </style>
 </head>
 <body>
+<button class="theme-btn" id="themeBtn" type="button" aria-label="Açık/koyu tema">☾</button>
 <div class="wrap">
   <div class="top-nav"><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/">← Ana Sayfa</a></div>
   <article>
@@ -84,8 +95,12 @@
 <blockquote>
 <p>TÜBİTAK 1002-A Hızlı Destek Programı kapsamında desteklenmektedir — Proje No: <strong>324K664</strong> Başlama: 03.06.2025 · Bitiş: 03.06.2026</p>
 </blockquote>
-<p><strong>Proje Yürütücüsü:</strong> Dr. Orhan HAYAL <strong>Araştırmacılar:</strong> Doç. Dr. Muhammed Ali AĞCAN · Arş. Gör. Muhammet Salih KAHRAMAN <strong>Danışman:</strong> Prof. Dr. Ali ERKEN</p>
+<p><strong>Proje Yürütücüsü:</strong> Dr. Orhan HAYAL<br />
+<strong>Araştırmacılar:</strong> Doç. Dr. Muhammed Ali AĞCAN · Arş. Gör. Muhammet Salih KAHRAMAN<br />
+<strong>Danışman:</strong> Prof. Dr. Ali ERKEN</p>
 <hr />
+<nav class="toc"><h2 class="toc-title">İçindekiler</h2><ul><li><a href="#bu-depo-hakkında">Bu depo hakkında</a></li><li><a href="#araştırma-sorunsalı">Araştırma sorunsalı</a></li><li><a href="#bulgular">Bulgular</a></li><li><a href="#kuramsal-çerçeve">Kuramsal çerçeve</a></li><li><a href="#yöntem-i̇lişki-temelli-aktör-ağ-kodlama-sistematiği">Yöntem: İlişki temelli aktör-ağ kodlama sistematiği</a></li><li><a href="#haritalar">Haritalar</a></li><li><a href="#katkılar-ve-sınırlılıklar">Katkılar ve sınırlılıklar</a></li><li><a href="#yöntemin-aktarılabilirliği">Yöntemin aktarılabilirliği</a></li><li><a href="#yaygın-etki">Yaygın etki</a></li><li><a href="#atıf">Atıf</a></li><li><a href="#lisans">Lisans</a></li></ul></nav>
+
 <h2 id="bu-depo-hakkında">Bu depo hakkında</h2>
 <p>Bu depo, yukarıdaki projenin temel çıktısı olan <strong>ilişkisel, maddi ve çok ölçekli analiz çerçevesinin</strong> ve buna bağlı <strong>aktör-ağ haritalama altyapısının</strong> somut, etkileşimli çıktılarını barındırır. Külliyat; uzman raporları, diplomatik yazışmalar, arşiv belgeleri, gazete ve dergilerden derlenen, standart künyeli 1.465 belgeden oluşur. Aşağıdaki her harita, bu külliyattan çıkarılan kalkınma ilişkilerinin, Bruno Latour öncülüğündeki Aktör-Ağ Kuramı (ANT) ve maddi-semiyotik yaklaşım çerçevesinde kodlanmasıyla üretilmiştir.</p>
 <h2 id="araştırma-sorunsalı">Araştırma sorunsalı</h2>
@@ -226,5 +241,20 @@
 
   </article>
 </div>
+<script>
+(function(){
+  var btn = document.getElementById('themeBtn');
+  if (!btn) return;
+  function current(){ return document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  function setIcon(){ btn.textContent = current() === 'dark' ? '☀' : '☾'; }
+  setIcon();
+  btn.addEventListener('click', function(){
+    var next = current() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+    setIcon();
+  });
+})();
+</script>
 </body>
 </html>

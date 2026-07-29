@@ -4,8 +4,8 @@
 > TÜBİTAK 1002-A Hızlı Destek Programı kapsamında desteklenmektedir — Proje No: **324K664**
 > Başlama: 03.06.2025 · Bitiş: 03.06.2026
 
-**Proje Yürütücüsü:** Dr. Orhan HAYAL
-**Araştırmacılar:** Doç. Dr. Muhammed Ali AĞCAN · Arş. Gör. Muhammet Salih KAHRAMAN
+**Proje Yürütücüsü:** Dr. Orhan HAYAL\
+**Araştırmacılar:** Doç. Dr. Muhammed Ali AĞCAN · Arş. Gör. Muhammet Salih KAHRAMAN\
 **Danışman:** Prof. Dr. Ali ERKEN
 
 ---

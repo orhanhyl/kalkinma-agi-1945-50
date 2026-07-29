@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8" />
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek — Aktör-Ağ Haritaları</title>
 <meta name="description" content="TÜBİTAK 1002-A projesi (324K664) kapsamında geliştirilen ilişki temelli aktör-ağ haritalama sistematiğinin etkileşimli çıktıları." />
@@ -21,7 +22,7 @@
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:where(:not([data-theme="light"])) {
       --page: #14110c; --surface: #1a1a19; --ink: #f4f1e8; --ink-2: #c7c2b6; --muted: #8f897c;
       --hair: rgba(244,241,232,0.14); --hair-strong: rgba(244,241,232,0.26);
       --wash: rgba(244,241,232,0.05); --wash-strong: rgba(244,241,232,0.10);
@@ -29,6 +30,20 @@
       color-scheme: dark;
     }
   }
+  :root[data-theme="dark"] {
+    --page: #14110c; --surface: #1a1a19; --ink: #f4f1e8; --ink-2: #c7c2b6; --muted: #8f897c;
+    --hair: rgba(244,241,232,0.14); --hair-strong: rgba(244,241,232,0.26);
+    --wash: rgba(244,241,232,0.05); --wash-strong: rgba(244,241,232,0.10);
+    --accent: #3987e5; color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --page: #f5f0e3; --surface: #fcfcfb; --ink: #1c1a16; --ink-2: #55504a; --muted: #8a8478;
+    --hair: rgba(28,26,22,0.12); --hair-strong: rgba(28,26,22,0.22);
+    --wash: rgba(28,26,22,0.045); --wash-strong: rgba(28,26,22,0.09);
+    --accent: #2a78d6; color-scheme: light;
+  }
+  .theme-btn { position: fixed; top: 14px; left: 14px; z-index: 100; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.03em; height: 28px; padding: 0 10px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 4px; }
+  .theme-btn:hover { background: var(--wash-strong); color: var(--ink); }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
@@ -57,20 +72,23 @@
     transition: background 0.1s;
   }
   .map-card:hover { background: var(--wash); }
-  .map-card .thumb {
-    flex: none; width: 128px; height: 88px; object-fit: cover; object-position: center;
-    border: 1px solid var(--hair); background: var(--wash);
+  .map-card .thumb-frame {
+    flex: none; width: 128px; height: 88px; box-sizing: border-box; padding: 5px;
+    background: var(--surface); border: 1px solid var(--hair);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.18);
   }
+  .map-card .thumb { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
   .map-card .body { flex: 1; min-width: 0; }
   .map-card .title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
   .map-card .desc { font-size: 13.5px; color: var(--ink-2); }
   .map-card .go { font-family: ui-monospace, monospace; font-size: 11px; color: var(--accent); margin-top: 8px; display: block; }
-  @media (max-width: 520px) { .map-card { flex-direction: column; align-items: stretch; } .map-card .thumb { width: 100%; height: 140px; } }
+  @media (max-width: 520px) { .map-card { flex-direction: column; align-items: stretch; } .map-card .thumb-frame { width: 100%; height: 140px; } }
   footer.note { margin-top: 40px; font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
   a { color: var(--accent); }
 </style>
 </head>
 <body>
+<button class="theme-btn mono" id="themeBtn" type="button" aria-label="Açık/koyu tema">koyu</button>
 <div class="wrap">
   <p class="eyebrow">TÜBİTAK 1002-A · Proje No 324K664</p>
   <h1>Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek</h1>
@@ -102,7 +120,7 @@
   <h2 class="section-title">Etkileşimli haritalar</h2>
 
   <a class="map-card" href="maps/aktor-agi/">
-    <img class="thumb" src="maps/aktor-agi/preview.png" alt="Aktör Ağı önizlemesi" loading="lazy" />
+    <div class="thumb-frame"><img class="thumb" src="maps/aktor-agi/preview.png" alt="Aktör Ağı önizlemesi" loading="lazy" /></div>
     <div class="body">
       <div class="title">Aktör Ağı</div>
       <div class="desc">970 düğüm, 1.923 kenar — ana bağlı bileşen, külliyatta kodlanan tüm aktörler arası ilişki temelli tam ağ.</div>
@@ -110,7 +128,7 @@
     </div>
   </a>
   <a class="map-card" href="maps/kume-agi/">
-    <img class="thumb" src="maps/kume-agi/preview.png" alt="Küme Ağı önizlemesi" loading="lazy" />
+    <div class="thumb-frame"><img class="thumb" src="maps/kume-agi/preview.png" alt="Küme Ağı önizlemesi" loading="lazy" /></div>
     <div class="body">
       <div class="title">Küme Ağı</div>
       <div class="desc">141 düğüm, 631 kenar, 12 küme — aktör ağının küme düzeyinde özeti.</div>
@@ -118,7 +136,7 @@
     </div>
   </a>
   <a class="map-card" href="maps/onerme-agi/">
-    <img class="thumb" src="maps/onerme-agi/preview.png" alt="Önerme Ağı önizlemesi" loading="lazy" />
+    <div class="thumb-frame"><img class="thumb" src="maps/onerme-agi/preview.png" alt="Önerme Ağı önizlemesi" loading="lazy" /></div>
     <div class="body">
       <div class="title">Önerme Ağı</div>
       <div class="desc">2.246 kenar, 3 kök + 27 alt-önerme — önerme aileleri arası ilişki ağı.</div>
@@ -126,7 +144,7 @@
     </div>
   </a>
   <a class="map-card" href="maps/sahalar-agi/">
-    <img class="thumb" src="maps/sahalar-agi/preview.png" alt="Maddi Müdahale Sahaları Ağı önizlemesi" loading="lazy" />
+    <div class="thumb-frame"><img class="thumb" src="maps/sahalar-agi/preview.png" alt="Maddi Müdahale Sahaları Ağı önizlemesi" loading="lazy" /></div>
     <div class="body">
       <div class="title">Maddi Müdahale Sahaları Ağı</div>
       <div class="desc">110 düğüm, 351 kenar, 4 saha — insan-dışı nesnelerin kalkınma ağını kuran maddi müdahale alanları.</div>
@@ -138,5 +156,20 @@
     Atıf ve lisans bilgisi için <a href="yontem/#atıf">Yöntem</a> sayfasına bakınız · CC BY 4.0
   </footer>
 </div>
+<script>
+(function(){
+  var btn = document.getElementById('themeBtn');
+  if (!btn) return;
+  function current(){ return document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  function setIcon(){ btn.textContent = current() === 'dark' ? 'açık' : 'koyu'; }
+  setIcon();
+  btn.addEventListener('click', function(){
+    var next = current() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+    setIcon();
+  });
+})();
+</script>
 </body>
 </html>

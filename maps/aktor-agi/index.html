@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8" />
+<script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="970 düğüm, 1923 kenar — 1945-1950 Türkçe külliyatından çıkarılan tüm aktörler arası ilişki temelli aktör-ağ haritası." />
 <link rel="canonical" href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/" />
@@ -123,11 +124,14 @@
   .top-nav a:hover { color: var(--ink); text-decoration: underline; }
   .top-nav .fs-btn { font-family: inherit; font-size: 11.5px; letter-spacing: 0.03em; padding: 5px 11px; background: transparent; border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 2px; }
   .top-nav .fs-btn:hover { background: var(--wash-strong); color: var(--ink); }
+  .theme-btn { position: fixed; top: 14px; left: 14px; z-index: 100; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.03em; height: 28px; padding: 0 10px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 4px; }
+  .theme-btn:hover { background: var(--wash-strong); color: var(--ink); }
   :fullscreen { background: var(--page); }
   :fullscreen .top-nav { display: none; }
   :fullscreen .map-intro { display: none; }
   :fullscreen .wrap { max-width: none; padding: 12px; }
   :fullscreen #graphSvg { height: 100vh !important; }
+  :fullscreen .theme-btn, html.pseudo-fs .theme-btn { display: none; }
   /* iPhone Safari, requestFullscreen()'i herhangi bir eleman için hiç
      desteklemez (yalnız <video>) — bu CSS-tabanlı yedek, native API
      başarısız olduğunda/mevcut olmadığında AYNI görsel etkiyi (üstbilgi
@@ -150,6 +154,7 @@
 </head>
 <body>
 <div class="wrap">
+<button class="theme-btn mono" id="themeBtn" type="button" aria-label="Açık/koyu tema">koyu</button>
 <div class="top-nav mono"><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/">← Ana Sayfa</a><button class="fs-btn" id="fsBtn" type="button">⛶ Tam Ekran</button></div>
 <script>
 (function(){
@@ -173,6 +178,19 @@
   document.addEventListener('fullscreenchange', function(){
     if (document.fullscreenElement) { b.textContent = '⛶ Çık (Esc)'; }
     else if (!document.documentElement.classList.contains('pseudo-fs')) { b.textContent = '⛶ Tam Ekran'; }
+  });
+})();
+(function(){
+  var t = document.getElementById('themeBtn');
+  if (!t) return;
+  function current(){ return document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+  function setIcon(){ t.textContent = current() === 'dark' ? 'açık' : 'koyu'; }
+  setIcon();
+  t.addEventListener('click', function(){
+    var next = current() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+    setIcon();
   });
 })();
 </script>
