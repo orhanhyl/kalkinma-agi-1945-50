@@ -362,12 +362,11 @@ dergide yayımlanmak üzere hazırlanıyor.
 
 ## Atıf
 
-Hayal, O. (proje yürütücüsü). *Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek:
-Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)*.
-TÜBİTAK 1002-A, Proje No: 324K664.
-
-Bkz. [CITATION.cff](CITATION.cff).
+Hayal, O., Ağcan, M. A., Kahraman, M. S. ve Erken, A. *Savaş Sonrası Türkiye'de
+Kalkınmayı İnşa Etmek: Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların
+Haritalanması (1945–50)* [Veri kümesi]. TÜBİTAK 1002-A, Proje No: 324K664.
+Sürüm 1.0.0 (2026-07-21). Lisans: CC BY 4.0.
 
 ## Lisans
 
-Bu depodaki metin ve haritalar [Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.tr) lisansı ile paylaşılmaktadır. Bkz. [LICENSE](LICENSE).
+Bu depodaki metin ve haritalar [Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.tr) lisansı ile paylaşılmaktadır: uygun atıf verilmesi koşuluyla, ticari amaçla da dahil olmak üzere kopyalanabilir, dağıtılabilir, uyarlanabilir ve türev çalışmalarda kullanılabilir.
