@@ -247,7 +247,7 @@ haritaların gezinme eksenini oluşturur.
 
 <!-- TSV_STATS_START — bu blok update_showcase_readme.py tarafından
      12_edges/11_edges.tsv'den otomatik yeniden üretilir, elle düzenlemeyin. -->
-Güncel master tabloda (`12_edges/11_edges.tsv`) **2.246 kodlanmış ilişki**, **1.120 benzersiz düğüm** ve 27 sütun bulunuyor; ilişkilerin tür bazında dağılımı A 123 · C 837 · D 545 · G 346 · R 395'dır. Önerme atama %100 tamamlanmıştır; bunların **%98,0'i** kural eşleşmesiyle otomatik olarak, kalan **%2,0'i** (birden çok önermeyle örtüşen belirsiz durumlar) araştırmacı kararıyla bir önerme ailesine atanmıştır.
+Güncel master tabloda (`12_edges/11_edges.tsv`) **2.246 kodlanmış ilişki**, **1.119 benzersiz düğüm** ve 27 sütun bulunuyor; ilişkilerin tür bazında dağılımı A 123 · C 837 · D 545 · G 346 · R 395'dır. Önerme atama %100 tamamlanmıştır; bunların **%98,0'i** kural eşleşmesiyle otomatik olarak, kalan **%2,0'i** (birden çok önermeyle örtüşen belirsiz durumlar) araştırmacı kararıyla bir önerme ailesine atanmıştır.
 <!-- TSV_STATS_END -->
 
 ### Yöntemin özgünlüğü
