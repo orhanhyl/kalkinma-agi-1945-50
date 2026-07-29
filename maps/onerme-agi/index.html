@@ -140,6 +140,17 @@
   :fullscreen .map-intro { display: none; }
   :fullscreen .wrap { max-width: none; padding: 12px; }
   :fullscreen #graphSvg { height: 100vh !important; }
+  /* iPhone Safari, requestFullscreen()'i herhangi bir eleman için hiç
+     desteklemez (yalnız <video>) — bu CSS-tabanlı yedek, native API
+     başarısız olduğunda/mevcut olmadığında AYNI görsel etkiyi (üstbilgi
+     gizlenir, grafik tüm görünüm alanını kaplar) tarayıcı desteğinden
+     bağımsız üretir. 100dvh, mobil tarayıcı adres çubuğu açılıp
+     kapandıkça 100vh'ın verdiği yanlış yüksekliği önler. */
+  html.pseudo-fs, html.pseudo-fs body { overflow: hidden; }
+  html.pseudo-fs .wrap { position: fixed; inset: 0; z-index: 9999; margin: 0; max-width: none; padding: 12px; background: var(--page); overflow: auto; }
+  html.pseudo-fs .top-nav { display: none; }
+  html.pseudo-fs .map-intro { display: none; }
+  html.pseudo-fs #graphSvg { height: 100dvh !important; }
 
 </style>
 </head>
@@ -150,12 +161,24 @@
 (function(){
   var b = document.getElementById('fsBtn');
   if (!b) return;
+  function enterPseudo(){
+    document.documentElement.classList.add('pseudo-fs');
+    b.textContent = '⛶ Çık (Esc)';
+  }
+  function exitPseudo(){
+    document.documentElement.classList.remove('pseudo-fs');
+    b.textContent = '⛶ Tam Ekran';
+  }
   b.addEventListener('click', function(){
-    if (document.fullscreenElement) { document.exitFullscreen(); }
-    else { document.documentElement.requestFullscreen().catch(function(){}); }
+    if (document.fullscreenElement) { document.exitFullscreen(); return; }
+    if (document.documentElement.classList.contains('pseudo-fs')) { exitPseudo(); return; }
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen().catch(enterPseudo);
+    } else { enterPseudo(); }
   });
   document.addEventListener('fullscreenchange', function(){
-    b.textContent = document.fullscreenElement ? '⛶ Çık (Esc)' : '⛶ Tam Ekran';
+    if (document.fullscreenElement) { b.textContent = '⛶ Çık (Esc)'; }
+    else if (!document.documentElement.classList.contains('pseudo-fs')) { b.textContent = '⛶ Tam Ekran'; }
   });
 })();
 </script>
