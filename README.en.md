@@ -361,11 +361,16 @@ Finance” was presented at the Tensions of Europe conference held in the
 Netherlands; the paper “Black-Boxing Development: Documentary Infrastructure,
 Relational Coding, and the Turkish Laboratory of the Early Cold War” was
 accepted for the Society for Social Studies of Science (4S) conference in
-Toronto, where it will be presented in October. A panel proposal based on the
-findings has been submitted to the 5th National Political Science Congress of
-the Turkish Political Science Association (Çukurova University, 19–20
-September 2026); an article on the Mercury–Medioli financing initiative is also
-being prepared for publication in a peer-reviewed, indexed journal.
+Toronto, where it will be presented in October. At the 5th National
+Political Science Congress organised by the Turkish Political Science
+Association (Çukurova University, 19–20 September 2026), a panel based on the
+findings, titled “The Politics of Development in Türkiye during the Early Cold
+War”, was chaired by the project’s principal investigator, Dr. Orhan Hayal; at
+the panel, Hayal and researcher Muhammet Salih Kahraman presented the paper
+“The Mercury–Medioli Project: What Does a Failed Development Initiative in
+Early Cold War Türkiye Tell Us?”; an article on the Mercury–Medioli financing
+initiative is also being prepared for publication in a peer-reviewed, indexed
+journal.
 
 ## Citation
 

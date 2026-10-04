@@ -357,11 +357,15 @@ düzenlenen Tensions of Europe konferansında sunuldu; *"Black-Boxing
 Development: Documentary Infrastructure, Relational Coding, and the
 Turkish Laboratory of the Early Cold War"* başlıklı bildiri 4S (Society
 for Social Studies of Science) Toronto konferansına kabul edildi, sunumu
-Ekim ayında gerçekleştirilecek. Bulgulara dayanan bir panel önerisiyle
-Siyasi İlimler Türk Derneği'nin V. Ulusal Siyaset Bilimi Kongresi'ne
-(Çukurova Üniversitesi, 19-20 Eylül 2026) başvuruldu; Mercury–Medioli
-finansman girişimini konu alan bir makale de hakemli, indeksli bir
-dergide yayımlanmak üzere hazırlanıyor.
+Ekim ayında gerçekleştirilecek. Siyasi İlimler Türk Derneği'nin düzenlediği
+V. Ulusal Siyaset Bilimi Kongresi'nde (Çukurova Üniversitesi, 19-20 Eylül
+2026), bulgulara dayanan "Erken Soğuk Savaş Döneminde Türkiye'de
+Kalkınmanın Siyaseti" başlıklı panel, proje yürütücüsü Dr. Orhan Hayal'ın
+başkanlığında gerçekleştirildi; panelde Hayal ve araştırmacı Muhammet Salih
+Kahraman, "Mercury–Medioli Projesi: Erken Soğuk Savaş Türkiye'sinde
+Başarısız Bir Kalkınma Girişimi Bize Ne Söyler?" başlıklı bildiriyi sundu;
+Mercury–Medioli finansman girişimini konu alan bir makale de hakemli,
+indeksli bir dergide yayımlanmak üzere hazırlanıyor.
 
 ## Atıf
 
