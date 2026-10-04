@@ -111,6 +111,17 @@
   #graphSvg { width: 100%; height: 560px; display: block; touch-action: none; cursor: grab; }
   #graphSvg.dragging { cursor: grabbing; }
   @media (max-width: 700px) { #graphSvg { height: 420px; } }
+  /* Tam ekran: yalnız harita sahnesi — hiyerarşi, tanıtım ve ek grafikler gizlenir; sahne
+     görünüm alanını doldurur (başlık şeridi tek satıra iner; sahne kartı düzeni ortak NAV CSS'inde).
+     Seçim değiştirmek için tam ekrandan çıkılır. */
+  :fullscreen .section-title, :fullscreen .hier-top, :fullscreen .hier-grid, :fullscreen hr.rule,
+  :fullscreen footer.note, :fullscreen .stage-extra,
+  html.pseudo-fs .section-title, html.pseudo-fs .hier-top, html.pseudo-fs .hier-grid, html.pseudo-fs hr.rule,
+  html.pseudo-fs footer.note, html.pseudo-fs .stage-extra { display: none !important; }
+  :fullscreen .stage-head, html.pseudo-fs .stage-head { padding: 8px 14px; gap: 8px 14px; }
+  :fullscreen .stage-head .cur-stmt, html.pseudo-fs .stage-head .cur-stmt { font-size: 14px; max-width: none; margin-top: 1px; }
+  :fullscreen .stage-head > div:last-child, html.pseudo-fs .stage-head > div:last-child { flex-direction: row !important; align-items: center !important; flex-wrap: wrap; gap: 8px 16px !important; }
+  :fullscreen .detail-panel, html.pseudo-fs .detail-panel { padding: 10px 14px 12px; }
   .cap-note { position: absolute; left: 16px; bottom: 12px; font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); background: color-mix(in srgb, var(--surface) 85%, transparent); padding: 3px 8px; border: 1px solid var(--hair); }
   .zoom-hint { position: absolute; right: 16px; bottom: 12px; font-family: ui-monospace, monospace; font-size: 10.5px; color: var(--muted); }
   .tooltip { position: absolute; pointer-events: none; max-width: 300px; background: var(--ink); color: var(--page); font-size: 12px; padding: 8px 10px; border-radius: 2px; line-height: 1.4; opacity: 0; transition: opacity 0.1s; z-index: 5; font-family: ui-monospace, monospace; }
@@ -144,7 +155,16 @@
   :fullscreen .top-nav { display: none; }
   :fullscreen .map-intro { display: none; }
   :fullscreen .wrap { max-width: none; padding: 12px; }
-  :fullscreen #graphSvg { height: 100vh !important; }
+  /* Tam ekranda sahne kartı görünüm alanını doldurur: başlık şeridi + grafik (kalan alan)
+     + ayrıntı paneli. (Önceden yalnız grafik 100vh yapılıyordu; başlık şeridi üstüne
+     eklenince sayfa taşıyor, harita tam görünmüyordu.) Düzen değişince `resize` olayı
+     tetiklenir (bkz. nav_header_html) — piksel koordinatlı yerleşimler yeniden kurulur. */
+  :fullscreen .stage-card, html.pseudo-fs .stage-card { display: flex; flex-direction: column; height: calc(100dvh - 24px); }
+  :fullscreen .stage-body, html.pseudo-fs .stage-body { flex: 1; min-height: 0; }
+  :fullscreen .stage-body #graphSvg, html.pseudo-fs .stage-body #graphSvg { height: 100% !important; }
+  :fullscreen .table-scroll, html.pseudo-fs .table-scroll { max-height: 100%; height: 100%; }
+  :fullscreen .detail-panel, html.pseudo-fs .detail-panel { max-height: 16vh; overflow: auto; }
+  :fullscreen #graphSvg { height: 100vh; }
   :fullscreen .theme-btn, html.pseudo-fs .theme-btn, :fullscreen .lang-btn, html.pseudo-fs .lang-btn { display: none; }
   /* iPhone Safari, requestFullscreen()'i herhangi bir eleman için hiç
      desteklemez (yalnız <video>) — bu CSS-tabanlı yedek, native API
@@ -162,7 +182,7 @@
   html.pseudo-fs .top-nav a { display: none; }
   html.pseudo-fs .top-nav .fs-btn { background: var(--surface); box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
   html.pseudo-fs .map-intro { display: none; }
-  html.pseudo-fs #graphSvg { height: 100dvh !important; }
+  html.pseudo-fs #graphSvg { height: 100dvh; }
 
 </style>
 </head>
@@ -175,13 +195,16 @@
 (function(){
   var b = document.getElementById('fsBtn');
   if (!b) return;
+  function relayout(){ setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 60); }
   function enterPseudo(){
     document.documentElement.classList.add('pseudo-fs');
     b.textContent = '⛶ Çık (Esc)';
+    relayout();
   }
   function exitPseudo(){
     document.documentElement.classList.remove('pseudo-fs');
     b.textContent = '⛶ Tam Ekran';
+    relayout();
   }
   b.addEventListener('click', function(){
     if (document.fullscreenElement) { document.exitFullscreen(); return; }
@@ -191,6 +214,7 @@
     } else { enterPseudo(); }
   });
   document.addEventListener('fullscreenchange', function(){
+    relayout();
     if (document.fullscreenElement) { b.textContent = '⛶ Çık (Esc)'; }
     else if (!document.documentElement.classList.contains('pseudo-fs')) { b.textContent = '⛶ Tam Ekran'; }
   });
@@ -273,7 +297,7 @@
   const CAT_LABEL = {"aktor": "Aktörler", "surec": "Süreçler", "sorun": "Sorunlar", "nesne": "Nesneler / Araçlar"};
   const CAT_VAR = { aktor: '--accent-aktor', surec: '--accent-surec', sorun: '--accent-sorun', nesne: '--accent-nesne' };
   const NODE_CAP = 220;
-  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-10-04_231722_p0-acilis-v2/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
+  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-10-04_232636_tam-ekran-duzeltmesi/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
 
   function mulberry32(seed) {
     return function () {
@@ -393,7 +417,9 @@
   let sim = null;
   let viewTransform = { x: 0, y: 0, k: 1 };
 
+  let lastSel = null;
   function selectProposition(selKey, pidLabel, onerme, kapsam) {
+    lastSel = [selKey, pidLabel, onerme, kapsam];
     currentPid = selKey;
     for (const r of allRows) r.classList.toggle('active', r.dataset.pid === selKey);
     document.getElementById('curPid').textContent = pidLabel;
@@ -691,6 +717,22 @@
     zoomAt(ev.clientX, ev.clientY, factor);
     if (curNodes && curLinks) draw(curNodes, curLinks);
   }, { passive: false });
+
+  // Sahne boyutu değişince (tam ekran aç/kapa, pencere yeniden boyutlama) yerleşim yeniden
+  // hesaplanır — düzen piksel koordinatında kurulduğu için eski boyuta göre kalırdı.
+  let lastBox = svg.getBoundingClientRect();
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const b = svg.getBoundingClientRect();
+      if (!lastSel || !b.width || !b.height) return;
+      if (Math.abs(b.width - lastBox.width) < 8 && Math.abs(b.height - lastBox.height) < 8) return;
+      lastBox = b;
+      viewTransform = { x: 0, y: 0, k: 1 };
+      selectProposition(...lastSel);
+    }, 120);
+  });
 
   // Açılış: en genel harita (P0 = tüm ilişkiler).
   document.querySelector('.hier-row[data-pid="P0"]').click();
