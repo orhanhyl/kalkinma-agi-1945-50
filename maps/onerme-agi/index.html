@@ -138,12 +138,13 @@
   .top-nav .fs-btn:hover { background: var(--wash-strong); color: var(--ink); }
   .theme-btn { position: fixed; top: 14px; left: 14px; z-index: 100; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.03em; height: 28px; padding: 0 10px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 4px; }
   .theme-btn:hover { background: var(--wash-strong); color: var(--ink); }
+  .lang-btn { left: 84px; }
   :fullscreen { background: var(--page); }
   :fullscreen .top-nav { display: none; }
   :fullscreen .map-intro { display: none; }
   :fullscreen .wrap { max-width: none; padding: 12px; }
   :fullscreen #graphSvg { height: 100vh !important; }
-  :fullscreen .theme-btn, html.pseudo-fs .theme-btn { display: none; }
+  :fullscreen .theme-btn, html.pseudo-fs .theme-btn, :fullscreen .lang-btn, html.pseudo-fs .lang-btn { display: none; }
   /* iPhone Safari, requestFullscreen()'i herhangi bir eleman için hiç
      desteklemez (yalnız <video>) — bu CSS-tabanlı yedek, native API
      başarısız olduğunda/mevcut olmadığında AYNI görsel etkiyi (üstbilgi
@@ -167,6 +168,7 @@
 <body>
 <div class="wrap">
 <button class="theme-btn mono" id="themeBtn" type="button" aria-label="Açık/koyu tema">koyu</button>
+<button class="theme-btn lang-btn mono" id="langBtn" type="button" aria-label="Dil / Language">EN</button>
 <div class="top-nav mono"><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/">← Ana Sayfa</a><button class="fs-btn" id="fsBtn" type="button">⛶ Tam Ekran</button></div>
 <script>
 (function(){
@@ -269,7 +271,7 @@
   const CAT_LABEL = {"aktor": "Aktörler", "surec": "Süreçler", "sorun": "Sorunlar", "nesne": "Nesneler / Araçlar"};
   const CAT_VAR = { aktor: '--accent-aktor', surec: '--accent-surec', sorun: '--accent-sorun', nesne: '--accent-nesne' };
   const NODE_CAP = 220;
-  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-07-29_142439_final/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
+  document.getElementById('sourceNote').textContent = "Kaynak: 07_export/runs/2026-10-04_230723_ingilizce-dil-anahtari-v2/data/source_edges.tsv · önerme tanımları: 01_closed_sources/11_PROPOSITION_FAMILIES.tsv · 07_export/scripts/plot_proposition_network.py ile üretildi.";
 
   function mulberry32(seed) {
     return function () {
@@ -683,6 +685,171 @@
   const firstCol = RAW.hier.find(h => h.subs.length);
   const initSub = firstCol && firstCol.subs.reduce((best, s) => (s.count > (best ? best.count : -1) ? s : best), null);
   if (initSub) selectProposition(initSub.id, initSub.id, initSub.onerme, initSub.kapsam);
+})();
+</script>
+<script>
+(function(){
+  var UI = {"Açık/koyu tema":"Light/dark theme","koyu":"dark","açık":"light","← Ana Sayfa":"← Home","⛶ Tam Ekran":"⛶ Fullscreen","⛶ Çık (Esc)":"⛶ Exit (Esc)","tümü":"all","hiçbiri":"none","tümünü göster":"show all","Ara":"Search","düğüm adı…":"node name…","Düğüm tipi":"Node type","Ağırlık eşiği":"Weight threshold","tekrar sayısı bu değerin altındaki kenarlar gizlenir":"edges with a repeat count below this value are hidden","Bir düğüme veya kenara tıklayın.":"Click a node or an edge.","graf":"graph","tablo":"table","Kaynak":"Source","İlişki":"Relation","Hedef":"Target","Küme":"Cluster","Kayıt":"Record","Kademe":"Tier","Saha":"Field","Belge":"Document","Mekanizma":"Mechanism","Code label":"Code label","İnsan / İnsan-dışı":"Human / Non-human","Yalnız sahalar-arası kenarlar":"Cross-field edges only","düğüm tipi dağılımı":"node type distribution","yıla göre kenar dağılımı":"edges by year","sürükle tuval · tekerlek/pinch ile yakınlaştır":"drag canvas · wheel/pinch to zoom","sürükle · tekerlek/pinch ile yakınlaştır":"drag · wheel/pinch to zoom","Aktör Ağı — Etkileşimli Harita":"Actor Network — Interactive Map","Küme Ağı — Etkileşimli Harita":"Cluster Network — Interactive Map","Maddi Müdahale Sahaları Ağı":"Network of Material Intervention Fields","Önerme Ailesi Ağ Haritası":"Proposition-Family Network Map","Önerme hiyerarşisi — P1 · P2 · P3":"Proposition hierarchy — P1 · P2 · P3","aktör-ağ haritası · tam külliyat · rapor §3.9, §4.2":"actor-network map · full corpus · report §3.9, §4.2","aktör-ağ haritası · küme düzeyi · rapor §3.9.2, §4.3":"actor-network map · cluster level · report §3.9.2, §4.3","aktör-ağ haritası · rapor §4.3, §5.4":"actor-network map · report §4.3, §5.4","aktör-ağ haritası · önerme ailesi · rapor §3.8, §4.1":"actor-network map · proposition family · report §3.8, §4.1","Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek":"Building Development in Postwar Türkiye","Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)":"Mapping Development Policies and Transnational Actor-Networks (1945–50)","Etkileşimli haritalar":"Interactive maps","Yöntem — Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek":"Method — Building Development in Postwar Türkiye","Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek — Aktör-Ağ Haritaları":"Building Development in Postwar Türkiye — Actor-Network Maps","HARİTAYI AÇ →":"OPEN MAP →","Aktör Ağı önizlemesi":"Actor Network preview","Küme Ağı önizlemesi":"Cluster Network preview","Önerme Ağı önizlemesi":"Proposition Network preview","Maddi Müdahale Sahaları Ağı önizlemesi":"Network of Material Intervention Fields preview","Aktör Ağı":"Actor Network","Küme Ağı":"Cluster Network","Önerme Ağı":"Proposition Network",") sahalar-arası kenar":") cross-field edges","Tarla, makine, çiftçi":"Field, machine, farmer","Yol, zemin, şantiye":"Road, ground, construction site","Su, enerji, maden, emek":"Water, energy, mining, labour","Kredi, dış yardım, teknik cihaz":"Credit, foreign aid, technical device","Kurum, Kişi, Kolektif aktör":"Institution, Person, Collective actor","İnsan aktör":"Human actor","Nesne, altyapı, teknik araç, finansal araç, belge, sorun":"Object, infrastructure, technical instrument, financial instrument, document, problem","İnsan-dışı nesne":"Non-human object","benzersiz düğüm":"unique nodes","önerme / alt-önerme":"propositions / sub-propositions","Aktörler":"Actors","· Süreçler":"· Processes","· Nesneler / Araçlar":"· Objects / Instruments","Süreçler":"Processes","Nesneler / Araçlar":"Objects / Instruments","birden fazla önerme ailesinde geçer":"appears in more than one proposition family","Devlet, idare, hukuk ve piyasa düzeni":"State, administration, law and market order","Uluslararası yardım, jeopolitik ve Soğuk Savaş":"International aid, geopolitics and the Cold War","Sanayi, maden ve enerji":"Industry, mining and energy","Tarım, toprak ve köy ekonomisi":"Agriculture, land and village economy","Tarımsal teknik ve makine":"Agricultural technique and machinery","Altyapı, ulaşım ve haberleşme":"Infrastructure, transport and communications","Finans, kredi, döviz ve bütçe":"Finance, credit, foreign exchange and budget","Uzmanlık, rapor, istatistik ve plan":"Expertise, reports, statistics and planning","Dış ticaret, fiyat ve pazarlama":"Foreign trade, prices and marketing","Emek, nüfus, sağlık ve eğitim":"Labour, population, health and education","Basın, yayın ve kamuoyu":"Press, publishing and public opinion","Coğrafya, mekân ve bölgeler":"Geography, space and regions","Kurum":"Institution","Kişi":"Person","Kolektif aktör":"Collective actor","Finansal araç":"Financial instrument","Teknik nesne":"Technical object","Altyapı nesnesi":"Infrastructure object","Süreç / pratik":"Process / practice","Belge / yazıt nesnesi":"Document / inscription object","Sorun nesnesi":"Problem object","Doğal / maddi varlık":"Natural / material entity","Coğrafi birim":"Geographic unit","İlgilendirme Cihazları":"Interessement Devices","Görevlendirme ve Uygulama Zinciri":"Enrolment and Implementation Chain","Stabilizasyon, Dolaşım ve Kara Kutulaşma":"Stabilisation, Circulation and Black-Boxing","Sözcülük, Temsil ve Meşrulaştırma":"Spokespersonship, Representation and Legitimation","İlgilendirme":"Interessement","Çıkar Hizalama":"Interest Alignment","Maddi-Teknik Uygulama ve Altyapılaştırma":"Material-Technical Implementation and Infrastructuring","Engel, Tehdit ve Sınırlama":"Obstacle, Threat and Constraint","Alternatif Bağların Kesilmesi":"Severing of Alternative Ties","İnsan-Dışı Muhalefet":"Non-Human Opposition","Direnç ve Kırılma":"Resistance and Rupture","Kurumsal ve Finansal Direnç":"Institutional and Financial Resistance","Problematizasyon":"Problematisation","Zorunlu Geçiş Noktası ve Programatik Öncelik":"Obligatory Passage Point and Programmatic Priority","Yazıt Aygıtı ve Çeviri":"Inscription Device and Translation","Aktör Kimliği ve Rol İnşası":"Actor Identity and Role Construction","Müzakere, Temas ve Diplomatik Bağlantı":"Negotiation, Contact and Diplomatic Connection","düğüm":"nodes","saha":"fields","Sorunsallaştırma":"Problematisation","Direnç ve kırılma":"Resistance and rupture","Görevlendirme":"Enrolment","Yazıtlaştırma, seferberlik ve stabilizasyon":"Inscription, mobilisation and stabilisation","yoğun görünüm — filtreleyerek daraltın":"dense view — narrow it down with filters","saç topu":"hairball","alt-önerme belirtilmemiş":"sub-proposition not specified","diğer":"other","kaynak belge":"source documents","kenar ·":"edges ·","Önermenin kapsamı":"Scope of the proposition","çapraz önerme:":"cross-proposition:","(yalnız sahalar-arası)":"(cross-field only)","sahalar-arası":"cross-field","insan aktör":"human actor","insan-dışı nesne":"non-human object","insan":"human","— ailenin bütünü (kendi + tüm alt kırılımları)":"— the whole family (itself + all sub-divisions)","— alt-önermeye daraltılamamış kenarlar":"— edges that could not be narrowed to a sub-proposition","küme":"clusters","kenar":"edges","Çekirdek (≥ 50 ilişki)":"Core (≥ 50 relations)","Süper-Hub (20–49 ilişki)":"Super-Hub (20–49 relations)","Hub (10–19 ilişki)":"Hub (10–19 relations)","Üst Bağlayıcı (5–9 ilişki)":"Upper Connector (5–9 relations)","Bağlayıcı (3–4 ilişki)":"Connector (3–4 relations)","Az Aktif (2 ilişki)":"Low-Activity (2 relations)","Çevre (1 ilişki)":"Periphery (1 relation)","Çekirdek":"Core","Süper-Hub":"Super-Hub","Üst Bağlayıcı":"Upper Connector","Bağlayıcı":"Connector","Az Aktif":"Low-Activity","Çevre":"Periphery","küme (hepsi temsilli)":"clusters (all represented)","düğüm ·":"nodes ·","kenar görünüyor":"edges shown","teshis_eder":"diagnoses","sorunsallastirir":"problematises","adlandirir":"names","gorunur_kilar":"renders visible","rol_yukler":"assigns a role to","konumlandirir":"positions","temsilci_kilar":"appoints as representative of","sozcusu_kilar":"makes spokesperson of","engeller":"prevents","kisitlar":"constrains","sinirlar":"delimits","zayiflatir":"weakens","bozar":"disrupts","geciktirir":"delays","yuk_bindirir":"burdens","zorunlu_kilar":"makes indispensable to","sart_kosar":"makes conditional on","onceliklendirir":"prioritises","baglar":"links","ilgisine_ceker":"interests","seferber_eder":"mobilises","devreye_sokar":"puts into service","yonlendirir":"directs","finanse_eder":"finances","temin_eder":"supplies","aracilik_eder":"mediates for","mumkun_kilar":"enables","kolaylastirir":"facilitates","entegre_eder":"integrates","dislar":"excludes","ikame_eder":"substitutes for","gecersizlestirir":"invalidates","koparir":"severs","tasfiye_eder":"abolishes","uyumlandirir":"aligns","bagdastirir":"reconciles","uzlastirir":"brokers compromise between","gorevlendirir":"assigns a task to","yetkilendirir":"authorises","sorumlu_kilar":"makes responsible for","uygular":"implements","duzenler":"regulates","koordine_eder":"coordinates","temas_eder":"makes contact with","gorusur":"meets with","muzakere_eder":"negotiates","bilgi_ister":"requests information from","bilgi_verir":"informs","teyit_ister":"requests confirmation from","insaa_eder":"constructs","tesis_eder":"establishes","isletir":"operates","nakleder":"transports","makinelestirir":"mechanises","sayisallastirir":"quantifies","olculebilir_kilar":"makes measurable","hesaplanabilir_kilar":"makes calculable","karsilastirir":"compares","tahmin_eder":"forecasts","tekniklestirir":"renders technical","nesnellestirir":"objectifies","sabitler":"fixes in place","temsil_eder":"represents","sozcusu_olur":"becomes spokesperson of","mesrulastirir":"legitimises","gerekcelendirir":"justifies","dolasima_sokar":"puts into circulation","tekrarlar":"repeats","stabilize_eder":"stabilises","kurumsallastirir":"institutionalises","kara_kutulastirir":"black-boxes","maddilestirir":"materialises","itiraz_eder":"objects to","reddeder":"rejects","direnir":"resists","sorgular":"questions","supheye_dusurur":"casts doubt on","maddi_direnc_gosterir":"offers material resistance to","ariza_yaratir":"causes breakdown in","surtunme_yaratir":"creates friction for","yetersiz_kalir":"proves inadequate for","guven_sorunu_yaratir":"creates a trust problem for","kurumsal_kosula_baglar":"subjects to institutional conditions","garanti_etmez":"does not guarantee","kapasitesini_asar":"exceeds the capacity of","mali_yuk_olusturur":"creates a financial burden for","Türkiye yüksek potansiyele sahip ancak azgelişmiş bir tarım toplumudur.":"Türkiye has high potential but is an underdeveloped agrarian society.","Türkiye yüksek potansiyele sahiptir":"Türkiye has high potential","Bu aile, Türkiye’nin kaynak, emek, tarım, enerji, maden, dış bağlantı ve teknik bilgi bakımından kalkınmaya çevrilebilir imkânlara sahip olarak kurulmasını kapsar.":"This family covers the construction of Türkiye as possessing possibilities that can be converted into development in terms of resources, labour, agriculture, energy, mining, external connections and technical knowledge.","Türkiye doğal kaynak ve maden potansiyeline sahiptir.":"Türkiye has natural-resource and mineral potential.","maden, kömür, linyit, krom, bakır, demir, petrol, yeraltı kaynakları":"mining, coal, lignite, chrome, copper, iron, petroleum, underground resources","Türkiye su, enerji ve hidrolik potansiyele sahiptir.":"Türkiye has water, energy and hydraulic potential.","su kuvvetleri, elektrik, sulama, baraj, hidroelektrik":"water power, electricity, irrigation, dams, hydroelectricity","Türkiye tarımsal üretim ve hammadde potansiyeline sahiptir.":"Türkiye has agricultural-production and raw-material potential.","pamuk, hububat, tütün, hayvancılık, gıda, sanayi hammaddesi, ihracat ürünü":"cotton, grain, tobacco, livestock, food, industrial raw materials, export crops","Türkiye insan, emek ve eğitilebilir nüfus potansiyeline sahiptir.":"Türkiye has human, labour and trainable-population potential.","köylü emeği, işgücü, teknik eleman, uzman yetiştirme, nüfus kapasitesi":"peasant labour, workforce, technical personnel, training of experts, population capacity","Türkiye dış sermaye, kredi, yardım ve uzmanlıkla açığa çıkarılabilir kalkınma potansiyeline sahiptir.":"Türkiye has a development potential that can be unlocked through foreign capital, credit, aid and expertise.","Amerikan yardımı, Dünya Bankası, Eximbank, yabancı uzman, teknik yardım, dış sermaye":"American aid, World Bank, Eximbank, foreign experts, technical assistance, foreign capital","Türkiye’nin potansiyeli ancak tetkik, istatistik, harita, rapor ve planlama ile görünür hale getirilebilir.":"Türkiye’s potential can only be made visible through survey, statistics, maps, reports and planning.","harita, kadastro, istatistik, uzman raporu, ekonomik tetkik, teknik inceleme":"maps, cadastral survey, statistics, expert reports, economic survey, technical inquiry","Türkiye azgelişmiştir":"Türkiye is underdeveloped","Bu aile, Türkiye’nin eksiklik, gerilik, verimsizlik, yetersiz sermaye, bürokrasi, devletçilik, yanlış yatırım, özel teşebbüs zayıflığı, ölçme eksikliği ve dış rekabet sorunları üzerinden kurulmasını kapsar.":"This family covers the construction of Türkiye through problems of deficiency, backwardness, inefficiency, inadequate capital, bureaucracy, etatism (devletçilik), misdirected investment, weak private enterprise, lack of measurement and foreign competition.","Türkiye düşük hayat seviyesi, refah ve gelir sorunu yaşamaktadır.":"Türkiye suffers from a low standard of living, welfare and income.","yoksulluk, düşük tüketim, düşük gelir, hayat standardı, geçim şartları":"poverty, low consumption, low income, standard of living, subsistence conditions","Türkiye düşük üretkenlik, randıman ve verimlilik sorunu yaşamaktadır.":"Türkiye suffers from low productivity, yield and efficiency.","düşük istihsal, düşük randıman, atıl emek, verimsiz işletme, düşük kapasite":"low output, low yield, idle labour, inefficient enterprise, low capacity","Türkiye teknik araç, makine ve altyapı bakımından geridir.":"Türkiye is backward in technical equipment, machinery and infrastructure.","makine yokluğu, yol eksikliği, sulama yetersizliği, ulaştırma, enerji, sağlık/eğitim altyapısı":"lack of machinery, lack of roads, inadequate irrigation, transport, energy, health/education infrastructure","Türkiye sermaye, kredi, döviz ve ödeme kapasitesi darboğazıyla sınırlıdır.":"Türkiye is constrained by bottlenecks in capital, credit, foreign exchange and payment capacity.","sermaye darlığı, kredi ihtiyacı, dış borç, döviz, ödeme gücü, garanti":"capital scarcity, need for credit, foreign debt, foreign exchange, ability to pay, guarantees","Türkiye planlama, koordinasyon, proje seçimi ve yatırım önceliği sorunları yaşamaktadır.":"Türkiye has problems of planning, coordination, project selection and investment priority.","koordine edilmemiş projeler, yanlış öncelik, planlama grubu, yatırım sıralaması":"uncoordinated projects, wrong priorities, planning group, investment sequencing","Türkiye’de devletçilik uygulaması, zorunlu başlangıç işlevinden çıkarak pahalı, verimsiz ve aşırı geniş bir devlet işletmeciliğine dönüşebilmektedir.":"In Türkiye, the practice of etatism (devletçilik) can turn from a necessary starting function into a costly, inefficient and excessively broad state enterprise system.","devletçilik, devlet işletmeleri, israf, inhisarcılık, devlet müdahalesi, özel teşebbüs alanının daralması":"etatism, state enterprises, waste, monopolism, state intervention, shrinking of the private-enterprise sphere","Türkiye’de bürokrasi, mesuliyetsizlik ve düzensiz çalışma sistemi ekonomik verimliliği düşürmektedir.":"Bureaucracy, irresponsibility and disorderly work practices lower economic efficiency in Türkiye.","bürokrasi, idari gecikme, mesai verimsizliği, keyfi karar, sorumluluk yokluğu":"bureaucracy, administrative delay, inefficient working hours, arbitrary decisions, absence of responsibility","Türkiye’de özel teşebbüs, güvenlik eksikliği, vergi sistemi, kontrol rejimleri, siyasal kararsızlık ve ananevi düşünce tarzları nedeniyle gelişememektedir.":"In Türkiye, private enterprise fails to develop because of insecurity, the tax system, control regimes, political instability and traditional modes of thought.","özel teşebbüs, keyfi müdahale, garanti, güven, vergi, kontrol, siyasal belirsizlik, alışkanlık":"private enterprise, arbitrary intervention, guarantees, trust, taxes, controls, political uncertainty, habit","Türkiye’de sanayileşme, tarım, ulaştırma, enerji, sermaye ve insan unsurlarıyla birlikte planlanmadığında yanlış önceliklere ve verimsiz yatırımlara yol açmaktadır.":"In Türkiye, industrialisation that is not planned together with agriculture, transport, energy, capital and human factors leads to wrong priorities and inefficient investment.","sanayileşme, Karabük, gösterişli tesis, ağır sanayi, hafif sanayi, hammadde, enerji, pazar":"industrialisation, Karabük, showy facilities, heavy industry, light industry, raw materials, energy, market","Türkiye yüksek maliyet, kalite, fiyat, standardizasyon ve ticari istihbarat sorunları nedeniyle dış piyasaya uyum sağlayamamaktadır.":"Türkiye cannot adapt to the foreign market because of problems of high cost, quality, price, standardisation and commercial intelligence.","ihracat, dış ticaret, maliyet, kalite, fiyat, standardizasyon, reklam, ticari bilgi":"exports, foreign trade, cost, quality, price, standardisation, advertising, commercial information","Türkiye’nin ölçme, sayma, kadastro, istatistik ve teknik bilgi eksikliği kalkınma nesnesinin kurulmasını zorlaştırmaktadır.":"Türkiye’s lack of measurement, counting, cadastral survey, statistics and technical knowledge makes it harder to construct development as an object.","tarım sayımı, kadastro, harita, istatistik, hesap, maliyet, envanter, teknik tetkik":"agricultural census, cadastral survey, maps, statistics, accounts, costs, inventory, technical survey","Türkiye tarım toplumudur":"Türkiye is an agrarian society","Bu aile, Türkiye’nin köylü çoğunluğu, ziraat merkeziliği, geçimlik üretim, kırsal izolasyon, ilkel teknik, hayvan gücü, kanaatkârlık, pazar yokluğu, kırsal yaşam koşulları ve tarımsal modernleşme üzerinden kurulmasını kapsar.":"This family covers the construction of Türkiye through its peasant majority, the centrality of agriculture, subsistence production, rural isolation, primitive technique, animal power, frugal contentment (kanaatkârlık), absence of markets, rural living conditions and agricultural modernisation.","Türkiye ziraat memleketidir ve köylü-çiftçi çoğunluk üzerinden tanımlanır.":"Türkiye is an agricultural country, defined through its peasant-farmer majority.","ziraat memleketi, köylü cemiyeti, çiftçi aileleri, tarımsal nüfus":"agricultural country, peasant society, farming families, agrarian population","Köylü üretimi geçimlik, düşük nakdî gelirli ve pazara zayıf bağlıdır.":"Peasant production is subsistence-oriented, low in cash income and weakly tied to the market.","aile ihtiyacı, fazla üretmeme, mübadele dışılık, düşük nakdî gelir, pazar yokluğu":"family needs, not producing a surplus, being outside exchange, low cash income, absence of markets","Türk ziraatinin geriliği kara sapan, öküz gücü, ilkel aletler ve makine eksikliğinde görünür hale gelir.":"The backwardness of Turkish agriculture becomes visible in the wooden plough (karasaban), ox power, primitive tools and lack of machinery.","kara sapan, tahta sapan, öküz, pulluk, mibzer, traktör, makineleşme":"wooden plough, ox, plough, seed drill, tractor, mechanisation","Köylünün kanaatkârlığı ve düşük üretim davranışı yol, pazar, kredi, vergi korkusu, teknik araç eksikliği ve geçimlik üretim koşullarıyla birlikte kurulmaktadır.":"The peasant’s frugal contentment (kanaatkârlık) and low-output behaviour are produced together with roads, markets, credit, fear of taxation, lack of technical equipment and subsistence-production conditions.","kanaatkârlık, şark tevekkülü, vergi tahsildarı, fazla çalışmama, pazar yokluğu, yol yokluğu":"frugal contentment (kanaatkârlık), “Oriental fatalism” (şark tevekkülü), tax collector, not working beyond need, absence of markets, absence of roads","Tarımsal-kırsal yapı düşük sağlık, hijyen, konut, beden ve çevre koşullarıyla tanımlanır.":"The agrarian-rural structure is defined by poor health, hygiene, housing, bodily and environmental conditions.","köy evi, su, hastalık, doktor yokluğu, hijyen, insan-hayvan birlikteliği":"village house, water, disease, absence of doctors, hygiene, human–animal cohabitation","Tarımsal üretimin değerlenmesi yol, pazar, nakliye, satış kredisi, silo, liman ve dış ticaret bağlantılarına bağlıdır.":"Realising the value of agricultural output depends on roads, markets, transport, sales credit, silos, ports and foreign-trade links.","yol, pazar, nakliye, silo, liman, satış kredisi, ihracat":"roads, markets, transport, silos, ports, sales credit, exports","Tarımsal kalkınma sanayi, döviz, iç pazar ve genel kalkınmanın ön şartı olarak kurulmaktadır.":"Agricultural development is constructed as the precondition of industry, foreign exchange, the domestic market and development in general.","ziraî gelir, sanayi malları için talep, hammadde, döviz, ihracat, iç pazar":"agricultural income, demand for industrial goods, raw materials, foreign exchange, exports, domestic market","Tarımda modernleşme makine, teknik bilgi, okul, uzman, kredi, kooperatif, sulama ve istatistikle sağlanmalıdır.":"Modernisation in agriculture must be achieved through machinery, technical knowledge, schools, experts, credit, cooperatives, irrigation and statistics.","traktör, makine, ziraat okulu, uzman, kooperatif, Ziraat Bankası, sulama, tarım sayımı":"tractor, machinery, agricultural school, experts, cooperatives, Ziraat Bank, irrigation, agricultural census","Arazi, küçük işletme, topraklandırma ve çiftçi ailesi tarımsal kalkınmanın temel toplumsal birimleri olarak kurulmaktadır.":"Land, small holdings, land allocation (topraklandırma) and the farming family are constructed as the basic social units of agricultural development.","topraklandırma, küçük işletme, çiftçi ailesi, arazi, köylü mülkiyeti":"land allocation (topraklandırma), small holdings, farming family, land, peasant ownership","Tarım toplumunun dönüştürülmesi yalnız üretim artışı değil, köylünün bilgi, alışkanlık, çalışma düzeni ve piyasa ilişkilerinin yeniden kurulmasıdır.":"Transforming the agrarian society is not only an increase in production but the re-making of the peasant’s knowledge, habits, work routines and market relations.","teknik eğitim, köylü davranışı, çalışma alışkanlığı, piyasa ilişkisi, kredi disiplini":"technical education, peasant behaviour, work habits, market relations, credit discipline"}, PATTERNS = [["^1 düğüm$","1 node"],["^1 kenar$","1 edge"],["^1 ilişki$","1 relation"],["^1 saha$","1 field"],["^Aktörler: ([\\d.,]+)$","Actors: $1"],["^Süreçler: ([\\d.,]+)$","Processes: $1"],["^Nesneler / Araçlar: ([\\d.,]+)$","Objects / Instruments: $1"],["^([\\d.,]+) düğüm · ([\\d.,]+) kenar$","$1 nodes · $2 edges"],["^([\\d.,]+) düğüm$","$1 nodes"],["^([\\d.,]+) kenar$","$1 edges"],["^Kaynak: ([^·]+)$","Source: $1"],["^önerme tanımları: ([^·]+)$","proposition definitions: $1"],["^(.+\\.py) ile üretildi\\.$","generated with $1."],["^küme başına pay: toplam ağırlığın ([\\d.,]+%)'i \\(alt sınır (\\d+), üst sınır (\\d+)\\)$","share per cluster: $1 of total weight (lower bound $2, upper bound $3)"],["^saha başına pay: toplam ağırlığın ([\\d.,]+%)'i \\(alt sınır (\\d+), üst sınır (\\d+)\\)$","share per field: $1 of total weight (lower bound $2, upper bound $3)"],["^ilişki: ([^·]+)$","relation: {1}"],["^kayıt: ([^·]+)$","record: $1"],["^belge: ([^·]+)$","document: $1"],["^derece:? (\\d+)$","degree: $1"],["^küme: ([^·]+)$","cluster: {1}"],["^kademe: ([^·]+)$","tier: {1}"],["^saha: ([^·]+)$","field: {1}"],["^süreç: ([^·]+)$","process: {1}"],["^mekanizma: ([^·]+)$","mechanism: {1}"],["^çapraz önerme: (.+)$","cross-proposition: $1"],["^çapraz önerme — bu düğüm ayrıca şurada da geçer: (.+)$","cross-proposition — this node also appears in: {1}"],["^bu düğümün görünen bağlantı sayısı: (\\d+)$","number of visible links of this node: $1"],["^(\\d+) düğümden en yüksek dereceli (\\d+) tanesi gösteriliyor$","showing the $2 highest-degree nodes out of $1"],["^(.+): (\\d+) kenar$","{1}: $2 edges"],["^\\((.+), sahalar-arası\\)$","({1}, cross-field)"],["^(\\d+) kenar ·$","$1 edges ·"],["^(\\d+) saha$","$1 fields"],["^≥ ?(\\d+) ilişki$","≥ $1 relations"],["^(\\d+)[–-](\\d+) ilişki$","$1–$2 relations"],["^(\\d+) ilişki$","$1 relations"]], BLOCKS = {".lede":"The overarching P0 proposition — “Türkiye has high potential but is an underdeveloped agrarian society.” — is not established with equal weight in the corpus: the underdevelopment (P2) family is represented by 1146 edges, the potential (P1) family is represented by 704 edges, the agrarian society (P3) family is represented by 396 edges. The single most repeated sub-proposition is P1.5 (491 edges). The three columns on the left show this hierarchy; clicking a sub-proposition brings the actor-network edges assigned to it onto the stage.",".stake":"The dominance of P1.5 shows that the development discourse builds an obligatory passage point that fixes Türkiye in an underdevelopment surmountable only through foreign capital/credit — the empirical backbone of how the P0 proposition became a scientific fact."}, SUB = {"karayolu":"highway","araştırma / inceleme":"research / survey","baraj":"dam","demiryolu":"railway","depo veya silo":"warehouse or silo","elektrik şebekesi":"electricity grid","enerji santrali":"power plant","eğitim tesisi":"educational facility","haberleşme altyapısı":"communications infrastructure","köprü":"bridge","liman":"port","sanayi tesisi":"industrial plant","sağlık tesisi":"health facility","sulama sistemi":"irrigation system","ulaştırma ağı":"transport network","üretim":"production","uzman raporu":"expert report","diplomatik yazışma":"diplomatic correspondence","gazete yazısı":"newspaper article","istatistik / cetvel":"statistics / table","kanun veya düzenleme metni":"law or regulatory text","plan / program":"plan / programme","proje etüdü":"project study","resmi yazışma":"official correspondence","tutanak":"minutes","bölge":"region","tarımsal bölge":"agricultural region","uluslararası bölge":"international region","ülke":"country","şehir":"city","toprak":"soil / land","bitkisel ürün":"crop","hammadde":"raw material","hastalık veya zararlı":"disease or pest","hayvansal varlık":"livestock","iklim koşulu":"climatic condition","maden kaynağı":"mineral resource","su":"water","kredi":"credit","borç / istikraz":"debt / loan","bütçe / tahsisat":"budget / appropriation","döviz / kambiyo":"foreign exchange","fiyat / ücret":"price / wage","garanti / teminat":"guarantee / collateral","hibe veya fon":"grant or fund","karşılık fonu":"counterpart fund","sermaye":"capital","vergi":"tax","uzman":"expert","akademisyen":"academic","bakan":"minister","bürokrat":"bureaucrat","diplomat":"diplomat","gazeteci-yazar":"journalist-writer","girişimci / iş insanı":"entrepreneur / businessperson","iktisatçı":"economist","mühendis":"engineer","siyasetçi":"politician","bürokrasi":"bureaucracy","işçiler":"workers","kamuoyu":"public opinion","köylüler":"peasants","mükellefler":"taxpayers","sanayiciler":"industrialists","siyasi muhalefet":"political opposition","toprak sahipleri":"landowners","tüccarlar":"merchants","uzmanlar":"experts","vasıflı işçiler":"skilled workers","yabancı yatırımcılar":"foreign investors","çiftçiler":"farmers","özel teşebbüs":"private enterprise","devlet kurumu":"state institution","araştırma kurumu":"research institution","askeri kurum":"military institution","bakanlık":"ministry","finans kurumu":"financial institution","inşaat firması":"construction firm","kamu bankası":"public bank","kamu iktisadi kuruluşu":"state economic enterprise","oda veya birlik":"chamber or association","siyasi parti":"political party","uluslararası kuruluş":"international organisation","yabancı hükümet":"foreign government","yardım kurumu":"aid agency","özel şirket":"private company","darlık":"scarcity","azgelişmişlik":"underdevelopment","belirsizlik":"uncertainty","bilgi eksikliği":"lack of information","darboğaz":"bottleneck","dengesizlik":"imbalance","düzensizlik":"disorder","eksiklik":"deficiency","geri kalmışlık":"backwardness","güven sorunu":"trust problem","istikrarsızlık":"instability","izolasyon":"isolation","kalitesizlik / standardizasyon sorunu":"poor quality / standardisation problem","koordinasyon sorunu":"coordination problem","pahalılık / maliyet":"high prices / cost","politika rejimi":"policy regime","risk / tehdit":"risk / threat","verimsizlik":"inefficiency","yetersizlik":"inadequacy","bakım / onarım":"maintenance / repair","denetim / düzenleme":"oversight / regulation","devalüasyon / para süreci":"devaluation / monetary process","eğitim / yayım":"education / extension","finansman pratiği":"financing practice","ihracat":"exports","iktisadi dönüşüm":"economic transformation","ithalat":"imports","nakliye / dolaşım":"transport / circulation","planlama":"planning","rasyonelleştirme":"rationalisation","standartlaştırma":"standardisation","tarımsal dönüşüm":"agricultural transformation","teknik dönüşüm":"technical transformation","yapısal dönüşüm":"structural transformation","yardım programı":"aid programme","yatırım":"investment","tarım makinesi":"agricultural machine","demiryolu malzemesi":"railway equipment","enerji ekipmanı":"energy equipment","genel makine":"general machinery","maden ekipmanı":"mining equipment","sanayi makinesi":"industrial machinery","teknik girdi":"technical input","ulaşım aracı":"means of transport","yedek parça":"spare part","yol makinesi":"road-building machine","ziraat aleti":"agricultural implement"};
+  var RX = PATTERNS.map(function(p){ return [new RegExp(p[0]), p[1]]; });
+  var ATTRS = ['title','aria-label','placeholder','alt'];
+  var lang = 'tr', busy = false, missing = {};
+  var textOrig = new WeakMap(), attrOrig = new WeakMap(), blockOrig = new WeakMap();
+  function norm(s){ return s.replace(/\s+/g,' ').trim(); }
+  var TRCH = /[ÇĞİÖŞÜçğıöşü]/;
+  function subEn(k){
+    if (Object.prototype.hasOwnProperty.call(SUB, k)) return SUB[k];
+    var kl = k.charAt(0).toLocaleLowerCase('tr') + k.slice(1);        // Karayolu → karayolu
+    return Object.prototype.hasOwnProperty.call(SUB, kl) ? SUB[kl] : null;
+  }
+  function has(k){ return Object.prototype.hasOwnProperty.call(UI, k); }
+  // t(): çevrilmiş dizge ya da null. Sırayla: birebir → kalıp ({n}: n. grubu özyinelemeli çevir)
+  // → " · " parçaları → "(...)" → " + " birleşikleri → ", " listeleri.
+  function t(k){
+    if (has(k)) return UI[k];
+    if (k.indexOf(' · ') > 0){
+      var ps = k.split(' · '), ch = false, out = ps.map(function(p){ var c = t(p); if (c !== null){ ch = true; return c; } return p; });
+      if (ch) return out.join(' · ');
+    }
+    for (var i=0;i<RX.length;i++){
+      var m = RX[i][0].exec(k);
+      if (m){
+        return RX[i][1].replace(/\$(\d)|\{(\d)\}/g, function(_, raw, tr){
+          if (raw) return m[+raw];
+          var v = m[+tr], c = t(v); return c === null ? v : c;
+        });
+      }
+    }
+    var pm = /^\((.+)\)$/.exec(k);
+    if (pm){
+      var ci = t(pm[1]); if (ci !== null) return '(' + ci + ')';
+      var cx = pm[1].indexOf(', ');       // "(tip, alt tür)": alt tür yalnız bu bağlamda SUB'dan çevrilir
+      if (cx > 0){
+        var ty = t(pm[1].slice(0, cx)), sb = subEn(pm[1].slice(cx + 2));
+        if (ty !== null && sb !== null) return '(' + ty + ', ' + sb + ')';
+      }
+    }
+    if (k.indexOf(' + ') > 0){            // "Küme A + Küme B" birleşik etiketleri
+      var pp = k.split(' + '), o2 = [];
+      for (var j=0;j<pp.length;j++){ var c2 = t(pp[j]); if (c2 === null){ o2 = null; break; } o2.push(c2); }
+      if (o2) return o2.join(' + ');
+    }
+    if (k.indexOf(', ') > 0){             // "A, B, C" listeleri (her parça çevrilebilir ya da Türkçe-harfsiz kimlik)
+      var cp = k.split(', '), o3 = [], any = false;
+      for (var q=0;q<cp.length;q++){
+        var c3 = t(cp[q]);
+        if (c3 !== null){ any = true; o3.push(c3); }
+        else if (!TRCH.test(cp[q])) o3.push(cp[q]);
+        else { o3 = null; break; }
+      }
+      if (o3 && any) return o3.join(', ');
+    }
+    return null;
+  }
+  function tr2en(s){
+    var k = norm(s);
+    if (!k) return null;
+    var r = t(k);
+    if (r === null && TRCH.test(k)) missing[k] = 1;
+    return r;
+  }
+  function inSkip(n){
+    for (var e = n.parentNode; e && e.nodeType === 1; e = e.parentNode){
+      var t = e.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEXTAREA') return true;
+      if (e.hasAttribute && e.hasAttribute('data-no-i18n')) return true;
+    }
+    return false;
+  }
+  function doText(node){
+    if (inSkip(node)) return;
+    if (lang === 'en'){
+      var base = textOrig.has(node) ? textOrig.get(node) : node.nodeValue;
+      var en = tr2en(base);
+      if (en !== null){
+        if (!textOrig.has(node)) textOrig.set(node, base);
+        var lead = base.match(/^\s*/)[0], trail = base.match(/\s*$/)[0];
+        var out = lead + en + trail;
+        if (node.nodeValue !== out) node.nodeValue = out;
+      }
+    } else if (textOrig.has(node)){
+      node.nodeValue = textOrig.get(node); textOrig.delete(node);
+    }
+  }
+  function doAttrs(el){
+    var rec = attrOrig.get(el) || {};
+    ATTRS.forEach(function(a){
+      if (!el.hasAttribute(a)) return;
+      if (lang === 'en'){
+        var base = (a in rec) ? rec[a] : el.getAttribute(a);
+        var en = tr2en(base);
+        if (en !== null){ rec[a] = base; if (el.getAttribute(a) !== en) el.setAttribute(a, en); }
+      } else if (a in rec){ el.setAttribute(a, rec[a]); delete rec[a]; }
+    });
+    if (Object.keys(rec).length) attrOrig.set(el, rec); else attrOrig.delete(el);
+  }
+  function walk(root){
+    if (root.nodeType === 3){ doText(root); return; }
+    if (root.nodeType !== 1) return;
+    doAttrs(root);
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = w.nextNode())){ if (n.nodeType === 3) doText(n); else doAttrs(n); }
+  }
+  function doBlocks(){
+    document.querySelectorAll('[data-en]').forEach(function(el){   // satır içi çeviri: data-en="<html>"
+      if (lang === 'en'){
+        if (!blockOrig.has(el)) blockOrig.set(el, el.innerHTML);
+        el.innerHTML = el.getAttribute('data-en');
+      } else if (blockOrig.has(el)){ el.innerHTML = blockOrig.get(el); blockOrig.delete(el); }
+    });
+    Object.keys(BLOCKS).forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){
+        if (lang === 'en'){
+          if (!blockOrig.has(el)) blockOrig.set(el, el.innerHTML);
+          el.innerHTML = BLOCKS[sel];
+        } else if (blockOrig.has(el)){ el.innerHTML = blockOrig.get(el); blockOrig.delete(el); }
+      });
+    });
+  }
+  function apply(){
+    busy = true;
+    try {
+      doBlocks();
+      walk(document.body);
+      document.documentElement.setAttribute('lang', lang);
+      var t = document.querySelector('title');
+      if (t){ walk(t); }
+      var btn = document.getElementById('langBtn');
+      if (btn) btn.textContent = lang === 'en' ? 'TR' : 'EN';
+    } finally { mo.takeRecords(); busy = false; }
+  }
+  var mo = new MutationObserver(function(muts){
+    if (busy || lang !== 'en') return;
+    busy = true;
+    try {
+      muts.forEach(function(m){
+        if (m.type === 'characterData'){ textOrig.delete(m.target); doText(m.target); }
+        else if (m.type === 'attributes') doAttrs(m.target);
+        else m.addedNodes.forEach(function(n){ walk(n); });
+      });
+    } finally { mo.takeRecords(); busy = false; }
+  });
+  function setLang(l){
+    lang = l;
+    try { localStorage.setItem('lang', l); } catch(e){}
+    apply();
+  }
+  window.__i18nMissing = function(){ return Object.keys(missing); };
+  window.__setLang = setLang;
+  document.addEventListener('DOMContentLoaded', function(){
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch(e){}
+    var btn = document.getElementById('langBtn');
+    if (btn) btn.addEventListener('click', function(){ setLang(lang === 'en' ? 'tr' : 'en'); });
+    mo.observe(document.body, {childList:true, subtree:true, characterData:true,
+                               attributes:true, attributeFilter:ATTRS});
+    if (saved === 'en') setLang('en'); else apply();
+  });
 })();
 </script>
 </body>

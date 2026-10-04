@@ -53,8 +53,11 @@
   .top-nav { font-family: ui-monospace, monospace; font-size: 11.5px; margin-bottom: 28px; }
   .top-nav a { color: var(--muted); text-decoration: none; letter-spacing: 0.03em; }
   .top-nav a:hover { color: var(--ink); text-decoration: underline; }
-  .theme-btn { position: fixed; top: 14px; left: 14px; z-index: 100; font-family: ui-monospace, monospace; font-size: 15px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 4px; padding: 0; }
+  .theme-btn { position: fixed; top: 14px; left: 14px; z-index: 100; font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.03em; height: 28px; padding: 0 10px; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--hair-strong); color: var(--ink-2); cursor: pointer; border-radius: 4px; }
   .theme-btn:hover { background: var(--wash-strong); color: var(--ink); }
+  .lang-btn { left: 84px; }
+  /* TR/EN: iki dilli gövde aynı sayfada, html[lang] ile seçilir (i18n_en.py çalışma-anı lang'ı ayarlar). */
+  html[lang="en"] [data-lang-block="tr"], html:not([lang="en"]) [data-lang-block="en"] { display: none; }
   article h1 { font-size: clamp(26px, 4vw, 34px); font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; line-height: 1.2; }
   article h2 { font-size: clamp(19px, 2.6vw, 23px); font-weight: 600; margin: 42px 0 14px; padding-top: 20px; border-top: 1px solid var(--hair); letter-spacing: -0.005em; }
   article h2:first-of-type { border-top: none; padding-top: 0; }
@@ -86,10 +89,12 @@
 </style>
 </head>
 <body>
-<button class="theme-btn" id="themeBtn" type="button" aria-label="Açık/koyu tema">☾</button>
+<button class="theme-btn mono" id="themeBtn" type="button" aria-label="Açık/koyu tema">koyu</button>
+<button class="theme-btn lang-btn mono" id="langBtn" type="button" aria-label="Dil / Language">EN</button>
 <div class="wrap">
   <div class="top-nav"><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/">← Ana Sayfa</a></div>
   <article>
+<div data-lang-block="tr" data-no-i18n>
 <h1 id="savaş-sonrası-türkiyede-kalkınmayı-i̇nşa-etmek">Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek</h1>
 <h2 id="kalkınma-politikalarının-ve-ulus-aşırı-aktör-ağların-haritalanması-194550">Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)</h2>
 <blockquote>
@@ -126,7 +131,7 @@
 <h2 id="kuramsal-çerçeve">Kuramsal çerçeve</h2>
 <p>Bu konumlanış bir boşluk iddiası taşımaz. Türkiye'nin erken Soğuk Savaş dönemi kalkınma deneyimi zaten geniş bir yazının konusudur: güvenlik mimarisi, siyasal-iktisadi dönüşüm, teknik yardımın sahadaki müzakereleri, uzmanlık ağları ve kültürel temsiller bu yazında ayrıntılı biçimde işlenmiştir; kalkınma iktisadı ve modernleşme kuramı da dönemin ortak kategorilerini —potansiyel, azgelişmişlik, ikili ekonomi— önce tanımlamış, bağımlılık okulu ve kalkınma-sonrası eleştiri bu kategorilerin kimin çıkarına işlediğini ve hangi iktidar ilişkilerini görünmez kıldığını sorgulamıştır. Bu araştırma o tartışmaların dışına çıkıp yeni bir vaka icat etmez; ayrı ayrı güçlü olan bu açıklama hatlarının, aynı önermenin —"Türkiye yüksek potansiyele sahip ancak azgelişmiş bir tarım toplumudur"— kuruluşu etrafında nasıl kesiştiğini izler. Fark sorudadır: önceki yazın bu teşhisin doğru olup olmadığını ya da kimin çıkarına hizmet ettiğini sorarken, bu çalışma teşhisin nasıl sorgulanamaz bir gerçekliğe dönüştüğünü — hangi belgenin hangisini doğruladığını, hangi aktörün hangisini hizaladığını — izler.</p>
 <p>Bunun somut bir yöntemsel sonucu var: araştırma klasik bağımlı/bağımsız değişken düzleminde kurulmaz. Örneğin ABD'nin savaş sonrası dış politika hedefleri, Türkiye'nin tarıma dayalı bir kalkınma yönelimi benimsemesinin doğrudan nedeni sayılan bir bağımsız değişken olarak ele alınmaz; bu hedefler bilgi, söylem, maddi araç ve toplumsal ilişkilerden oluşan heterojen bir ağın parçası sayılır, kalkınma politikaları da bu ağdaki insan ve insan-dışı aktörlerin etkileşimi üzerinden açıklanır. Analiz birimi böylece sabit değişkenler arası nedensellik değil, ağların kuruluşu ve istikrar kazanışıdır — bunun kuramsal karşılığı aktör-ağ kuramıdır.</p>
-<p>Araştırma, aktör-ağ kuramına dayanır. Bu kurama göre "toplumsal" —devlet, kurum, sınıf gibi kategoriler— hazır bir zemin değildir; insan ve insan-dışı unsurlar arasındaki ilişkilerin her defasında yeniden ürettiği kırılgan bir birleşimdir. Bunun yöntemsel karşılığı <strong>genel simetri ilkesidir</strong> (Callon, 1984): bir aktörün —insan ya da insan-dışı, belge, teknoloji, kurum— özellikleri ve etkisi önceden verili değildir; ancak diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar. Kuramın merkezî kavramı olan <strong>çeviri (translation)</strong>, heterojen aktörlerin çıkarlarının yeniden tanımlanarak ortak bir ağ etrafında hizalanma sürecidir ve dört aşamada işler: sorunsallaştırma, ilgilendirme (interessement), kayıt altına alma (enrolment) ve müttefiklerin seferber edilmesi (Callon, 1984). Bu ağlar belirli bir istikrara ulaştığında <strong>kara kutulaşma</strong> ortaya çıkar — karmaşık bir ilişkiler bütünü, tek bir sorgulanamaz gerçeklik gibi görünmeye başlar (Latour, 1987).</p>
+<p>Araştırma, aktör-ağ kuramına dayanır. Bu kurama göre "toplumsal" —devlet, kurum, sınıf gibi kategoriler— hazır bir zemin değildir; insan ve insan-dışı unsurlar arasındaki ilişkilerin her defasında yeniden ürettiği kırılgan bir birleşimdir. Bunun yöntemsel karşılığı <strong>genel simetri ilkesidir</strong> (Callon, 1984): insan ve insan-dışı aktörler —belge, teknoloji, kurum— aynı çözümleme diliyle betimlenir. Kuramın ilişkisel varlık anlayışı (Law, 2008) uyarınca bir aktörün özellikleri ve etkisi de önceden verili değildir; ancak diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar. Kuramın merkezî kavramı olan <strong>çeviri (translation)</strong>, heterojen aktörlerin çıkarlarının yeniden tanımlanarak ortak bir ağ etrafında hizalanma sürecidir ve dört aşamada işler: sorunsallaştırma, ilgilendirme (interessement), kayıt altına alma (enrolment) ve müttefiklerin seferber edilmesi (Callon, 1984). Bu ağlar belirli bir istikrara ulaştığında <strong>kara kutulaşma</strong> ortaya çıkar — karmaşık bir ilişkiler bütünü, tek bir sorgulanamaz gerçeklik gibi görünmeye başlar (Latour, 1987).</p>
 <p>Araştırmacı bu süreçte <strong>agnostik</strong> bir konum benimser: aktörlerin iddialarını önceden doğru ya da yanlış olarak sınıflandırmaz, bu iddiaların hangi ilişkiler aracılığıyla güç kazandığını izler. Belgeler de yalnız söylemsel içerikleriyle değil, maddesellikleriyle birlikte ele alınır (maddi-semiyotik yaklaşım, Mol, 2002). Aşağıdaki kodlama sisteminin beş <strong>makro süreci</strong> (sorunsallaştırma, ilgilendirme, görevlendirme, yazıtlaştırma/seferberlik/stabilizasyon, direnç ve kırılma), çevirinin bu dört kuramsal aşamasını — ve ona eklenen bir direnç boyutunu — belgeye dayalı kodlamada işler kılacak biçimde somutlaştırır.</p>
 <h2 id="yöntem-i̇lişki-temelli-aktör-ağ-kodlama-sistematiği">Yöntem: İlişki temelli aktör-ağ kodlama sistematiği</h2>
 <p>Bu kuramsal çerçeve, somut bir kodlama protokolüne şu adımlarla çevrilir:</p>
@@ -191,9 +196,9 @@
 <!-- TSV_STATS_END -->
 
 <h3 id="yöntemin-özgünlüğü">Yöntemin özgünlüğü</h3>
-<p>Aktör-ağ kuramının kendisi, geniş ölçekli bir tarihsel arşive doğrudan uygulanabilir bir yöntem sunmaz (Law, 2008): bir idari kararın zorunlu geçiş noktası işlevi gördüğünü kuramsal düzeyde söylemek başka, on binlerce sayfalık belge içinde bu işlevi hangi ölçütlerle tespit edeceğini belirlemek başkadır. Bu projenin asıl yöntemsel katkısı da tam burada durur: ANT'ın ilişkisel ontolojisini, her ilişkinin kaynak belgeye ve pasaja geri izlenebildiği, denetlenebilir bir kodlama protokolüne çevirmek.</p>
-<p>Kalkınma söylemi üzerine yapılan çoğu çalışma, metin madenciliğinde <strong>co-word / co-occurrence</strong> yöntemlerine dayanır (Callon ve Courtial, 1983): terimlerin metinde birlikte geçme sıklığı, aralarında anlamlı bir ilişki olduğunun <em>belirleyici</em> kanıtı sayılır — önce sabit varlıklar/kategoriler varsayılır, sonra bunların birlikteliği ölçülür. Ama aynı raporda birlikte anılan iki aktör bir çatışmanın, bir müzakerenin, başarısız bir çeviri girişiminin ya da sıradan bir idari işlemin parçası olabilir — birliktelik sıklığı ilişkinin varlığına işaret etse de yönünü, niteliğini ya da işlevini açıklamaz. Kuvvet yönelimli ağ görselleştirmeleri ve tartışma haritalama (controversy mapping) gibi diğer ilişkisel yöntemler de benzer bir sınırla karşılaşır: ikisi de zengin, sürekli ve dijital iz bırakan kaynaklara (web arşivleri, çevrimiçi platformlar) dayanır — bu araştırmanın malzemesini oluşturan daktilo raporlar, el yazması notlar ve fiziksel yazışmalar için doğrudan uygulanabilir değildir. Bu yüzden projede co-word/co-occurrence yalnızca <strong>4. adımda, aday pasaj seçiminde ön-eleme aracı</strong> olarak kullanılmıştır; hiçbir ilişki yalnızca birlikte geçme sıklığına dayanılarak kodlanmaz.</p>
-<p>Bunun yerine, aktör-ağ kuramının genel simetri ilkesinden — <strong>bir varlığın özellikleri ancak diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar</strong> — hareketle <strong>ilişki temelli bir kodlama sistematiği</strong> inşa edilmiştir: bir düğüm (aktör/nesne), yalnızca bir ilişkinin ucu olarak kodlandığında var olur; sıklık veya birliktelik değil, kapalı bir kod listesine dayanan <strong>yönlü, mekanizmalı ilişki</strong> (X — ilişki — Y) kodlamanın birim eylemidir. Bu, ANT'ın ilişkisel ontolojisini somut bir kodlama protokolüne çeviren, bu proje için özgün olarak geliştirilmiş bir sistematiktir.</p>
+<p>Aktör-ağ kuramı, hazır bir yöntemden çok bir duyarlılıklar ve çözümleme araçları ailesidir (krş. Law, 2008); geniş ölçekli bir tarihsel arşive doğrudan uygulanabilir bir yöntem sunmaz: bir idari kararın zorunlu geçiş noktası işlevi gördüğünü kuramsal düzeyde söylemek başka, on binlerce sayfalık belge içinde bu işlevi hangi ölçütlerle tespit edeceğini belirlemek başkadır. Bu projenin asıl yöntemsel katkısı da tam burada durur: ANT'ın ilişkisel ontolojisini, her ilişkinin kaynak belgeye ve pasaja geri izlenebildiği, denetlenebilir bir kodlama protokolüne çevirmek.</p>
+<p>Kalkınma söylemi üzerine yapılan çoğu çalışma, metin madenciliğinde <strong>co-word / co-occurrence</strong> yöntemlerine dayanır (Callon vd., 1983): terimlerin metinde birlikte geçme sıklığı, aralarında anlamlı bir ilişki olduğunun <em>belirleyici</em> kanıtı sayılır — önce sabit varlıklar/kategoriler varsayılır, sonra bunların birlikteliği ölçülür. Ama aynı raporda birlikte anılan iki aktör bir çatışmanın, bir müzakerenin, başarısız bir çeviri girişiminin ya da sıradan bir idari işlemin parçası olabilir — birliktelik sıklığı ilişkinin varlığına işaret etse de yönünü, niteliğini ya da işlevini açıklamaz. Kuvvet yönelimli ağ görselleştirmeleri ve tartışma haritalama (controversy mapping) gibi diğer ilişkisel yöntemler de benzer bir sınırla karşılaşır: ikisi de zengin, sürekli ve dijital iz bırakan kaynaklara (web arşivleri, çevrimiçi platformlar) dayanır — bu araştırmanın malzemesini oluşturan daktilo raporlar, el yazması notlar ve fiziksel yazışmalar için doğrudan uygulanabilir değildir. Bu yüzden projede co-word/co-occurrence yalnızca <strong>4. adımda, aday pasaj seçiminde ön-eleme aracı</strong> olarak kullanılmıştır; hiçbir ilişki yalnızca birlikte geçme sıklığına dayanılarak kodlanmaz.</p>
+<p>Bunun yerine, aktör-ağ kuramının ilişkisel varlık anlayışından — <strong>bir varlığın özellikleri ancak diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar</strong> — hareketle <strong>ilişki temelli bir kodlama sistematiği</strong> inşa edilmiştir: bir düğüm (aktör/nesne), yalnızca bir ilişkinin ucu olarak kodlandığında var olur; sıklık veya birliktelik değil, kapalı bir kod listesine dayanan <strong>yönlü, mekanizmalı ilişki</strong> (X — ilişki — Y) kodlamanın birim eylemidir. Bu, ANT'ın ilişkisel ontolojisini somut bir kodlama protokolüne çeviren, bu proje için özgün olarak geliştirilmiş bir sistematiktir.</p>
 <p>Aynı temkin, bu depodaki haritaların okunuşuna da taşınır. Bir düğümün görselde merkezde durması ya da başka düğümlere yakın konumlanması, o aktörün tarihsel olarak en önemli aktör olduğunun kanıtı değildir — yerleşim algoritmasının, kodlanmış ilişki sayısına göre ürettiği bir temsildir (Jacomy vd., 2014). Haritalar bu yüzden nihai bir yorum sunmaz; araştırmacının yeni sorular geliştirmesine, beklenmedik örüntüleri fark etmesine ve bunları belgeye dönüp yeniden doğrulamasına yarayan bir keşif yüzeyidir.</p>
 <h2 id="haritalar">Haritalar</h2>
 <div class="table-scroll"><table>
@@ -239,6 +244,158 @@
 <h2 id="lisans">Lisans</h2>
 <p>Bu depodaki metin ve haritalar <a href="https://creativecommons.org/licenses/by/4.0/deed.tr">Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0)</a> lisansı ile paylaşılmaktadır: uygun atıf verilmesi koşuluyla, ticari amaçla da dahil olmak üzere kopyalanabilir, dağıtılabilir, uyarlanabilir ve türev çalışmalarda kullanılabilir.</p>
 
+</div>
+<div data-lang-block="en" data-no-i18n lang="en">
+<h1 id="building-development-in-postwar-türkiye">Building Development in Postwar Türkiye</h1>
+<h2 id="mapping-development-policies-and-transnational-actor-networks-194550">Mapping Development Policies and Transnational Actor-Networks (1945–50)</h2>
+<blockquote>
+<p>Supported under the TÜBİTAK 1002-A Short-Term Support Module — Project No: <strong>324K664</strong> Start: 3 June 2025 · End: 3 June 2026</p>
+</blockquote>
+<p><strong>Principal Investigator:</strong> Dr. Orhan Hayal<br />
+<strong>Researchers:</strong> Assoc. Prof. Muhammed Ali Ağcan · Res. Asst. Muhammet Salih Kahraman<br />
+<strong>Advisor:</strong> Prof. Dr. Ali Erken</p>
+<hr />
+<nav class="toc"><h2 class="toc-title">Contents</h2><ul><li><a href="#about-this-repository">About this repository</a></li><li><a href="#research-problematic">Research problematic</a></li><li><a href="#findings">Findings</a></li><li><a href="#theoretical-framework">Theoretical framework</a></li><li><a href="#method-a-relation-based-actor-network-coding-scheme">Method: a relation-based actor-network coding scheme</a></li><li><a href="#maps">Maps</a></li><li><a href="#contributions-and-limitations">Contributions and limitations</a></li><li><a href="#transferability-of-the-method">Transferability of the method</a></li><li><a href="#dissemination-and-impact">Dissemination and impact</a></li><li><a href="#citation">Citation</a></li><li><a href="#licence">Licence</a></li></ul></nav>
+
+<h2 id="about-this-repository">About this repository</h2>
+<p>This repository hosts the concrete, interactive outputs of the <strong>relational, material and multi-scalar analytical framework</strong> — the core product of the project above — and of the <strong>actor-network mapping infrastructure</strong> built on it. The corpus consists of 1,465 documents with standardised catalogue records, compiled from expert reports, diplomatic correspondence, archival documents, newspapers and journals. Each map below was produced by coding the development relations extracted from this corpus within the framework of actor-network theory (ANT), associated above all with Bruno Latour, Michel Callon and John Law, and of the material-semiotic approach.</p>
+<h2 id="research-problematic">Research problematic</h2>
+<p>In the postwar period, Türkiye faced a choice between continuing the state-led industrialisation policies that had been launched in the 1930s but disrupted by the war, and integrating into the capitalist West, centred on the United States, by embracing agricultural specialisation. In this period, the proposition <em>“Türkiye has high potential but is an underdeveloped agrarian society”</em> became the common reference point of development debates across expert reports, diplomatic correspondence and press discussions.</p>
+<p>The research does not ask whether this proposition is true or whose interests it serves. Instead, it undertakes an <strong>archaeology</strong> of how the proposition became an unquestioned fact with scientific standing — tracing how it constructed reality, how it stabilised, and how it entered circulation as an indisputable fact. In doing so, it places one question at the centre: <strong>are development practices really informed by policy, or do practices shape policy?</strong> Is the real work of development actors to design policy, or to turn development into a stable and coherent reality that stands apart from events? The project is organised around four objectives:</p>
+<ol type="1">
+<li>To develop an actor-oriented, transnational understanding of postwar development politics that takes local, national and international scales into account together;</li>
+<li>To establish a mapping approach that treats development as an actor-network in relational and material terms;</li>
+<li>To produce an actor-network map that visualises the relations among the human and non-human actors mobilised in the development network;</li>
+<li>To set out the relationship between politics and expertise, together with its constituent elements.</li>
+</ol>
+<h2 id="findings">Findings</h2>
+<p>The findings show that the overarching proposition (P0) — “Türkiye has high potential but is an underdeveloped agrarian society” — was not a ready-made diagnosis to be found in the documents of the period, but a reality built step by step through operations of measurement, classification, representation and repetition. P0 is composed of three sub-diagnoses that complement one another functionally — it is not the sum of independent observations:</p>
+<ul>
+<li><strong>P1 — High potential</strong> is built through reserves, discharge figures, arable land and export projections. The Seyhan River engineering report, for instance, calculated flow regime, flood risk and dam cross-section together and thereby turned the river into 51,700 kilowatts of generating capacity; potential is always a category that is <strong>calculated</strong> under particular technical assumptions — not an accomplished success.</li>
+<li><strong>P2 — Underdevelopment</strong> is built through a chain of deficiencies that refer to one another: inadequate roads raise transport costs, costs raise the need for foreign exchange, scarce foreign exchange constrains investment priorities, and the question of priorities in turn raises the problem of coordination. A concrete trace of this chain is the <strong>twentyfold gap</strong> between the 500-million-dollar credit Türkiye requested from the United States in 1945 and the 25 million dollars approved by the Export-Import Bank (Eximbank) in 1946 — underdevelopment here takes concrete form not as an abstract “lack of capital” but as a negotiated distance between the desire to invest and the capacity an external creditor deemed appropriate.</li>
+<li><strong>P3 — Agrarian society</strong> is built through selected indicators (more than 6.5 million of an economically active population of 8 million working in agriculture, subsistence consumption, low cash income, a shortage of equipment). Treating the traditional wooden plough (<em>karasaban</em>) and animal power as emblems of “backward” production does not reflect an objective attribute of the peasant; the decisive operation is the comparison of motorised-plough diagrams with implements driven by human or animal power, which places the latter in a position of deficiency.</li>
+</ul>
+<p>These three diagnoses come to corroborate one another through repetition across different document types (expert report, diplomatic correspondence, archival record, press) — and this repetition gives P0 a stability that can be explained through <strong>Latour’s (1987) notion of black-boxing</strong>: as a claim that first appears as a technical diagnosis is turned into a subject of negotiation in diplomatic correspondence, an administrative task in an archival record, and public criticism in a newspaper column, it comes to be treated as settled without its source being questioned. Yet this stability is not final: the findings also show that the process did not produce a fully settled consensus. Black-boxing is not a state in which objection has ceased, but a <strong>selective tendency</strong> in which some claims are taken over without being reopened.</p>
+<p>A direct consequence is that expertise is not a field of technical knowledge independent of politics. The case of Max Weston Thornburg shows this clearly: his authority was established not by technical texts written in a closed office, but by his introduction through diplomatic channels and by journalists relaying and headlining his views — that is, through <strong>the moments of problematisation, interessement, enrolment and mobilisation in Callon’s (1984) sociology of translation</strong>. Expertise thus appears as a <strong>constitutive</strong> element that defines policy problems, sets priorities and legitimises the instruments of implementation; politics and expertise are not two separate fields but components of a single power-knowledge complex.</p>
+<p>The making of development is also <strong>multi-scalar</strong>: the villagers’ demand for a dam in the Seyhan basin, ministerial correspondence in Ankara, statistical tables carried to Washington, and assessments by the International Bank for Reconstruction and Development (IBRD) and the Economic Cooperation Administration (ECA) are different links of the same chain of translation — a single network stretching from the local to the transnational. Nor does this network advance without friction: instances of resistance, such as the failure of the Mercury–Medioli financing initiative to become a real construction site once no reliable source of funds could be secured, undercut narratives that present development as necessary, one-directional progress, and show that the programme was kept alive through a series of negotiations that worked their way around obstacles.</p>
+<p>The interactive maps in this repository offer a way of exploring exactly this finding: each map makes visible, and traceable back to its source, the thousands of individual relations that build the P0/P1/P2/P3 propositions — which actor, in which document, through which mechanism, enabled or impeded what.</p>
+<h2 id="theoretical-framework">Theoretical framework</h2>
+<p>This positioning does not claim to fill a gap. Türkiye’s early Cold War development experience is already the subject of an extensive literature: the security architecture, political-economic transformation, the on-the-ground negotiations of technical assistance, expertise networks and cultural representations have all been treated in detail. Development economics and modernisation theory first defined the shared categories of the period — potential, underdevelopment, the dual economy — and the dependency school and post-development critique asked whose interests these categories served and which power relations they rendered invisible. This research does not step outside those debates to invent a new case; it traces how these separately strong lines of explanation intersect in the making of one and the same proposition — “Türkiye has high potential but is an underdeveloped agrarian society”. The difference lies in the question: whereas earlier literature asks whether this diagnosis is correct or whom it serves, this study traces how the diagnosis became an unquestionable reality — which document corroborates which, and which actor aligns which.</p>
+<p>This has a concrete methodological consequence: the research is not built on the classical plane of dependent and independent variables. The United States’ postwar foreign-policy goals, for example, are not treated as an independent variable that directly caused Türkiye’s adoption of an agriculture-based development orientation; they are regarded as part of a heterogeneous network made up of knowledge, discourse, material instruments and social relations, and development policies are explained through the interaction of the human and non-human actors in that network. The unit of analysis is thus not causality between fixed variables but the making and stabilisation of networks — for which actor-network theory supplies the theoretical counterpart.</p>
+<p>The research draws on actor-network theory. According to this theory, “the social” — categories such as the state, institution or class — is not a ready-made ground; it is a fragile assemblage that the relations among human and non-human elements re-produce each time. Its methodological counterpart is the <strong>principle of generalised symmetry</strong> (Callon, 1984), which commits the analyst to describing human and non-human actors — documents, technologies, institutions — in the same terms; in line with ANT’s relational understanding of entities (Law, 2008), the properties and effects of an actor are not given in advance but emerge only within the relations it forms with other actors. The central concept of the theory, <strong>translation</strong>, is the process by which the interests of heterogeneous actors are redefined and aligned around a common network, and it proceeds in four moments: problematisation, interessement, enrolment, and the mobilisation of allies (Callon, 1984). When such networks reach a certain stability, <strong>black-boxing</strong> occurs — a complex set of relations comes to appear as a single, unquestionable reality (Latour, 1987).</p>
+<p>In this process the researcher adopts an <strong>agnostic</strong> position (Callon, 1984): the claims of actors are not classified in advance as true or false; the researcher traces the relations through which these claims gain strength. Documents are treated not only for their discursive content but also for their materiality (the material-semiotic approach; Law, 2008; Mol, 2002). The five <strong>macro-processes</strong> of the coding system below (problematisation, interessement, enrolment [assignment of roles and tasks], inscription/mobilisation/stabilisation, and resistance and rupture) operationalise these four theoretical moments of translation — together with an added dimension of resistance — in document-based coding.</p>
+<h2 id="method-a-relation-based-actor-network-coding-scheme">Method: a relation-based actor-network coding scheme</h2>
+<p>This theoretical framework is translated into a concrete coding protocol through the following steps:</p>
+<h3 id="process-from-archive-to-map">Process: from archive to map</h3>
+<p><strong>1. Archival ethnography.</strong> The corpus is built by surveying and compiling expert reports, diplomatic correspondence, archival documents, newspapers and journals — <strong>1,465 documents</strong> with standardised catalogue records, a total of <strong>about 3.65 million words</strong>:</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Number of documents</th>
+<th>Number of words</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Archival documents (A)</td>
+<td>72</td>
+<td>443,144</td>
+</tr>
+<tr>
+<td>Diplomatic correspondence (C)</td>
+<td>540</td>
+<td>653,038</td>
+</tr>
+<tr>
+<td>Journals (D)</td>
+<td>533</td>
+<td>679,400</td>
+</tr>
+<tr>
+<td>Newspapers (G)</td>
+<td>269</td>
+<td>206,497</td>
+</tr>
+<tr>
+<td>Reports (R)</td>
+<td>51</td>
+<td>1,670,196</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>1,465</strong></td>
+<td><strong>3,652,275</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>82% of the corpus falls exactly within the 1945–1950 window; the remainder consists of antecedent (1943–44) and subsequent (1951–56) documents that contextualise the period, plus one later-published memoir.</p>
+<p><strong>2. Transcription.</strong> The compiled archival material is converted into digital text.</p>
+<p><strong>3. Cataloguing.</strong> Each document is systematically catalogued with its type, date and source, and assigned a unique identifier.</p>
+<p><strong>4. Candidate passage selection.</strong> Within the catalogued documents, the researcher screens for passages that are candidates for coding using a <strong>closed list of terms</strong>, on the basis of the terms’ <strong>co-word / co-occurrence frequency</strong>. <em>The function of this step is only pre-screening</em>: it narrows down where to look in the large corpus, and makes no decision about which relation exists or how it should be coded. A deterministic gate then applies a final filter based on formal criteria.</p>
+<p><strong>5. Relation-based coding (the main work).</strong> From each selected passage, a single relation triple is extracted using a <strong>closed code/relation list</strong> built on the basis of actor-network theory:</p>
+<blockquote>
+<p><strong>X (influencer/source) — relation (mechanism of influence) — Y (influenced/target)</strong></p>
+</blockquote>
+<p>This extraction — which two entities are related, in which direction, and through which mechanism (enables, compels, impedes, finances, weakens, constrains…) — is carried out on the evidence sentence in the passage through <strong>the researcher’s interpretation</strong>. Deriving which closed code the relation corresponds to, and looking up the source and target ends in a pre-established dictionary of entities, are deterministic; when a new end appears that has no counterpart in the dictionary, reducing it to an atomic core is again a decision for the researcher. Finally, each coded relation passes through a deterministic validation gate (schema, relation–code consistency, traceability to the source text, atomicity).</p>
+<p>The coded relations are classified under one of the five macro-processes mentioned above.</p>
+<p><strong>6. Proposition assignment.</strong> Each validated relation is assigned to one of a <strong>closed list of propositions and sub-propositions</strong> derived inductively from the corpus — “Türkiye has high potential” (P1), “Türkiye is underdeveloped” (P2), “Türkiye is an agrarian society” (P3) and their sub-divisions. The assignment is made deterministically by rule matching; ambiguous cases that overlap with more than one proposition are left to the researcher’s decision. This layer forms the navigation axis of the maps in this repository.</p>
+<!-- TSV_STATS_START — bu blok update_showcase_readme.py tarafından
+     12_edges/11_edges.tsv'den otomatik yeniden üretilir, elle düzenlemeyin. -->
+
+<p>The current master table (<code>12_edges/11_edges.tsv</code>) contains <strong>2,246 coded relations</strong>, <strong>1,119 unique nodes</strong> and 27 columns; the distribution of relations by document type is A 123 · C 837 · D 545 · G 346 · R 395. Proposition assignment is 100% complete; of these, <strong>98.0%</strong> were assigned automatically by rule matching, and the remaining <strong>2.0%</strong> (ambiguous cases overlapping with more than one proposition) were assigned to a proposition family by the researcher’s decision.</p>
+<!-- TSV_STATS_END -->
+
+<h3 id="originality-of-the-method">Originality of the method</h3>
+<p>Actor-network theory is better described as a family of sensibilities and analytical tools than as a ready-made method (cf. Law, 2008), and it does not by itself supply a procedure that can be applied directly to a large-scale historical archive: it is one thing to say at the theoretical level that an administrative decision functions as an obligatory passage point, and another to specify by which criteria that function is to be identified across tens of thousands of pages of documents. The project’s main methodological contribution lies precisely here: translating ANT’s relational ontology into an auditable coding protocol in which every relation can be traced back to its source document and passage.</p>
+<p>Many text-mining studies of development discourse rely on <strong>co-word / co-occurrence</strong> methods (Callon et al., 1983): the frequency with which terms appear together in a text is taken as <em>decisive</em> evidence that a meaningful relation exists between them — fixed entities or categories are assumed first, and their co-occurrence is measured afterwards. But two actors mentioned together in the same report may be part of a conflict, a negotiation, a failed attempt at translation or an ordinary administrative procedure; although co-occurrence frequency points to the existence of a relation, it does not explain its direction, nature or function. Other relational methods, such as force-directed network visualisation and controversy mapping, meet a similar limit: both depend on rich, continuous sources that leave digital traces (web archives, online platforms), and neither is directly applicable to the typewritten reports, handwritten notes and paper correspondence that make up this research’s material. For this reason, the project uses co-word/co-occurrence only as a <strong>pre-screening tool in step 4, candidate passage selection</strong>; no relation is coded on the basis of co-occurrence frequency alone.</p>
+<p>Instead, proceeding from ANT’s relational understanding of entities — <strong>the properties of an entity emerge only within the relations it forms with other actors</strong> — a <strong>relation-based coding scheme</strong> has been built: a node (actor or object) exists only when it is coded as one end of a relation; the basic unit of coding is not frequency or co-occurrence but a <strong>directed, mechanism-bearing relation</strong> (X — relation — Y) drawn from a closed code list. This scheme was developed specifically for this project, translating ANT’s relational ontology into a concrete coding protocol.</p>
+<p>The same caution applies to how the maps in this repository are read. That a node sits at the centre of a visualisation or lies close to other nodes is not evidence that the actor was historically the most important one — it is a representation produced by the layout algorithm from the number of coded relations (Jacomy et al., 2014). The maps therefore do not offer a final interpretation; they are an exploratory surface that helps the researcher formulate new questions, notice unexpected patterns, and return to the documents to verify them.</p>
+<h2 id="maps">Maps</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Map</th>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Actor Network</td>
+<td>970 nodes, 1,923 edges — the main connected component, the full relation-based network of all actors</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/aktor-agi/">orhanhyl.github.io/.../aktor-agi/</a></td>
+</tr>
+<tr>
+<td>Cluster Network</td>
+<td>141 nodes, 631 edges, 12 clusters — a cluster-level summary of the actor network</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/kume-agi/">orhanhyl.github.io/.../kume-agi/</a></td>
+</tr>
+<tr>
+<td>Proposition Network</td>
+<td>2,246 edges, 3 root + 27 sub-propositions — the network of relations among proposition families</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/onerme-agi/">orhanhyl.github.io/.../onerme-agi/</a></td>
+</tr>
+<tr>
+<td>Network of Material Intervention Fields</td>
+<td>110 nodes, 351 edges, 4 fields — the fields of material intervention established by non-human objects</td>
+<td><a href="https://orhanhyl.github.io/kalkinma-agi-1945-50/maps/sahalar-agi/">orhanhyl.github.io/.../sahalar-agi/</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="contributions-and-limitations">Contributions and limitations</h2>
+<p>The study’s contributions fall at three levels: at the <strong>theoretical</strong> level, a framework that re-reads development through ANT and the material-semiotic approach; at the <strong>methodological</strong> level, an auditable research architecture that makes every interpretation traceable back to its source document (transcription → passage selection → relation-based coding → proposition family → actor standardisation → network mapping); and at the <strong>empirical</strong> level, a relational re-examination of a corpus of 1,465 documents. The research acknowledges that it reaches the practices it represents not directly but only through documents — a recommendation in an expert report is not an implemented policy — and that coding and mapping are themselves operations that involve the researcher’s interpretation. For this reason, the requirement that every relation be supported by evidence and traceable back to its source has been upheld throughout the study as a methodological safeguard.</p>
+<h2 id="transferability-of-the-method">Transferability of the method</h2>
+<p>The relation-based coding and network-mapping scheme established here is not tied to a single historical case. The same method can be applied to development corpora from other periods and countries, opening them to comparative readings; beyond development, it can be used for the relational analysis of knowledge, expertise and decision-making in fields such as health, the environment, education and infrastructure. One of the directions the project proposed was to turn the actor-network infrastructure it built into an accessible, interactive visual platform — this repository and the maps in it are the concrete realisation of that proposal.</p>
+<p>The method also carries an implication for policy analysis: the approach tested here assesses the effect of a policy not through causality between fixed variables but by tracing the relations among actors, institutions, documents and objects. This relational view offers a basis for reading not only 1945–1950 Türkiye but also contemporary development and policy processes in a context-sensitive way.</p>
+<h2 id="dissemination-and-impact">Dissemination and impact</h2>
+<p>The research findings have been tested in international academic forums: the paper “A ‘Good Neighbor’ for the Middle East: Constructing Türkiye as a Development Mediator in the Early Cold War” was accepted as a full paper at the ICRP: Middle East conference and published in its proceedings; “ECA and European Recovery in Türkiye (1945–1950): The Limits of Alternative Development Finance” was presented at the Tensions of Europe conference held in the Netherlands; the paper “Black-Boxing Development: Documentary Infrastructure, Relational Coding, and the Turkish Laboratory of the Early Cold War” was accepted for the Society for Social Studies of Science (4S) conference in Toronto, where it will be presented in October. A panel proposal based on the findings has been submitted to the 5th National Political Science Congress of the Turkish Political Science Association (Çukurova University, 19–20 September 2026); an article on the Mercury–Medioli financing initiative is also being prepared for publication in a peer-reviewed, indexed journal.</p>
+<h2 id="citation">Citation</h2>
+<p>Hayal, O., Ağcan, M. A., Kahraman, M. S. and Erken, A. <em>Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek: Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)</em> [Building Development in Postwar Türkiye: Mapping Development Policies and Transnational Actor-Networks (1945–50)]. TÜBİTAK 1002-A, Project No: 324K664. Version 1.0.0 (21 July 2026). Licence: CC BY 4.0.</p>
+<h2 id="licence">Licence</h2>
+<p>The text and maps in this repository are shared under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a> licence: provided that appropriate credit is given, they may be copied, distributed, adapted and used in derivative works, including for commercial purposes.</p>
+
+</div>
   </article>
 </div>
 <script>
@@ -246,13 +403,178 @@
   var btn = document.getElementById('themeBtn');
   if (!btn) return;
   function current(){ return document.documentElement.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
-  function setIcon(){ btn.textContent = current() === 'dark' ? '☀' : '☾'; }
+  function setIcon(){ btn.textContent = current() === 'dark' ? 'açık' : 'koyu'; }
   setIcon();
   btn.addEventListener('click', function(){
     var next = current() === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     try { localStorage.setItem('theme', next); } catch(e){}
     setIcon();
+  });
+})();
+</script>
+<script>
+(function(){
+  var UI = {"Açık/koyu tema":"Light/dark theme","koyu":"dark","açık":"light","← Ana Sayfa":"← Home","⛶ Tam Ekran":"⛶ Fullscreen","⛶ Çık (Esc)":"⛶ Exit (Esc)","tümü":"all","hiçbiri":"none","tümünü göster":"show all","Ara":"Search","düğüm adı…":"node name…","Düğüm tipi":"Node type","Ağırlık eşiği":"Weight threshold","tekrar sayısı bu değerin altındaki kenarlar gizlenir":"edges with a repeat count below this value are hidden","Bir düğüme veya kenara tıklayın.":"Click a node or an edge.","graf":"graph","tablo":"table","Kaynak":"Source","İlişki":"Relation","Hedef":"Target","Küme":"Cluster","Kayıt":"Record","Kademe":"Tier","Saha":"Field","Belge":"Document","Mekanizma":"Mechanism","Code label":"Code label","İnsan / İnsan-dışı":"Human / Non-human","Yalnız sahalar-arası kenarlar":"Cross-field edges only","düğüm tipi dağılımı":"node type distribution","yıla göre kenar dağılımı":"edges by year","sürükle tuval · tekerlek/pinch ile yakınlaştır":"drag canvas · wheel/pinch to zoom","sürükle · tekerlek/pinch ile yakınlaştır":"drag · wheel/pinch to zoom","Aktör Ağı — Etkileşimli Harita":"Actor Network — Interactive Map","Küme Ağı — Etkileşimli Harita":"Cluster Network — Interactive Map","Maddi Müdahale Sahaları Ağı":"Network of Material Intervention Fields","Önerme Ailesi Ağ Haritası":"Proposition-Family Network Map","Önerme hiyerarşisi — P1 · P2 · P3":"Proposition hierarchy — P1 · P2 · P3","aktör-ağ haritası · tam külliyat · rapor §3.9, §4.2":"actor-network map · full corpus · report §3.9, §4.2","aktör-ağ haritası · küme düzeyi · rapor §3.9.2, §4.3":"actor-network map · cluster level · report §3.9.2, §4.3","aktör-ağ haritası · rapor §4.3, §5.4":"actor-network map · report §4.3, §5.4","aktör-ağ haritası · önerme ailesi · rapor §3.8, §4.1":"actor-network map · proposition family · report §3.8, §4.1","Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek":"Building Development in Postwar Türkiye","Kalkınma Politikalarının ve Ulus-Aşırı Aktör-Ağların Haritalanması (1945–50)":"Mapping Development Policies and Transnational Actor-Networks (1945–50)","Etkileşimli haritalar":"Interactive maps","Yöntem — Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek":"Method — Building Development in Postwar Türkiye","Savaş Sonrası Türkiye'de Kalkınmayı İnşa Etmek — Aktör-Ağ Haritaları":"Building Development in Postwar Türkiye — Actor-Network Maps","HARİTAYI AÇ →":"OPEN MAP →","Aktör Ağı önizlemesi":"Actor Network preview","Küme Ağı önizlemesi":"Cluster Network preview","Önerme Ağı önizlemesi":"Proposition Network preview","Maddi Müdahale Sahaları Ağı önizlemesi":"Network of Material Intervention Fields preview","Aktör Ağı":"Actor Network","Küme Ağı":"Cluster Network","Önerme Ağı":"Proposition Network",") sahalar-arası kenar":") cross-field edges","Tarla, makine, çiftçi":"Field, machine, farmer","Yol, zemin, şantiye":"Road, ground, construction site","Su, enerji, maden, emek":"Water, energy, mining, labour","Kredi, dış yardım, teknik cihaz":"Credit, foreign aid, technical device","Kurum, Kişi, Kolektif aktör":"Institution, Person, Collective actor","İnsan aktör":"Human actor","Nesne, altyapı, teknik araç, finansal araç, belge, sorun":"Object, infrastructure, technical instrument, financial instrument, document, problem","İnsan-dışı nesne":"Non-human object","benzersiz düğüm":"unique nodes","önerme / alt-önerme":"propositions / sub-propositions","Aktörler":"Actors","· Süreçler":"· Processes","· Nesneler / Araçlar":"· Objects / Instruments","Süreçler":"Processes","Nesneler / Araçlar":"Objects / Instruments","birden fazla önerme ailesinde geçer":"appears in more than one proposition family","Devlet, idare, hukuk ve piyasa düzeni":"State, administration, law and market order","Uluslararası yardım, jeopolitik ve Soğuk Savaş":"International aid, geopolitics and the Cold War","Sanayi, maden ve enerji":"Industry, mining and energy","Tarım, toprak ve köy ekonomisi":"Agriculture, land and village economy","Tarımsal teknik ve makine":"Agricultural technique and machinery","Altyapı, ulaşım ve haberleşme":"Infrastructure, transport and communications","Finans, kredi, döviz ve bütçe":"Finance, credit, foreign exchange and budget","Uzmanlık, rapor, istatistik ve plan":"Expertise, reports, statistics and planning","Dış ticaret, fiyat ve pazarlama":"Foreign trade, prices and marketing","Emek, nüfus, sağlık ve eğitim":"Labour, population, health and education","Basın, yayın ve kamuoyu":"Press, publishing and public opinion","Coğrafya, mekân ve bölgeler":"Geography, space and regions","Kurum":"Institution","Kişi":"Person","Kolektif aktör":"Collective actor","Finansal araç":"Financial instrument","Teknik nesne":"Technical object","Altyapı nesnesi":"Infrastructure object","Süreç / pratik":"Process / practice","Belge / yazıt nesnesi":"Document / inscription object","Sorun nesnesi":"Problem object","Doğal / maddi varlık":"Natural / material entity","Coğrafi birim":"Geographic unit","İlgilendirme Cihazları":"Interessement Devices","Görevlendirme ve Uygulama Zinciri":"Enrolment and Implementation Chain","Stabilizasyon, Dolaşım ve Kara Kutulaşma":"Stabilisation, Circulation and Black-Boxing","Sözcülük, Temsil ve Meşrulaştırma":"Spokespersonship, Representation and Legitimation","İlgilendirme":"Interessement","Çıkar Hizalama":"Interest Alignment","Maddi-Teknik Uygulama ve Altyapılaştırma":"Material-Technical Implementation and Infrastructuring","Engel, Tehdit ve Sınırlama":"Obstacle, Threat and Constraint","Alternatif Bağların Kesilmesi":"Severing of Alternative Ties","İnsan-Dışı Muhalefet":"Non-Human Opposition","Direnç ve Kırılma":"Resistance and Rupture","Kurumsal ve Finansal Direnç":"Institutional and Financial Resistance","Problematizasyon":"Problematisation","Zorunlu Geçiş Noktası ve Programatik Öncelik":"Obligatory Passage Point and Programmatic Priority","Yazıt Aygıtı ve Çeviri":"Inscription Device and Translation","Aktör Kimliği ve Rol İnşası":"Actor Identity and Role Construction","Müzakere, Temas ve Diplomatik Bağlantı":"Negotiation, Contact and Diplomatic Connection","düğüm":"nodes","saha":"fields","Sorunsallaştırma":"Problematisation","Direnç ve kırılma":"Resistance and rupture","Görevlendirme":"Enrolment","Yazıtlaştırma, seferberlik ve stabilizasyon":"Inscription, mobilisation and stabilisation","yoğun görünüm — filtreleyerek daraltın":"dense view — narrow it down with filters","saç topu":"hairball","alt-önerme belirtilmemiş":"sub-proposition not specified","diğer":"other","kaynak belge":"source documents","kenar ·":"edges ·","Önermenin kapsamı":"Scope of the proposition","çapraz önerme:":"cross-proposition:","(yalnız sahalar-arası)":"(cross-field only)","sahalar-arası":"cross-field","insan aktör":"human actor","insan-dışı nesne":"non-human object","insan":"human","— ailenin bütünü (kendi + tüm alt kırılımları)":"— the whole family (itself + all sub-divisions)","— alt-önermeye daraltılamamış kenarlar":"— edges that could not be narrowed to a sub-proposition","küme":"clusters","kenar":"edges","Çekirdek (≥ 50 ilişki)":"Core (≥ 50 relations)","Süper-Hub (20–49 ilişki)":"Super-Hub (20–49 relations)","Hub (10–19 ilişki)":"Hub (10–19 relations)","Üst Bağlayıcı (5–9 ilişki)":"Upper Connector (5–9 relations)","Bağlayıcı (3–4 ilişki)":"Connector (3–4 relations)","Az Aktif (2 ilişki)":"Low-Activity (2 relations)","Çevre (1 ilişki)":"Periphery (1 relation)","Çekirdek":"Core","Hub":"Hub","Süper-Hub":"Super-Hub","Üst Bağlayıcı":"Upper Connector","Bağlayıcı":"Connector","Az Aktif":"Low-Activity","Çevre":"Periphery","küme (hepsi temsilli)":"clusters (all represented)","düğüm ·":"nodes ·","kenar görünüyor":"edges shown","teshis_eder":"diagnoses","sorunsallastirir":"problematises","adlandirir":"names","gorunur_kilar":"renders visible","rol_yukler":"assigns a role to","konumlandirir":"positions","temsilci_kilar":"appoints as representative of","sozcusu_kilar":"makes spokesperson of","engeller":"prevents","kisitlar":"constrains","sinirlar":"delimits","zayiflatir":"weakens","bozar":"disrupts","geciktirir":"delays","yuk_bindirir":"burdens","zorunlu_kilar":"makes indispensable to","sart_kosar":"makes conditional on","onceliklendirir":"prioritises","baglar":"links","ilgisine_ceker":"interests","seferber_eder":"mobilises","devreye_sokar":"puts into service","yonlendirir":"directs","finanse_eder":"finances","temin_eder":"supplies","aracilik_eder":"mediates for","mumkun_kilar":"enables","kolaylastirir":"facilitates","entegre_eder":"integrates","dislar":"excludes","ikame_eder":"substitutes for","gecersizlestirir":"invalidates","koparir":"severs","tasfiye_eder":"abolishes","uyumlandirir":"aligns","bagdastirir":"reconciles","uzlastirir":"brokers compromise between","gorevlendirir":"assigns a task to","yetkilendirir":"authorises","sorumlu_kilar":"makes responsible for","uygular":"implements","duzenler":"regulates","koordine_eder":"coordinates","temas_eder":"makes contact with","gorusur":"meets with","muzakere_eder":"negotiates","bilgi_ister":"requests information from","bilgi_verir":"informs","teyit_ister":"requests confirmation from","insaa_eder":"constructs","tesis_eder":"establishes","isletir":"operates","nakleder":"transports","makinelestirir":"mechanises","sayisallastirir":"quantifies","olculebilir_kilar":"makes measurable","hesaplanabilir_kilar":"makes calculable","karsilastirir":"compares","tahmin_eder":"forecasts","tekniklestirir":"renders technical","nesnellestirir":"objectifies","sabitler":"fixes in place","temsil_eder":"represents","sozcusu_olur":"becomes spokesperson of","mesrulastirir":"legitimises","gerekcelendirir":"justifies","dolasima_sokar":"puts into circulation","tekrarlar":"repeats","stabilize_eder":"stabilises","kurumsallastirir":"institutionalises","kara_kutulastirir":"black-boxes","maddilestirir":"materialises","itiraz_eder":"objects to","reddeder":"rejects","direnir":"resists","sorgular":"questions","supheye_dusurur":"casts doubt on","maddi_direnc_gosterir":"offers material resistance to","ariza_yaratir":"causes breakdown in","surtunme_yaratir":"creates friction for","yetersiz_kalir":"proves inadequate for","guven_sorunu_yaratir":"creates a trust problem for","kurumsal_kosula_baglar":"subjects to institutional conditions","garanti_etmez":"does not guarantee","kapasitesini_asar":"exceeds the capacity of","mali_yuk_olusturur":"creates a financial burden for","Türkiye yüksek potansiyele sahip ancak azgelişmiş bir tarım toplumudur.":"Türkiye has high potential but is an underdeveloped agrarian society.","Türkiye yüksek potansiyele sahiptir":"Türkiye has high potential","Bu aile, Türkiye’nin kaynak, emek, tarım, enerji, maden, dış bağlantı ve teknik bilgi bakımından kalkınmaya çevrilebilir imkânlara sahip olarak kurulmasını kapsar.":"This family covers the construction of Türkiye as possessing possibilities that can be converted into development in terms of resources, labour, agriculture, energy, mining, external connections and technical knowledge.","Türkiye doğal kaynak ve maden potansiyeline sahiptir.":"Türkiye has natural-resource and mineral potential.","maden, kömür, linyit, krom, bakır, demir, petrol, yeraltı kaynakları":"mining, coal, lignite, chrome, copper, iron, petroleum, underground resources","Türkiye su, enerji ve hidrolik potansiyele sahiptir.":"Türkiye has water, energy and hydraulic potential.","su kuvvetleri, elektrik, sulama, baraj, hidroelektrik":"water power, electricity, irrigation, dams, hydroelectricity","Türkiye tarımsal üretim ve hammadde potansiyeline sahiptir.":"Türkiye has agricultural-production and raw-material potential.","pamuk, hububat, tütün, hayvancılık, gıda, sanayi hammaddesi, ihracat ürünü":"cotton, grain, tobacco, livestock, food, industrial raw materials, export crops","Türkiye insan, emek ve eğitilebilir nüfus potansiyeline sahiptir.":"Türkiye has human, labour and trainable-population potential.","köylü emeği, işgücü, teknik eleman, uzman yetiştirme, nüfus kapasitesi":"peasant labour, workforce, technical personnel, training of experts, population capacity","Türkiye dış sermaye, kredi, yardım ve uzmanlıkla açığa çıkarılabilir kalkınma potansiyeline sahiptir.":"Türkiye has a development potential that can be unlocked through foreign capital, credit, aid and expertise.","Amerikan yardımı, Dünya Bankası, Eximbank, yabancı uzman, teknik yardım, dış sermaye":"American aid, World Bank, Eximbank, foreign experts, technical assistance, foreign capital","Türkiye’nin potansiyeli ancak tetkik, istatistik, harita, rapor ve planlama ile görünür hale getirilebilir.":"Türkiye’s potential can only be made visible through survey, statistics, maps, reports and planning.","harita, kadastro, istatistik, uzman raporu, ekonomik tetkik, teknik inceleme":"maps, cadastral survey, statistics, expert reports, economic survey, technical inquiry","Türkiye azgelişmiştir":"Türkiye is underdeveloped","Bu aile, Türkiye’nin eksiklik, gerilik, verimsizlik, yetersiz sermaye, bürokrasi, devletçilik, yanlış yatırım, özel teşebbüs zayıflığı, ölçme eksikliği ve dış rekabet sorunları üzerinden kurulmasını kapsar.":"This family covers the construction of Türkiye through problems of deficiency, backwardness, inefficiency, inadequate capital, bureaucracy, etatism (devletçilik), misdirected investment, weak private enterprise, lack of measurement and foreign competition.","Türkiye düşük hayat seviyesi, refah ve gelir sorunu yaşamaktadır.":"Türkiye suffers from a low standard of living, welfare and income.","yoksulluk, düşük tüketim, düşük gelir, hayat standardı, geçim şartları":"poverty, low consumption, low income, standard of living, subsistence conditions","Türkiye düşük üretkenlik, randıman ve verimlilik sorunu yaşamaktadır.":"Türkiye suffers from low productivity, yield and efficiency.","düşük istihsal, düşük randıman, atıl emek, verimsiz işletme, düşük kapasite":"low output, low yield, idle labour, inefficient enterprise, low capacity","Türkiye teknik araç, makine ve altyapı bakımından geridir.":"Türkiye is backward in technical equipment, machinery and infrastructure.","makine yokluğu, yol eksikliği, sulama yetersizliği, ulaştırma, enerji, sağlık/eğitim altyapısı":"lack of machinery, lack of roads, inadequate irrigation, transport, energy, health/education infrastructure","Türkiye sermaye, kredi, döviz ve ödeme kapasitesi darboğazıyla sınırlıdır.":"Türkiye is constrained by bottlenecks in capital, credit, foreign exchange and payment capacity.","sermaye darlığı, kredi ihtiyacı, dış borç, döviz, ödeme gücü, garanti":"capital scarcity, need for credit, foreign debt, foreign exchange, ability to pay, guarantees","Türkiye planlama, koordinasyon, proje seçimi ve yatırım önceliği sorunları yaşamaktadır.":"Türkiye has problems of planning, coordination, project selection and investment priority.","koordine edilmemiş projeler, yanlış öncelik, planlama grubu, yatırım sıralaması":"uncoordinated projects, wrong priorities, planning group, investment sequencing","Türkiye’de devletçilik uygulaması, zorunlu başlangıç işlevinden çıkarak pahalı, verimsiz ve aşırı geniş bir devlet işletmeciliğine dönüşebilmektedir.":"In Türkiye, the practice of etatism (devletçilik) can turn from a necessary starting function into a costly, inefficient and excessively broad state enterprise system.","devletçilik, devlet işletmeleri, israf, inhisarcılık, devlet müdahalesi, özel teşebbüs alanının daralması":"etatism, state enterprises, waste, monopolism, state intervention, shrinking of the private-enterprise sphere","Türkiye’de bürokrasi, mesuliyetsizlik ve düzensiz çalışma sistemi ekonomik verimliliği düşürmektedir.":"Bureaucracy, irresponsibility and disorderly work practices lower economic efficiency in Türkiye.","bürokrasi, idari gecikme, mesai verimsizliği, keyfi karar, sorumluluk yokluğu":"bureaucracy, administrative delay, inefficient working hours, arbitrary decisions, absence of responsibility","Türkiye’de özel teşebbüs, güvenlik eksikliği, vergi sistemi, kontrol rejimleri, siyasal kararsızlık ve ananevi düşünce tarzları nedeniyle gelişememektedir.":"In Türkiye, private enterprise fails to develop because of insecurity, the tax system, control regimes, political instability and traditional modes of thought.","özel teşebbüs, keyfi müdahale, garanti, güven, vergi, kontrol, siyasal belirsizlik, alışkanlık":"private enterprise, arbitrary intervention, guarantees, trust, taxes, controls, political uncertainty, habit","Türkiye’de sanayileşme, tarım, ulaştırma, enerji, sermaye ve insan unsurlarıyla birlikte planlanmadığında yanlış önceliklere ve verimsiz yatırımlara yol açmaktadır.":"In Türkiye, industrialisation that is not planned together with agriculture, transport, energy, capital and human factors leads to wrong priorities and inefficient investment.","sanayileşme, Karabük, gösterişli tesis, ağır sanayi, hafif sanayi, hammadde, enerji, pazar":"industrialisation, Karabük, showy facilities, heavy industry, light industry, raw materials, energy, market","Türkiye yüksek maliyet, kalite, fiyat, standardizasyon ve ticari istihbarat sorunları nedeniyle dış piyasaya uyum sağlayamamaktadır.":"Türkiye cannot adapt to the foreign market because of problems of high cost, quality, price, standardisation and commercial intelligence.","ihracat, dış ticaret, maliyet, kalite, fiyat, standardizasyon, reklam, ticari bilgi":"exports, foreign trade, cost, quality, price, standardisation, advertising, commercial information","Türkiye’nin ölçme, sayma, kadastro, istatistik ve teknik bilgi eksikliği kalkınma nesnesinin kurulmasını zorlaştırmaktadır.":"Türkiye’s lack of measurement, counting, cadastral survey, statistics and technical knowledge makes it harder to construct development as an object.","tarım sayımı, kadastro, harita, istatistik, hesap, maliyet, envanter, teknik tetkik":"agricultural census, cadastral survey, maps, statistics, accounts, costs, inventory, technical survey","Türkiye tarım toplumudur":"Türkiye is an agrarian society","Bu aile, Türkiye’nin köylü çoğunluğu, ziraat merkeziliği, geçimlik üretim, kırsal izolasyon, ilkel teknik, hayvan gücü, kanaatkârlık, pazar yokluğu, kırsal yaşam koşulları ve tarımsal modernleşme üzerinden kurulmasını kapsar.":"This family covers the construction of Türkiye through its peasant majority, the centrality of agriculture, subsistence production, rural isolation, primitive technique, animal power, frugal contentment (kanaatkârlık), absence of markets, rural living conditions and agricultural modernisation.","Türkiye ziraat memleketidir ve köylü-çiftçi çoğunluk üzerinden tanımlanır.":"Türkiye is an agricultural country, defined through its peasant-farmer majority.","ziraat memleketi, köylü cemiyeti, çiftçi aileleri, tarımsal nüfus":"agricultural country, peasant society, farming families, agrarian population","Köylü üretimi geçimlik, düşük nakdî gelirli ve pazara zayıf bağlıdır.":"Peasant production is subsistence-oriented, low in cash income and weakly tied to the market.","aile ihtiyacı, fazla üretmeme, mübadele dışılık, düşük nakdî gelir, pazar yokluğu":"family needs, not producing a surplus, being outside exchange, low cash income, absence of markets","Türk ziraatinin geriliği kara sapan, öküz gücü, ilkel aletler ve makine eksikliğinde görünür hale gelir.":"The backwardness of Turkish agriculture becomes visible in the wooden plough (karasaban), ox power, primitive tools and lack of machinery.","kara sapan, tahta sapan, öküz, pulluk, mibzer, traktör, makineleşme":"wooden plough, ox, plough, seed drill, tractor, mechanisation","Köylünün kanaatkârlığı ve düşük üretim davranışı yol, pazar, kredi, vergi korkusu, teknik araç eksikliği ve geçimlik üretim koşullarıyla birlikte kurulmaktadır.":"The peasant’s frugal contentment (kanaatkârlık) and low-output behaviour are produced together with roads, markets, credit, fear of taxation, lack of technical equipment and subsistence-production conditions.","kanaatkârlık, şark tevekkülü, vergi tahsildarı, fazla çalışmama, pazar yokluğu, yol yokluğu":"frugal contentment (kanaatkârlık), “Oriental fatalism” (şark tevekkülü), tax collector, not working beyond need, absence of markets, absence of roads","Tarımsal-kırsal yapı düşük sağlık, hijyen, konut, beden ve çevre koşullarıyla tanımlanır.":"The agrarian-rural structure is defined by poor health, hygiene, housing, bodily and environmental conditions.","köy evi, su, hastalık, doktor yokluğu, hijyen, insan-hayvan birlikteliği":"village house, water, disease, absence of doctors, hygiene, human–animal cohabitation","Tarımsal üretimin değerlenmesi yol, pazar, nakliye, satış kredisi, silo, liman ve dış ticaret bağlantılarına bağlıdır.":"Realising the value of agricultural output depends on roads, markets, transport, sales credit, silos, ports and foreign-trade links.","yol, pazar, nakliye, silo, liman, satış kredisi, ihracat":"roads, markets, transport, silos, ports, sales credit, exports","Tarımsal kalkınma sanayi, döviz, iç pazar ve genel kalkınmanın ön şartı olarak kurulmaktadır.":"Agricultural development is constructed as the precondition of industry, foreign exchange, the domestic market and development in general.","ziraî gelir, sanayi malları için talep, hammadde, döviz, ihracat, iç pazar":"agricultural income, demand for industrial goods, raw materials, foreign exchange, exports, domestic market","Tarımda modernleşme makine, teknik bilgi, okul, uzman, kredi, kooperatif, sulama ve istatistikle sağlanmalıdır.":"Modernisation in agriculture must be achieved through machinery, technical knowledge, schools, experts, credit, cooperatives, irrigation and statistics.","traktör, makine, ziraat okulu, uzman, kooperatif, Ziraat Bankası, sulama, tarım sayımı":"tractor, machinery, agricultural school, experts, cooperatives, Ziraat Bank, irrigation, agricultural census","Arazi, küçük işletme, topraklandırma ve çiftçi ailesi tarımsal kalkınmanın temel toplumsal birimleri olarak kurulmaktadır.":"Land, small holdings, land allocation (topraklandırma) and the farming family are constructed as the basic social units of agricultural development.","topraklandırma, küçük işletme, çiftçi ailesi, arazi, köylü mülkiyeti":"land allocation (topraklandırma), small holdings, farming family, land, peasant ownership","Tarım toplumunun dönüştürülmesi yalnız üretim artışı değil, köylünün bilgi, alışkanlık, çalışma düzeni ve piyasa ilişkilerinin yeniden kurulmasıdır.":"Transforming the agrarian society is not only an increase in production but the re-making of the peasant’s knowledge, habits, work routines and market relations.","teknik eğitim, köylü davranışı, çalışma alışkanlığı, piyasa ilişkisi, kredi disiplini":"technical education, peasant behaviour, work habits, market relations, credit discipline"}, PATTERNS = [["^1 düğüm$","1 node"],["^1 kenar$","1 edge"],["^1 ilişki$","1 relation"],["^1 saha$","1 field"],["^Aktörler: ([\\d.,]+)$","Actors: $1"],["^Süreçler: ([\\d.,]+)$","Processes: $1"],["^Nesneler / Araçlar: ([\\d.,]+)$","Objects / Instruments: $1"],["^([\\d.,]+) düğüm · ([\\d.,]+) kenar$","$1 nodes · $2 edges"],["^([\\d.,]+) düğüm$","$1 nodes"],["^([\\d.,]+) kenar$","$1 edges"],["^Kaynak: ([^·]+)$","Source: $1"],["^önerme tanımları: ([^·]+)$","proposition definitions: $1"],["^(.+\\.py) ile üretildi\\.$","generated with $1."],["^küme başına pay: toplam ağırlığın ([\\d.,]+%)'i \\(alt sınır (\\d+), üst sınır (\\d+)\\)$","share per cluster: $1 of total weight (lower bound $2, upper bound $3)"],["^saha başına pay: toplam ağırlığın ([\\d.,]+%)'i \\(alt sınır (\\d+), üst sınır (\\d+)\\)$","share per field: $1 of total weight (lower bound $2, upper bound $3)"],["^ilişki: ([^·]+)$","relation: {1}"],["^kayıt: ([^·]+)$","record: $1"],["^belge: ([^·]+)$","document: $1"],["^derece:? (\\d+)$","degree: $1"],["^küme: ([^·]+)$","cluster: {1}"],["^kademe: ([^·]+)$","tier: {1}"],["^saha: ([^·]+)$","field: {1}"],["^süreç: ([^·]+)$","process: {1}"],["^mekanizma: ([^·]+)$","mechanism: {1}"],["^çapraz önerme: (.+)$","cross-proposition: $1"],["^çapraz önerme — bu düğüm ayrıca şurada da geçer: (.+)$","cross-proposition — this node also appears in: {1}"],["^bu düğümün görünen bağlantı sayısı: (\\d+)$","number of visible links of this node: $1"],["^(\\d+) düğümden en yüksek dereceli (\\d+) tanesi gösteriliyor$","showing the $2 highest-degree nodes out of $1"],["^(.+): (\\d+) kenar$","{1}: $2 edges"],["^\\((.+), sahalar-arası\\)$","({1}, cross-field)"],["^(\\d+) kenar ·$","$1 edges ·"],["^(\\d+) saha$","$1 fields"],["^≥ ?(\\d+) ilişki$","≥ $1 relations"],["^(\\d+)[–-](\\d+) ilişki$","$1–$2 relations"],["^(\\d+) ilişki$","$1 relations"]], BLOCKS = {}, SUB = {"karayolu":"highway","araştırma / inceleme":"research / survey","baraj":"dam","demiryolu":"railway","depo veya silo":"warehouse or silo","elektrik şebekesi":"electricity grid","enerji santrali":"power plant","eğitim tesisi":"educational facility","haberleşme altyapısı":"communications infrastructure","köprü":"bridge","liman":"port","sanayi tesisi":"industrial plant","sağlık tesisi":"health facility","sulama sistemi":"irrigation system","ulaştırma ağı":"transport network","üretim":"production","uzman raporu":"expert report","diplomatik yazışma":"diplomatic correspondence","gazete yazısı":"newspaper article","istatistik / cetvel":"statistics / table","kanun veya düzenleme metni":"law or regulatory text","plan / program":"plan / programme","proje etüdü":"project study","resmi yazışma":"official correspondence","tutanak":"minutes","bölge":"region","tarımsal bölge":"agricultural region","uluslararası bölge":"international region","ülke":"country","şehir":"city","toprak":"soil / land","bitkisel ürün":"crop","hammadde":"raw material","hastalık veya zararlı":"disease or pest","hayvansal varlık":"livestock","iklim koşulu":"climatic condition","maden kaynağı":"mineral resource","su":"water","kredi":"credit","borç / istikraz":"debt / loan","bütçe / tahsisat":"budget / appropriation","döviz / kambiyo":"foreign exchange","fiyat / ücret":"price / wage","garanti / teminat":"guarantee / collateral","hibe veya fon":"grant or fund","karşılık fonu":"counterpart fund","sermaye":"capital","vergi":"tax","uzman":"expert","akademisyen":"academic","bakan":"minister","bürokrat":"bureaucrat","diplomat":"diplomat","gazeteci-yazar":"journalist-writer","girişimci / iş insanı":"entrepreneur / businessperson","iktisatçı":"economist","mühendis":"engineer","siyasetçi":"politician","bürokrasi":"bureaucracy","işçiler":"workers","kamuoyu":"public opinion","köylüler":"peasants","mükellefler":"taxpayers","sanayiciler":"industrialists","siyasi muhalefet":"political opposition","toprak sahipleri":"landowners","tüccarlar":"merchants","uzmanlar":"experts","vasıflı işçiler":"skilled workers","yabancı yatırımcılar":"foreign investors","çiftçiler":"farmers","özel teşebbüs":"private enterprise","devlet kurumu":"state institution","araştırma kurumu":"research institution","askeri kurum":"military institution","bakanlık":"ministry","finans kurumu":"financial institution","inşaat firması":"construction firm","kamu bankası":"public bank","kamu iktisadi kuruluşu":"state economic enterprise","oda veya birlik":"chamber or association","siyasi parti":"political party","uluslararası kuruluş":"international organisation","yabancı hükümet":"foreign government","yardım kurumu":"aid agency","özel şirket":"private company","darlık":"scarcity","azgelişmişlik":"underdevelopment","belirsizlik":"uncertainty","bilgi eksikliği":"lack of information","darboğaz":"bottleneck","dengesizlik":"imbalance","düzensizlik":"disorder","eksiklik":"deficiency","geri kalmışlık":"backwardness","güven sorunu":"trust problem","istikrarsızlık":"instability","izolasyon":"isolation","kalitesizlik / standardizasyon sorunu":"poor quality / standardisation problem","koordinasyon sorunu":"coordination problem","pahalılık / maliyet":"high prices / cost","politika rejimi":"policy regime","risk / tehdit":"risk / threat","verimsizlik":"inefficiency","yetersizlik":"inadequacy","bakım / onarım":"maintenance / repair","denetim / düzenleme":"oversight / regulation","devalüasyon / para süreci":"devaluation / monetary process","eğitim / yayım":"education / extension","finansman pratiği":"financing practice","ihracat":"exports","iktisadi dönüşüm":"economic transformation","ithalat":"imports","nakliye / dolaşım":"transport / circulation","planlama":"planning","rasyonelleştirme":"rationalisation","standartlaştırma":"standardisation","tarımsal dönüşüm":"agricultural transformation","teknik dönüşüm":"technical transformation","yapısal dönüşüm":"structural transformation","yardım programı":"aid programme","yatırım":"investment","tarım makinesi":"agricultural machine","demiryolu malzemesi":"railway equipment","enerji ekipmanı":"energy equipment","genel makine":"general machinery","maden ekipmanı":"mining equipment","sanayi makinesi":"industrial machinery","teknik girdi":"technical input","ulaşım aracı":"means of transport","yedek parça":"spare part","yol makinesi":"road-building machine","ziraat aleti":"agricultural implement"};
+  var RX = PATTERNS.map(function(p){ return [new RegExp(p[0]), p[1]]; });
+  var ATTRS = ['title','aria-label','placeholder','alt'];
+  var lang = 'tr', busy = false, missing = {};
+  var textOrig = new WeakMap(), attrOrig = new WeakMap(), blockOrig = new WeakMap();
+  function norm(s){ return s.replace(/\s+/g,' ').trim(); }
+  var TRCH = /[ÇĞİÖŞÜçğıöşü]/;
+  function subEn(k){
+    if (Object.prototype.hasOwnProperty.call(SUB, k)) return SUB[k];
+    var kl = k.charAt(0).toLocaleLowerCase('tr') + k.slice(1);        // Karayolu → karayolu
+    return Object.prototype.hasOwnProperty.call(SUB, kl) ? SUB[kl] : null;
+  }
+  function has(k){ return Object.prototype.hasOwnProperty.call(UI, k); }
+  // t(): çevrilmiş dizge ya da null. Sırayla: birebir → kalıp ({n}: n. grubu özyinelemeli çevir)
+  // → " · " parçaları → "(...)" → " + " birleşikleri → ", " listeleri.
+  function t(k){
+    if (has(k)) return UI[k];
+    if (k.indexOf(' · ') > 0){
+      var ps = k.split(' · '), ch = false, out = ps.map(function(p){ var c = t(p); if (c !== null){ ch = true; return c; } return p; });
+      if (ch) return out.join(' · ');
+    }
+    for (var i=0;i<RX.length;i++){
+      var m = RX[i][0].exec(k);
+      if (m){
+        return RX[i][1].replace(/\$(\d)|\{(\d)\}/g, function(_, raw, tr){
+          if (raw) return m[+raw];
+          var v = m[+tr], c = t(v); return c === null ? v : c;
+        });
+      }
+    }
+    var pm = /^\((.+)\)$/.exec(k);
+    if (pm){
+      var ci = t(pm[1]); if (ci !== null) return '(' + ci + ')';
+      var cx = pm[1].indexOf(', ');       // "(tip, alt tür)": alt tür yalnız bu bağlamda SUB'dan çevrilir
+      if (cx > 0){
+        var ty = t(pm[1].slice(0, cx)), sb = subEn(pm[1].slice(cx + 2));
+        if (ty !== null && sb !== null) return '(' + ty + ', ' + sb + ')';
+      }
+    }
+    if (k.indexOf(' + ') > 0){            // "Küme A + Küme B" birleşik etiketleri
+      var pp = k.split(' + '), o2 = [];
+      for (var j=0;j<pp.length;j++){ var c2 = t(pp[j]); if (c2 === null){ o2 = null; break; } o2.push(c2); }
+      if (o2) return o2.join(' + ');
+    }
+    if (k.indexOf(', ') > 0){             // "A, B, C" listeleri (her parça çevrilebilir ya da Türkçe-harfsiz kimlik)
+      var cp = k.split(', '), o3 = [], any = false;
+      for (var q=0;q<cp.length;q++){
+        var c3 = t(cp[q]);
+        if (c3 !== null){ any = true; o3.push(c3); }
+        else if (!TRCH.test(cp[q])) o3.push(cp[q]);
+        else { o3 = null; break; }
+      }
+      if (o3 && any) return o3.join(', ');
+    }
+    return null;
+  }
+  function tr2en(s){
+    var k = norm(s);
+    if (!k) return null;
+    var r = t(k);
+    if (r === null && TRCH.test(k)) missing[k] = 1;
+    return r;
+  }
+  function inSkip(n){
+    for (var e = n.parentNode; e && e.nodeType === 1; e = e.parentNode){
+      var t = e.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEXTAREA') return true;
+      if (e.hasAttribute && e.hasAttribute('data-no-i18n')) return true;
+    }
+    return false;
+  }
+  function doText(node){
+    if (inSkip(node)) return;
+    if (lang === 'en'){
+      var base = textOrig.has(node) ? textOrig.get(node) : node.nodeValue;
+      var en = tr2en(base);
+      if (en !== null){
+        if (!textOrig.has(node)) textOrig.set(node, base);
+        var lead = base.match(/^\s*/)[0], trail = base.match(/\s*$/)[0];
+        var out = lead + en + trail;
+        if (node.nodeValue !== out) node.nodeValue = out;
+      }
+    } else if (textOrig.has(node)){
+      node.nodeValue = textOrig.get(node); textOrig.delete(node);
+    }
+  }
+  function doAttrs(el){
+    var rec = attrOrig.get(el) || {};
+    ATTRS.forEach(function(a){
+      if (!el.hasAttribute(a)) return;
+      if (lang === 'en'){
+        var base = (a in rec) ? rec[a] : el.getAttribute(a);
+        var en = tr2en(base);
+        if (en !== null){ rec[a] = base; if (el.getAttribute(a) !== en) el.setAttribute(a, en); }
+      } else if (a in rec){ el.setAttribute(a, rec[a]); delete rec[a]; }
+    });
+    if (Object.keys(rec).length) attrOrig.set(el, rec); else attrOrig.delete(el);
+  }
+  function walk(root){
+    if (root.nodeType === 3){ doText(root); return; }
+    if (root.nodeType !== 1) return;
+    doAttrs(root);
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, null);
+    var n;
+    while ((n = w.nextNode())){ if (n.nodeType === 3) doText(n); else doAttrs(n); }
+  }
+  function doBlocks(){
+    document.querySelectorAll('[data-en]').forEach(function(el){   // satır içi çeviri: data-en="<html>"
+      if (lang === 'en'){
+        if (!blockOrig.has(el)) blockOrig.set(el, el.innerHTML);
+        el.innerHTML = el.getAttribute('data-en');
+      } else if (blockOrig.has(el)){ el.innerHTML = blockOrig.get(el); blockOrig.delete(el); }
+    });
+    Object.keys(BLOCKS).forEach(function(sel){
+      document.querySelectorAll(sel).forEach(function(el){
+        if (lang === 'en'){
+          if (!blockOrig.has(el)) blockOrig.set(el, el.innerHTML);
+          el.innerHTML = BLOCKS[sel];
+        } else if (blockOrig.has(el)){ el.innerHTML = blockOrig.get(el); blockOrig.delete(el); }
+      });
+    });
+  }
+  function apply(){
+    busy = true;
+    try {
+      doBlocks();
+      walk(document.body);
+      document.documentElement.setAttribute('lang', lang);
+      var t = document.querySelector('title');
+      if (t){ walk(t); }
+      var btn = document.getElementById('langBtn');
+      if (btn) btn.textContent = lang === 'en' ? 'TR' : 'EN';
+    } finally { mo.takeRecords(); busy = false; }
+  }
+  var mo = new MutationObserver(function(muts){
+    if (busy || lang !== 'en') return;
+    busy = true;
+    try {
+      muts.forEach(function(m){
+        if (m.type === 'characterData'){ textOrig.delete(m.target); doText(m.target); }
+        else if (m.type === 'attributes') doAttrs(m.target);
+        else m.addedNodes.forEach(function(n){ walk(n); });
+      });
+    } finally { mo.takeRecords(); busy = false; }
+  });
+  function setLang(l){
+    lang = l;
+    try { localStorage.setItem('lang', l); } catch(e){}
+    apply();
+  }
+  window.__i18nMissing = function(){ return Object.keys(missing); };
+  window.__setLang = setLang;
+  document.addEventListener('DOMContentLoaded', function(){
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch(e){}
+    var btn = document.getElementById('langBtn');
+    if (btn) btn.addEventListener('click', function(){ setLang(lang === 'en' ? 'tr' : 'en'); });
+    mo.observe(document.body, {childList:true, subtree:true, characterData:true,
+                               attributes:true, attributeFilter:ATTRS});
+    if (saved === 'en') setLang('en'); else apply();
   });
 })();
 </script>

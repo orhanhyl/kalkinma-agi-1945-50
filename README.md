@@ -159,9 +159,11 @@ Araştırma, aktör-ağ kuramına dayanır. Bu kurama göre "toplumsal" —devle
 kurum, sınıf gibi kategoriler— hazır bir zemin değildir; insan ve
 insan-dışı unsurlar arasındaki ilişkilerin her defasında yeniden ürettiği
 kırılgan bir birleşimdir. Bunun yöntemsel karşılığı **genel simetri
-ilkesidir** (Callon, 1984): bir aktörün —insan ya da insan-dışı, belge,
-teknoloji, kurum— özellikleri ve etkisi önceden verili değildir; ancak
-diğer aktörlerle kurduğu ilişkiler içinde ortaya çıkar. Kuramın merkezî
+ilkesidir** (Callon, 1984): insan ve insan-dışı aktörler —belge,
+teknoloji, kurum— aynı çözümleme diliyle betimlenir. Kuramın ilişkisel
+varlık anlayışı (Law, 2008) uyarınca bir aktörün özellikleri ve etkisi de
+önceden verili değildir; ancak diğer aktörlerle kurduğu ilişkiler içinde
+ortaya çıkar. Kuramın merkezî
 kavramı olan **çeviri (translation)**, heterojen aktörlerin çıkarlarının
 yeniden tanımlanarak ortak bir ağ etrafında hizalanma sürecidir ve dört
 aşamada işler: sorunsallaştırma, ilgilendirme (interessement), kayıt
@@ -252,8 +254,9 @@ Güncel master tabloda (`12_edges/11_edges.tsv`) **2.246 kodlanmış ilişki**, 
 
 ### Yöntemin özgünlüğü
 
-Aktör-ağ kuramının kendisi, geniş ölçekli bir tarihsel arşive doğrudan
-uygulanabilir bir yöntem sunmaz (Law, 2008): bir idari kararın zorunlu
+Aktör-ağ kuramı, hazır bir yöntemden çok bir duyarlılıklar ve çözümleme
+araçları ailesidir (krş. Law, 2008); geniş ölçekli bir tarihsel arşive
+doğrudan uygulanabilir bir yöntem sunmaz: bir idari kararın zorunlu
 geçiş noktası işlevi gördüğünü kuramsal düzeyde söylemek başka, on
 binlerce sayfalık belge içinde bu işlevi hangi ölçütlerle tespit
 edeceğini belirlemek başkadır. Bu projenin asıl yöntemsel katkısı da
@@ -262,7 +265,7 @@ belgeye ve pasaja geri izlenebildiği, denetlenebilir bir kodlama
 protokolüne çevirmek.
 
 Kalkınma söylemi üzerine yapılan çoğu çalışma, metin madenciliğinde
-**co-word / co-occurrence** yöntemlerine dayanır (Callon ve Courtial,
+**co-word / co-occurrence** yöntemlerine dayanır (Callon vd.,
 1983): terimlerin metinde birlikte geçme sıklığı, aralarında anlamlı bir
 ilişki olduğunun *belirleyici* kanıtı sayılır — önce sabit
 varlıklar/kategoriler varsayılır, sonra bunların birlikteliği ölçülür.
@@ -280,7 +283,7 @@ co-word/co-occurrence yalnızca **4. adımda, aday pasaj seçiminde
 ön-eleme aracı** olarak kullanılmıştır; hiçbir ilişki yalnızca birlikte
 geçme sıklığına dayanılarak kodlanmaz.
 
-Bunun yerine, aktör-ağ kuramının genel simetri ilkesinden — **bir
+Bunun yerine, aktör-ağ kuramının ilişkisel varlık anlayışından — **bir
 varlığın özellikleri ancak diğer aktörlerle kurduğu ilişkiler içinde
 ortaya çıkar** — hareketle **ilişki temelli bir kodlama sistematiği**
 inşa edilmiştir: bir düğüm (aktör/nesne), yalnızca bir ilişkinin ucu
